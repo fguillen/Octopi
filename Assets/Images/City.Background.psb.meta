@@ -120,8 +120,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1777
+      x: 6118
+      y: 4
       width: 6038
       height: 1762
     spriteID: 8c2d18847095640108e1a994bbf2e8b1
@@ -134,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1777}
+    uvTransform: {x: 6118, y: 4}
   - name: Shore
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4337
+      y: 2567
       width: 5736
       height: 783
     spriteID: a13180d697dba4df5a497006c2a00b1f
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -541, y: 4337}
+    uvTransform: {x: -541, y: 2567}
   - name: Shore_Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +165,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3547
+      y: 1777
       width: 6278
       height: 782
     spriteID: 83da4ccf21b534bb087fb2cde31b446c
@@ -178,7 +178,51 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 3547}
+    uvTransform: {x: 4, y: 1777}
+  - name: Sea
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12164
+      y: 4
+      width: 1919
+      height: 796
+    spriteID: 46919b31db41745c39dabedd3b1c4963
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5888, y: 4}
+  - name: Sky
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6290
+      y: 1777
+      width: 8195
+      height: 501
+    spriteID: 51a27d181cd7a45768610f2a3fdc913b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 6290, y: -322}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -235,8 +279,8 @@ ScriptedImporter:
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 8192
-  textureActualHeight: 8192
+  textureActualWidth: 16384
+  textureActualHeight: 16384
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
@@ -262,7 +306,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 8c2d18847095640108e1a994bbf2e8b1
     layerID: 194
-    mosaicPosition: {x: 4, y: 1777}
+    mosaicPosition: {x: 6118, y: 4}
   - name: Shore
     spriteName: 
     isGroup: 1
@@ -276,14 +320,28 @@ ScriptedImporter:
     parentIndex: 3
     spriteID: a13180d697dba4df5a497006c2a00b1f
     layerID: 25
-    mosaicPosition: {x: 4, y: 4337}
+    mosaicPosition: {x: 4, y: 2567}
+  - name: Sea
+    spriteName: Sea
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 46919b31db41745c39dabedd3b1c4963
+    layerID: 512
+    mosaicPosition: {x: 12164, y: 4}
+  - name: Sky
+    spriteName: Sky
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 51a27d181cd7a45768610f2a3fdc913b
+    layerID: 511
+    mosaicPosition: {x: 6290, y: 1777}
   - name: Shore_Background
     spriteName: Shore_Background
     isGroup: 0
     parentIndex: 3
     spriteID: 83da4ccf21b534bb087fb2cde31b446c
     layerID: 135
-    mosaicPosition: {x: 4, y: 3547}
+    mosaicPosition: {x: 4, y: 1777}
   characterData:
     bones: []
     parts: []
