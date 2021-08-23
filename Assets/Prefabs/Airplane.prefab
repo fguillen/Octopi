@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 949898603
-  m_SortingLayer: 4
+  m_SortingLayerID: 2070616087
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9051717257452824688, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5755653492922190774}
+  - component: {fileID: 5980783009681939617}
   m_Layer: 0
   m_Name: Airplane
   m_TagString: Untagged
@@ -114,6 +115,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5980783009681939617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152678621288526705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1f019bc94e8463dafc4c25576798fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: -1
 --- !u!1 &8285488625486724511
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,8 +196,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 949898603
-  m_SortingLayer: 4
+  m_SortingLayerID: 2070616087
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -8665489822194116537, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
