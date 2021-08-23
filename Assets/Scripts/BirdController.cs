@@ -5,6 +5,17 @@ using UnityEngine;
 public class BirdController : MonoBehaviour
 {
     public float velocity = -1;
+    Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        animator.SetBool("Flying", true);
+    }
 
     void Update()
     {
