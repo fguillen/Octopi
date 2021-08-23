@@ -17,4 +17,15 @@ public class RoadPatrolPointController : MonoBehaviour
     {
 
     }
+
+    void OnDrawGizmosSelected()
+    {
+        // Display the next PatrolPoints
+        Gizmos.color = Color.red;
+        foreach (var patrolPoint in nextPatrolPoints)
+        {
+            Gizmos.DrawLine(transform.position, patrolPoint.transform.position);
+        }
+
+    }
 }

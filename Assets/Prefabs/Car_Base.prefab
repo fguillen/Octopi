@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 992540751254635550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.509, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9141739117606459356}
   m_Father: {fileID: 6585086134120003780}
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 1
   nextPatrolPoint: {fileID: 0}
+  degreesToNextPatrolPoint: 0
 --- !u!95 &9048188112044448228
 Animator:
   serializedVersion: 3

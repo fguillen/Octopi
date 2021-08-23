@@ -24,11 +24,13 @@ public class CarSpawnerController : MonoBehaviour
 
     void SpawnCar() {
         Debug.Log("[CarSpawner].SpawnCar()");
-        Vector3 carPosition = new Vector3(transform.position.x, transform.position.y, Utils.AddNoise(transform.position.z, 0.1f)); // Adding z noise to avoid sprites render coupling
+        float zPosition = Utils.AddNoise(transform.position.z, 0.1f); // Adding z noise to avoid sprites render coupling
+        Vector3 carPosition = new Vector3(transform.position.x, transform.position.y, zPosition);
         GameObject car = Instantiate(RandomCar(), carPosition, Quaternion.identity, transform);
         nextCarAt = Time.time + Utils.AddNoise(carEachSeconds);
 
         car.GetComponent<CarController>().velocity = Utils.AddNoise(carVelocity);
+        car.GetComponent<CarController>().OriginalZ = zPosition;
         car.GetComponent<CarController>().NextPatrolPoint(firstPatrolPoint);
     }
 

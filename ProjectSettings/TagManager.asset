@@ -50,11 +50,11 @@ TagManager:
   - name: Buildings
     uniqueID: 2070616087
     locked: 0
-  - name: Cars
-    uniqueID: 949898603
-    locked: 0
   - name: Characters
     uniqueID: 3920158415
+    locked: 0
+  - name: Cars
+    uniqueID: 949898603
     locked: 0
   - name: Player
     uniqueID: 3101903729
