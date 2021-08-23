@@ -7,18 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1750995647990416372, guid: 931e155ea72124e4883a396643f00040, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2938826792689850773, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 3252614451015008259, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_Name
       value: Car2
       objectReference: {fileID: 0}
-    - target: {fileID: 6145978617745206607, guid: 931e155ea72124e4883a396643f00040, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5478800370273190007, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 6585086134120003780, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_RootOrder
       value: 0
