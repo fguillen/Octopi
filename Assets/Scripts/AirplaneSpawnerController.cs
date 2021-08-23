@@ -10,6 +10,11 @@ public class AirplaneSpawnerController : MonoBehaviour
     [SerializeField] float airplaneVelocity = 2;
     float nextAirplaneAt;
 
+    // void Awake()
+    // {
+    //     Time.timeScale = 10.0f;
+    // }
+
     void Start()
     {
         SpawnAirplane();
