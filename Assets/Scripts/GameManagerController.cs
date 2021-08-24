@@ -13,13 +13,13 @@ public class GameManagerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             Time.timeScale += 0.1f;
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
 
-        if(Input.GetKey(KeyCode.O))
+        if(Input.GetKeyDown(KeyCode.O))
         {
             float timeScale = Time.timeScale;
             timeScale -= 0.1f;

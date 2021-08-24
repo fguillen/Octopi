@@ -6,10 +6,14 @@ public class PersonController : MonoBehaviour
 {
     public float velocity = 1;
     public RoadPatrolPointController nextPatrolPoint;
+    RoadPatrolPointController previousPatrolPoint;
     Animator animator;
 
     [SerializeField] float degreesToNextPatrolPoint;
-    [SerializeField] float changeDirectionTime = 2.0f;
+    [SerializeField] float pauseTime = 2.0f;
+    [SerializeField] float pauseEachSeconds = 10.0f;
+
+    float nextPauseAt;
 
     bool idle = false;
 
@@ -21,33 +25,52 @@ public class PersonController : MonoBehaviour
     void Start()
     {
         animator.SetBool("Moving", true);
+        nextPauseAt = Time.time + Utils.AddNoise(pauseEachSeconds);
     }
 
     void Update()
     {
         if(!idle)
         {
-            Vector3 nextPatrolPointPositionWithCustomZ = new Vector3(nextPatrolPoint.transform.position.x, nextPatrolPoint.transform.position.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, nextPatrolPointPositionWithCustomZ, velocity * Time.deltaTime);
-
-            if(Vector3.Distance(transform.position, nextPatrolPointPositionWithCustomZ) < 0.01)
-            {
-                if(nextPatrolPoint.nextPatrolPoints.Count == 0)
-                {
-                    Destroy(gameObject);
-                } else
-                {
-                    StartCoroutine(ChangeDirectionCoroutine());
-                }
-            }
+            Move();
+            CheckPause();
         }
 
         // degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(nextPatrolPoint.transform.position.y - transform.position.y, nextPatrolPoint.transform.position.x - transform.position.x));
         // LookTowardsPoint(nextPatrolPoint.transform.position);
     }
 
+    void Move()
+    {
+        Vector3 nextPatrolPointPositionWithCustomZ = new Vector3(nextPatrolPoint.transform.position.x, nextPatrolPoint.transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, nextPatrolPointPositionWithCustomZ, velocity * Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, nextPatrolPointPositionWithCustomZ) < 0.01)
+        {
+            if(nextPatrolPoint.nextPatrolPoints.Count == 0)
+            {
+                Destroy(gameObject);
+            } else
+            {
+                NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
+            }
+        }
+    }
+
+    void CheckPause()
+    {
+        if(nextPauseAt <= Time.time)
+            StartCoroutine(ChangeDirectionCoroutine());
+
+    }
+
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)
     {
+        if(this.nextPatrolPoint == null)
+            this.previousPatrolPoint = patrolPoint;
+        else
+            this.previousPatrolPoint = this.nextPatrolPoint;
+
         this.nextPatrolPoint = patrolPoint;
         LookTowardsPoint(nextPatrolPoint.transform.position);
     }
@@ -105,8 +128,14 @@ public class PersonController : MonoBehaviour
     IEnumerator ChangeDirectionCoroutine()
     {
         idle = true;
-        yield return new WaitForSeconds(Utils.AddNoise(changeDirectionTime, changeDirectionTime));
-        NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
+        animator.SetBool("Moving", false);
+
+        yield return new WaitForSeconds(Utils.AddNoise(pauseTime, pauseTime));
+
+        RoadPatrolPointController[] possiblePatrolPoints = { previousPatrolPoint, nextPatrolPoint };
+        NextPatrolPoint(possiblePatrolPoints[Random.Range(0, possiblePatrolPoints.Length)]);
+        this.nextPauseAt = Time.time + Utils.AddNoise(pauseEachSeconds);
+        animator.SetBool("Moving", true);
         idle = false;
     }
 }
