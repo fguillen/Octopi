@@ -23,7 +23,7 @@ public class CarSpawnerController : MonoBehaviour
 
 
     void SpawnCar() {
-        Debug.Log("[CarSpawner].SpawnCar()");
+        // Debug.Log("[CarSpawner].SpawnCar()");
         float zPosition = Utils.AddNoise(transform.position.z, 0.1f); // Adding z noise to avoid sprites render coupling
         Vector3 carPosition = new Vector3(transform.position.x, transform.position.y, zPosition);
         GameObject car = Instantiate(RandomCar(), carPosition, Quaternion.identity, transform);

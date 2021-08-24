@@ -23,7 +23,7 @@ public class PeopleSpawnerController : MonoBehaviour
 
 
     void SpawnPerson() {
-        Debug.Log("[PersonSpawner].SpawnPerson()");
+        // Debug.Log("[PersonSpawner].SpawnPerson()");
         float zPosition = Utils.AddNoise(transform.position.z, 0.1f); // Adding z noise to avoid sprites render coupling
         Vector3 personPosition = new Vector3(transform.position.x, transform.position.y, zPosition);
         GameObject person = Instantiate(RandomPerson(), personPosition, Quaternion.identity, transform);

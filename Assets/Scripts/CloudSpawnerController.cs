@@ -23,7 +23,7 @@ public class CloudSpawnerController : MonoBehaviour
 
 
     void SpawnCloud() {
-        Debug.Log("[CloudSpawner].SpawnCloud()");
+        // Debug.Log("[CloudSpawner].SpawnCloud()");
         Vector3 cloudPosition = new Vector3(transform.position.x, Utils.AddNoise(transform.position.y, spawnAreaDelta), transform.position.z);
         GameObject cloud = Instantiate(cloudPrefab, cloudPosition, Quaternion.identity, transform);
         nextCloudAt = Time.time + Utils.AddNoise(cloudEachSeconds);

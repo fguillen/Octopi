@@ -10,11 +10,6 @@ public class AirplaneSpawnerController : MonoBehaviour
     [SerializeField] float airplaneVelocity = 2;
     float nextAirplaneAt;
 
-    // void Awake()
-    // {
-    //     Time.timeScale = 10.0f;
-    // }
-
     void Start()
     {
         SpawnAirplane();
@@ -28,7 +23,7 @@ public class AirplaneSpawnerController : MonoBehaviour
 
 
     void SpawnAirplane() {
-        Debug.Log("[AirplaneSpawner].SpawnAirplane()");
+        // Debug.Log("[AirplaneSpawner].SpawnAirplane()");
         Vector3 airplanePosition = new Vector3(transform.position.x, Utils.AddNoise(transform.position.y, spawnAreaDelta), Utils.AddNoise(transform.position.z, 0.1f)); // Adding z noise to avoid sprites render coupling
         GameObject airplane = Instantiate(airplanePrefab, airplanePosition, Quaternion.identity, transform);
         nextAirplaneAt = Time.time + Utils.AddNoise(airplaneEachSeconds);

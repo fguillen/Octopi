@@ -75,7 +75,6 @@ public class CarController : MonoBehaviour
 
     void LookRight()
     {
-        Debug.Log($"LookRight() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(-1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ - 0.2f); // Front
@@ -83,7 +82,6 @@ public class CarController : MonoBehaviour
 
     void LookDown()
     {
-        Debug.Log($"LookDown() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 90);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ + 0.2f); // Back
@@ -91,7 +89,6 @@ public class CarController : MonoBehaviour
 
     void LookLeft()
     {
-        Debug.Log($"LookLeft() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ + 0.2f); // Back
@@ -99,7 +96,6 @@ public class CarController : MonoBehaviour
 
     void LookUp()
     {
-        Debug.Log($"LookUp() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, -1, 1);
         transform.rotation = Quaternion.Euler(0, 0, -90);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ - 0.2f); // Front

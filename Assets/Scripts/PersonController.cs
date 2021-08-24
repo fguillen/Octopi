@@ -80,28 +80,24 @@ public class PersonController : MonoBehaviour
 
     void LookRight()
     {
-        Debug.Log($"LookRight() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(-1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     void LookDown()
     {
-        Debug.Log($"LookDown() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 90);
     }
 
     void LookLeft()
     {
-        Debug.Log($"LookLeft() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, 1, 1);
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     void LookUp()
     {
-        Debug.Log($"LookUp() - {degreesToNextPatrolPoint}");
         transform.localScale = new Vector3(1, -1, 1);
         transform.rotation = Quaternion.Euler(0, 0, -90);
     }

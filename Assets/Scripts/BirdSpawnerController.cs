@@ -23,7 +23,7 @@ public class BirdSpawnerController : MonoBehaviour
 
 
     void SpawnBird() {
-        Debug.Log("[BirdSpawner].SpawnBird()");
+        // Debug.Log("[BirdSpawner].SpawnBird()");
         Vector3 birdPosition = new Vector3(transform.position.x, Utils.AddNoise(transform.position.y, spawnAreaDelta), Utils.AddNoise(transform.position.z, 0.1f)); // Adding z noise to avoid sprites render coupling
         GameObject bird = Instantiate(birdPrefab, birdPosition, Quaternion.identity, transform);
         nextBirdAt = Time.time + Utils.AddNoise(birdEachSeconds);
