@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581649554382456097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.033, y: -0.01, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0.001, z: 0.01}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2947867335063433992}
@@ -68,10 +68,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 949898603
-  m_SortingLayer: 5
+  m_SortingLayerID: -374808881
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1354630828838401111, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+  m_Sprite: {fileID: 6528806990201847417, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
   m_Color: {r: 0.57254905, g: 0.7490196, b: 0.7529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4025025431742609343}
   - component: {fileID: 1580110710021465418}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Bullet
   m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

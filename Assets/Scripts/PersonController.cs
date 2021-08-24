@@ -9,7 +9,6 @@ public class PersonController : MonoBehaviour
     RoadPatrolPointController previousPatrolPoint;
     Animator animator;
 
-    [SerializeField] float degreesToNextPatrolPoint;
     [SerializeField] float pauseTime = 2.0f;
     [SerializeField] float pauseEachSeconds = 10.0f;
 
@@ -35,9 +34,6 @@ public class PersonController : MonoBehaviour
             Move();
             CheckPause();
         }
-
-        // degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(nextPatrolPoint.transform.position.y - transform.position.y, nextPatrolPoint.transform.position.x - transform.position.x));
-        // LookTowardsPoint(nextPatrolPoint.transform.position);
     }
 
     void Move()
@@ -52,7 +48,7 @@ public class PersonController : MonoBehaviour
                 Destroy(gameObject);
             } else
             {
-                NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
+                NextPatrolPoint();
             }
         }
     }
@@ -62,6 +58,11 @@ public class PersonController : MonoBehaviour
         if(nextPauseAt <= Time.time)
             StartCoroutine(ChangeDirectionCoroutine());
 
+    }
+
+    public void NextPatrolPoint()
+    {
+        NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
     }
 
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)
@@ -78,7 +79,7 @@ public class PersonController : MonoBehaviour
     void LookTowardsPoint(Vector3 point)
     {
         // Vector2.Angle doesn't work
-        degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(point.y - transform.position.y, point.x - transform.position.x));
+        float degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(point.y - transform.position.y, point.x - transform.position.x));
 
         if(
             (degreesToNextPatrolPoint < 45 && degreesToNextPatrolPoint >= 0) ||
