@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TankController : MonoBehaviour
@@ -8,12 +9,14 @@ public class TankController : MonoBehaviour
     public RoadPatrolPointController nextPatrolPoint;
     Animator animator;
     public float OriginalZ { get; set; }
+    PlayerController player;
 
     [SerializeField] float degreesToNextPatrolPoint;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.Find("/Player").GetComponent<PlayerController>();
     }
 
     void Start()
@@ -33,12 +36,17 @@ public class TankController : MonoBehaviour
                 Destroy(gameObject);
             } else
             {
-                NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
+                NextPatrolPointClosestToPlayer();
             }
         }
 
         // degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(nextPatrolPoint.transform.position.y - transform.position.y, nextPatrolPoint.transform.position.x - transform.position.x));
         // LookTowardsPoint(nextPatrolPoint.transform.position);
+    }
+
+    void NextPatrolPointClosestToPlayer()
+    {
+        NextPatrolPoint(nextPatrolPoint.nextPatrolPoints.OrderBy( e => Vector2.Distance(e.transform.position, player.transform.position) ).ToList()[0]);
     }
 
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)

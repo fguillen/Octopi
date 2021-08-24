@@ -15,16 +15,16 @@ public class GameManagerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            Time.timeScale += 0.1f;
+            Time.timeScale += 0.5f;
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
 
         if(Input.GetKeyDown(KeyCode.O))
         {
             float timeScale = Time.timeScale;
-            timeScale -= 0.1f;
+            timeScale -= 0.5f;
             if(timeScale <= 0)
-                timeScale = 0.1f;
+                timeScale = 0.5f;
 
             Time.timeScale = timeScale;
 
