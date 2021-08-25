@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -716035291267271276, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
-  m_Color: {r: 0.57254905, g: 0.7490196, b: 0.7529412, a: 1}
+  m_Color: {r: 0.6509804, g: 0.56078434, b: 0.29411766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -243,8 +243,9 @@ MonoBehaviour:
   gun: {fileID: 357493776926974589}
   missilePrefab: {fileID: 6821153355229891535, guid: 6f8c761521acf4570b7d09bb40bad7dd, type: 3}
   barrelEnd: {fileID: 2212983945321176716}
-  shootForce: 1
-  shootingOffset: {x: 0, y: 1, z: 0}
+  shootForce: 2
+  shootingOffset: {x: 0, y: 0.5, z: 0}
+  numBulletsPerShoot: 4
 --- !u!1001 &8973504804008347146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,15 +259,15 @@ PrefabInstance:
       objectReference: {fileID: -7651894480830207911, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.b
-      value: 0.7529412
+      value: 0.29411766
       objectReference: {fileID: 0}
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.g
-      value: 0.7490196
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.r
-      value: 0.57254905
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Name
@@ -274,27 +275,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5176787652933076652, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.b
-      value: 0.7529412
+      value: 0.29411766
       objectReference: {fileID: 0}
     - target: {fileID: 5176787652933076652, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.g
-      value: 0.7490196
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 5176787652933076652, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.r
-      value: 0.57254905
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 6145978617745206607, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.b
-      value: 0.7529412
+      value: 0.29411766
       objectReference: {fileID: 0}
     - target: {fileID: 6145978617745206607, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.g
-      value: 0.7490196
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 6145978617745206607, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.r
-      value: 0.57254905
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 6585086134120003780, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_RootOrder
