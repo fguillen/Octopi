@@ -28,7 +28,7 @@ public class HelicopterController : Shooter
     void Awake()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.Find("/Player").GetComponent<PlayerController>();
+        player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
     }
 
     void Start()

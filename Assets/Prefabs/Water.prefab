@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5350637621995294668}
   - component: {fileID: 5350637621995294670}
-  - component: {fileID: 5350637621995294669}
+  - component: {fileID: 3980931525663688938}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5350637621995294669
+--- !u!114 &3980931525663688938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +92,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5350637621995294667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccc33fd3497f411d9b06f8958c8a8af, type: 3}
+  m_Script: {fileID: 11500000, guid: b6cc9cfe86adc416a9c657d5cc8a222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0.2
-  velocity: 1
+  waveable: {fileID: 5350637621995294668}
+  offset: 0.1
+  velocity: 2
