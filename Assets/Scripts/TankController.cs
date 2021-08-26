@@ -28,6 +28,7 @@ public class TankController : Shooter
     {
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
+        Debug.Assert(player != null);
     }
 
     void Start()

@@ -29,6 +29,7 @@ public class SoldierController : Shooter
     {
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
+        Debug.Assert(player != null);
     }
 
     void Start()
