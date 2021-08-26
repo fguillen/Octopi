@@ -13,6 +13,13 @@ public class GameManagerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #if UNITY_EDITOR
+            ChangeVelocity();
+        #endif
+    }
+
+    void ChangeVelocity()
+    {
         if(Input.GetKeyDown(KeyCode.P))
         {
             Time.timeScale += 0.5f;
@@ -30,6 +37,5 @@ public class GameManagerController : MonoBehaviour
 
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
-
     }
 }
