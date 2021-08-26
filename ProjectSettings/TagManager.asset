@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
   - 
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: Birds
     uniqueID: 2153079779
+    locked: 0
+  - name: Dialog
+    uniqueID: 915187595
     locked: 0
