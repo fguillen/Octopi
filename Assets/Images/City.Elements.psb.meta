@@ -1820,7 +1820,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 548
     mosaicPosition: {x: 0, y: 0}
   - name: Dialog_Heart
@@ -1897,7 +1897,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 541
     mosaicPosition: {x: 0, y: 0}
   - name: Octopus_Bad_Body
@@ -2009,7 +2009,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 569
     mosaicPosition: {x: 0, y: 0}
   - name: Water
@@ -2044,7 +2044,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 37
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 567
     mosaicPosition: {x: 0, y: 0}
   - name: Truck_Billboard_Letters
