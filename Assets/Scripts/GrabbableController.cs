@@ -1,12 +1,12 @@
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.Events;
 using DG.Tweening;
 
 public class GrabbableController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D theRigidbody;
-    [SerializeField] Animator animator;
     [SerializeField] Transform scalable;
     [SerializeField] Transform shakeable;
 
@@ -14,6 +14,9 @@ public class GrabbableController : MonoBehaviour
     PlayerController player;
     IEnumerator grabCoroutine;
     Tween shakeTween;
+
+    public UnityEvent StartGrabEvent;
+    public UnityEvent StopGrabEvent;
 
     void Awake()
     {
@@ -23,8 +26,8 @@ public class GrabbableController : MonoBehaviour
 
     public void StartGrab()
     {
-        if(animator != null)
-            animator.enabled = false;
+        Debug.Log("GrabbableController.StartGrab()");
+        StartGrabEvent.Invoke();
 
         grabCoroutine = GrabCoroutine();
         StartCoroutine(grabCoroutine);
@@ -32,6 +35,8 @@ public class GrabbableController : MonoBehaviour
 
     public void StopGrab()
     {
+        StopGrabEvent.Invoke();
+
         StopShake();
 
         if(grabCoroutine != null)

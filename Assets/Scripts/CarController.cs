@@ -11,6 +11,8 @@ public class CarController : MonoBehaviour
 
     [SerializeField] float degreesToNextPatrolPoint;
 
+    bool idle = false;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,14 @@ public class CarController : MonoBehaviour
     }
 
     void Update()
+    {
+        if(!idle)
+            Move();
+
+
+    }
+
+    void Move()
     {
         Vector3 nextPatrolPointPositionWithCustomZ = new Vector3(nextPatrolPoint.transform.position.x, nextPatrolPoint.transform.position.y, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, nextPatrolPointPositionWithCustomZ, velocity * Time.deltaTime);
@@ -36,9 +46,6 @@ public class CarController : MonoBehaviour
                 NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
             }
         }
-
-        // degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(nextPatrolPoint.transform.position.y - transform.position.y, nextPatrolPoint.transform.position.x - transform.position.x));
-        // LookTowardsPoint(nextPatrolPoint.transform.position);
     }
 
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)
@@ -99,5 +106,18 @@ public class CarController : MonoBehaviour
         transform.localScale = new Vector3(1, -1, 1);
         transform.rotation = Quaternion.Euler(0, 0, -90);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ - 0.2f); // Front
+    }
+
+    public void StartGrab()
+    {
+        Debug.Log("CarController.StartGrab()");
+        animator.SetBool("Moving", false);
+        idle = true;
+    }
+
+    public void StopGrab()
+    {
+        animator.SetBool("Moving", true);
+        idle = false;
     }
 }

@@ -196,10 +196,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRigidbody: {fileID: 4751523732691960470}
-  animator: {fileID: 9048188112044448228}
   scalable: {fileID: 5442663538852479410}
   shakeable: {fileID: 6057128254527818499}
   timeToShake: 2
+  StartGrabEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8854987564488072876}
+        m_TargetAssemblyTypeName: CarController, Assembly-CSharp
+        m_MethodName: StartGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StopGrabEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8854987564488072876}
+        m_TargetAssemblyTypeName: CarController, Assembly-CSharp
+        m_MethodName: StopGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &4751523732691960470
 Rigidbody2D:
   serializedVersion: 4
@@ -351,7 +380,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -5478800370273190007, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.83766705, g: 0.37624598, b: 0.8962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
