@@ -98,7 +98,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1615
+      x: 1676
       y: 475
       width: 52
       height: 71
@@ -112,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1506, y: -292}
+    uvTransform: {x: 1567, y: -292}
   - name: HouseWindo_Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -120,7 +120,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1675
+      x: 1855
       y: 475
       width: 48
       height: 66
@@ -134,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1564, y: -294}
+    uvTransform: {x: 1744, y: -294}
   - name: Tree_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -142,8 +142,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1615
-      y: 554
+      x: 1847
+      y: 552
       width: 0
       height: 0
     spriteID: 3e14cf7585ed744dcb26446768e107c9
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1367, y: -385}
+    uvTransform: {x: -1135, y: -387}
   - name: Tree_2_Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -164,8 +164,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1623
-      y: 554
+      x: 1847
+      y: 560
       width: 0
       height: 0
     spriteID: e81cca4a4fe394863a3edde2b02a3b4b
@@ -178,7 +178,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1359, y: -385}
+    uvTransform: {x: -1135, y: -379}
   - name: Tree_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -186,8 +186,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1631
-      y: 554
+      x: 1897
+      y: 549
       width: 0
       height: 0
     spriteID: 7c697dc470479484eba62b2a2092cf4c
@@ -200,7 +200,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1351, y: -385}
+    uvTransform: {x: -1085, y: -390}
   - name: Tree_1_Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -208,8 +208,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1639
-      y: 554
+      x: 1897
+      y: 557
       width: 0
       height: 0
     spriteID: d2a646661b2b94292919da00d6483edd
@@ -222,7 +222,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1343, y: -385}
+    uvTransform: {x: -1085, y: -382}
   - name: House_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -443,6 +443,292 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -615, y: 720}
+  - name: WindowCrack_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1855
+      y: 549
+      width: 14
+      height: 16
+    spriteID: bf89dbcbc65884e938e77720a04c5945
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1734, y: -189}
+  - name: WindowCrack_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1796
+      y: 552
+      width: 9
+      height: 11
+    spriteID: 55b9fc214db4046048f8294c8350609f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1649, y: -187}
+  - name: WindowCrack_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1934
+      y: 475
+      width: 10
+      height: 17
+    spriteID: b0774b6b7589e46c7aff3654dc9c8ed3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1765, y: -262}
+  - name: WindowCrack_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1877
+      y: 549
+      width: 12
+      height: 11
+    spriteID: 8b2607685ecc0483281328b1793212ac
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1684, y: -189}
+  - name: WindowCrack_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1911
+      y: 475
+      width: 15
+      height: 17
+    spriteID: 3774fb930aec64b6383980f91621c5db
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1691, y: -260}
+  - name: WindowCrack_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1813
+      y: 552
+      width: 11
+      height: 7
+    spriteID: 95935f26d180a43358adddc90b2dbf7a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1563, y: -189}
+  - name: WindowCrack_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1911
+      y: 525
+      width: 10
+      height: 18
+    spriteID: 617e8364fd84c4f19b9902302941dfbf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1638, y: -207}
+  - name: WindowCrack_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1911
+      y: 500
+      width: 11
+      height: 17
+    spriteID: c35f9560359d04cfb99bfc62d90b8990
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1615, y: -232}
+  - name: WindowCrack_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1911
+      y: 551
+      width: 13
+      height: 12
+    spriteID: 056e066170c67427caf2657420d84eec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1592, y: -183}
+  - name: WindowCrack_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1832
+      y: 552
+      width: 7
+      height: 10
+    spriteID: 855341939e7034963af9a292841fbff2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1483, y: -180}
+  - name: WindowBroken_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1796
+      y: 475
+      width: 51
+      height: 69
+    spriteID: 219759ccbcaba41619e59c6d3e936f96
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1473, y: -287}
+  - name: WindowBroken_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1736
+      y: 475
+      width: 52
+      height: 69
+    spriteID: 1957ad8952f38489cb52df8741af474e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1474, y: -290}
+  - name: WindowBroken_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1615
+      y: 475
+      width: 53
+      height: 71
+    spriteID: 616bd94f8683b487089a066cc603b3a9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1420, y: -289}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -466,83 +752,174 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 498
     mosaicPosition: {x: 0, y: 0}
+  - name: WindowCrack_10
+    spriteName: WindowCrack_10
+    isGroup: 0
+    parentIndex: 0
+    spriteID: bf89dbcbc65884e938e77720a04c5945
+    layerID: 504
+    mosaicPosition: {x: 1855, y: 549}
+  - name: WindowCrack_9
+    spriteName: WindowCrack_9
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 55b9fc214db4046048f8294c8350609f
+    layerID: 505
+    mosaicPosition: {x: 1796, y: 552}
+  - name: WindowCrack_8
+    spriteName: WindowCrack_8
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b0774b6b7589e46c7aff3654dc9c8ed3
+    layerID: 506
+    mosaicPosition: {x: 1934, y: 475}
+  - name: WindowCrack_7
+    spriteName: WindowCrack_7
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8b2607685ecc0483281328b1793212ac
+    layerID: 507
+    mosaicPosition: {x: 1877, y: 549}
+  - name: WindowCrack_6
+    spriteName: WindowCrack_6
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3774fb930aec64b6383980f91621c5db
+    layerID: 508
+    mosaicPosition: {x: 1911, y: 475}
+  - name: WindowCrack_5
+    spriteName: WindowCrack_5
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 95935f26d180a43358adddc90b2dbf7a
+    layerID: 509
+    mosaicPosition: {x: 1813, y: 552}
+  - name: WindowCrack_4
+    spriteName: WindowCrack_4
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 617e8364fd84c4f19b9902302941dfbf
+    layerID: 510
+    mosaicPosition: {x: 1911, y: 525}
+  - name: WindowCrack_3
+    spriteName: WindowCrack_3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c35f9560359d04cfb99bfc62d90b8990
+    layerID: 511
+    mosaicPosition: {x: 1911, y: 500}
+  - name: WindowCrack_2
+    spriteName: WindowCrack_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 056e066170c67427caf2657420d84eec
+    layerID: 512
+    mosaicPosition: {x: 1911, y: 551}
+  - name: WindowCrack_1
+    spriteName: WindowCrack_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 855341939e7034963af9a292841fbff2
+    layerID: 503
+    mosaicPosition: {x: 1832, y: 552}
+  - name: WindowBroken_3
+    spriteName: WindowBroken_3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 219759ccbcaba41619e59c6d3e936f96
+    layerID: 502
+    mosaicPosition: {x: 1796, y: 475}
+  - name: WindowBroken_2
+    spriteName: WindowBroken_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1957ad8952f38489cb52df8741af474e
+    layerID: 501
+    mosaicPosition: {x: 1736, y: 475}
+  - name: WindowBroken_1
+    spriteName: WindowBroken_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 616bd94f8683b487089a066cc603b3a9
+    layerID: 500
+    mosaicPosition: {x: 1615, y: 475}
   - name: HouseWindow
     spriteName: HouseWindow
     isGroup: 0
     parentIndex: 0
     spriteID: 2647f8d15fe904fcf993b44fb29791ed
     layerID: 496
-    mosaicPosition: {x: 1615, y: 475}
+    mosaicPosition: {x: 1676, y: 475}
   - name: HouseWindo_Background
     spriteName: HouseWindo_Background
     isGroup: 0
     parentIndex: 0
     spriteID: 389dc159dd7bb493b9e1c35075ad302a
     layerID: 497
-    mosaicPosition: {x: 1675, y: 475}
+    mosaicPosition: {x: 1855, y: 475}
   - name: Tree 2
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 251
     mosaicPosition: {x: 0, y: 0}
   - name: Tree_2
     spriteName: Tree_2
     isGroup: 0
-    parentIndex: 3
+    parentIndex: 16
     spriteID: 3e14cf7585ed744dcb26446768e107c9
     layerID: 254
-    mosaicPosition: {x: 1615, y: 554}
+    mosaicPosition: {x: 1847, y: 552}
   - name: Tree_2_Background
     spriteName: Tree_2_Background
     isGroup: 0
-    parentIndex: 3
+    parentIndex: 16
     spriteID: e81cca4a4fe394863a3edde2b02a3b4b
     layerID: 255
-    mosaicPosition: {x: 1623, y: 554}
+    mosaicPosition: {x: 1847, y: 560}
   - name: Tree 1
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 178
     mosaicPosition: {x: 0, y: 0}
   - name: Tree_1
     spriteName: Tree_1
     isGroup: 0
-    parentIndex: 6
+    parentIndex: 19
     spriteID: 7c697dc470479484eba62b2a2092cf4c
     layerID: 177
-    mosaicPosition: {x: 1631, y: 554}
+    mosaicPosition: {x: 1897, y: 549}
   - name: Tree_1_Background
     spriteName: Tree_1_Background
     isGroup: 0
-    parentIndex: 6
+    parentIndex: 19
     spriteID: d2a646661b2b94292919da00d6483edd
     layerID: 176
-    mosaicPosition: {x: 1639, y: 554}
+    mosaicPosition: {x: 1897, y: 557}
   - name: House 1
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 231
     mosaicPosition: {x: 0, y: 0}
   - name: House_1
     spriteName: House_1
     isGroup: 0
-    parentIndex: 9
+    parentIndex: 22
     spriteID: 8b0d8a30fb57143679c01acbb2d5ac68
     layerID: 230
     mosaicPosition: {x: 4, y: 4}
   - name: House_1_Background
     spriteName: House_1_Background
     isGroup: 0
-    parentIndex: 9
+    parentIndex: 22
     spriteID: cdd30145d4ccb4da0b0dfbb1a50811e3
     layerID: 485
     mosaicPosition: {x: 1303, y: 4}
@@ -550,20 +927,20 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 227
     mosaicPosition: {x: 0, y: 0}
   - name: House_2
     spriteName: House_2
     isGroup: 0
-    parentIndex: 12
+    parentIndex: 25
     spriteID: 2ad7a2e93fed949b580e22a51e05904d
     layerID: 226
     mosaicPosition: {x: 4, y: 573}
   - name: House_2_Background
     spriteName: House_2_Background
     isGroup: 0
-    parentIndex: 12
+    parentIndex: 25
     spriteID: 6488544c412134c11b9d27cf8eb77e1d
     layerID: 225
     mosaicPosition: {x: 202, y: 573}
@@ -571,20 +948,20 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 223
     mosaicPosition: {x: 0, y: 0}
   - name: House_3
     spriteName: House_3
     isGroup: 0
-    parentIndex: 15
+    parentIndex: 28
     spriteID: 194926a81fa7e416eb125df28d0aae34
     layerID: 222
     mosaicPosition: {x: 927, y: 4}
   - name: House_3_Background
     spriteName: House_3_Background
     isGroup: 0
-    parentIndex: 15
+    parentIndex: 28
     spriteID: 585d0ce9ff6f1430daace3263234b121
     layerID: 221
     mosaicPosition: {x: 1615, y: 4}
@@ -592,20 +969,20 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 219
     mosaicPosition: {x: 0, y: 0}
   - name: House_4
     spriteName: House_4
     isGroup: 0
-    parentIndex: 18
+    parentIndex: 31
     spriteID: 44402ffc7ebaf4089b1785010f6d16f1
     layerID: 218
     mosaicPosition: {x: 395, y: 573}
   - name: House_4_Background
     spriteName: House_4_Background
     isGroup: 0
-    parentIndex: 18
+    parentIndex: 31
     spriteID: 0437b5c9679ef4aea8c4f9b6a034f4d8
     layerID: 217
     mosaicPosition: {x: 395, y: 1047}
@@ -613,20 +990,20 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 196
     mosaicPosition: {x: 0, y: 0}
   - name: House_5
     spriteName: House_5
     isGroup: 0
-    parentIndex: 21
+    parentIndex: 34
     spriteID: 8c2159c4c30814beb8fe22b3ce0803af
     layerID: 202
     mosaicPosition: {x: 614, y: 573}
   - name: House_5_Background
     spriteName: House_5_Background
     isGroup: 0
-    parentIndex: 21
+    parentIndex: 34
     spriteID: 82307467f4b124ea3ad01a9b01dec4f3
     layerID: 203
     mosaicPosition: {x: 614, y: 830}

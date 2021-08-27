@@ -9,6 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281362971924293900}
+  - component: {fileID: 2707567808827082955}
+  - component: {fileID: 1558505950150620807}
+  - component: {fileID: 4782656421649414935}
+  - component: {fileID: 2447362470626363076}
   m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
@@ -32,6 +36,106 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2707567808827082955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394296630173996093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e93b617f38945df8e9da59b4006b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theRigidbody: {fileID: 1558505950150620807}
+  scalable: {fileID: 6281362971924293900}
+  shakeable: {fileID: 971292839454818202}
+  mainObject: {fileID: 6281362971924293900}
+  timeToThrow: 1
+  throwForce: 10
+  jumpUp: 1
+  StartGrabEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  StopGrabEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ThrownEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2447362470626363076}
+        m_TargetAssemblyTypeName: WindowController, Assembly-CSharp
+        m_MethodName: Thrown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!50 &1558505950150620807
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394296630173996093}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &4782656421649414935
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394296630173996093}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.57}
+  m_EdgeRadius: 0
+--- !u!114 &2447362470626363076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394296630173996093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce2360fd07e94071884e0ca1d3e1cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowBrokenPrefab: {fileID: 3394296630173996093, guid: eec123cb70b9d4759bff8b66c67d4601, type: 3}
 --- !u!1 &4504377555558320660
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +208,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 8815447266391376613, guid: 7d575c3b57bf04748bd93e2de09b9489, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.41568628, g: 0.6509804, b: 0.6509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

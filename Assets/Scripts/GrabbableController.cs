@@ -9,6 +9,7 @@ public class GrabbableController : MonoBehaviour
     [SerializeField] Rigidbody2D theRigidbody;
     [SerializeField] Transform scalable;
     [SerializeField] Transform shakeable;
+    [SerializeField] Transform mainObject;
 
     [SerializeField] float timeToThrow = 2.0f;
     [SerializeField] float throwForce = 10.0f;
@@ -23,6 +24,7 @@ public class GrabbableController : MonoBehaviour
 
     public UnityEvent StartGrabEvent;
     public UnityEvent StopGrabEvent;
+    public UnityEvent ThrownEvent;
 
     void Awake()
     {
@@ -72,7 +74,7 @@ public class GrabbableController : MonoBehaviour
         sequence.Append(scalable.DOScale(originalScale * 0.95f, 0.2f).SetEase(Ease.OutBack));
         sequence.Append(scalable.DOScale(originalScale, 0.1f));
 
-        yield return new WaitForSeconds(timeToThrow);
+        yield return new WaitForSeconds(Utils.AddNoise(timeToThrow));
         StopShake();
 
         ThrowToPlayer();
@@ -80,6 +82,9 @@ public class GrabbableController : MonoBehaviour
 
     void ThrowToPlayer()
     {
+        ThrownEvent.Invoke();
+
+        mainObject.position = new Vector3(mainObject.position.x, mainObject.position.y, -1.0f); // on Front
         theRigidbody.bodyType = RigidbodyType2D.Dynamic;
         Vector2 direction = (player.transform.position - scalable.position).normalized;
 
@@ -90,6 +95,7 @@ public class GrabbableController : MonoBehaviour
         }
 
         theRigidbody.AddForce(direction * throwForce, ForceMode2D.Impulse);
+        theRigidbody.AddTorque(Random.Range(-throwForce, throwForce), ForceMode2D.Impulse);
     }
 
     void OnMouseDown()

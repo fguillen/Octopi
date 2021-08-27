@@ -198,7 +198,8 @@ MonoBehaviour:
   theRigidbody: {fileID: 4751523732691960470}
   scalable: {fileID: 5442663538852479410}
   shakeable: {fileID: 6057128254527818499}
-  timeToThrow: 2
+  mainObject: {fileID: 6585086134120003780}
+  timeToThrow: 1.5
   throwForce: 7
   jumpUp: 1
   StartGrabEvent:
