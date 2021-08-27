@@ -9,11 +9,15 @@ public class GrabbableController : MonoBehaviour
     [SerializeField] Rigidbody2D theRigidbody;
     [SerializeField] Transform scalable;
     [SerializeField] Transform shakeable;
+    [SerializeField] SpriteRenderer colorizable;
     [SerializeField] Transform mainObject;
 
     [SerializeField] float timeToThrow = 2.0f;
     [SerializeField] float throwForce = 10.0f;
     [SerializeField] bool jumpUp;
+
+    Color originalColor;
+    [SerializeField] Color activeColor = new Color(0.837667f, 0.376246f, 0.8962264f);
 
     PlayerController player;
     IEnumerator grabCoroutine;
@@ -26,6 +30,8 @@ public class GrabbableController : MonoBehaviour
     public UnityEvent StopGrabEvent;
     public UnityEvent ThrownEvent;
 
+    bool thrown = false;
+
     void Awake()
     {
         player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
@@ -33,6 +39,7 @@ public class GrabbableController : MonoBehaviour
 
         originalScale = scalable.localScale;
         originalPosition = shakeable.localPosition;
+        originalColor = colorizable.color;
     }
 
     public void StartGrab()
@@ -49,6 +56,7 @@ public class GrabbableController : MonoBehaviour
         StopGrabEvent.Invoke();
 
         StopShake();
+        colorizable.color = originalColor;
 
         if(grabCoroutine != null)
             StopCoroutine(grabCoroutine);
@@ -69,6 +77,7 @@ public class GrabbableController : MonoBehaviour
 
     IEnumerator GrabCoroutine()
     {
+        colorizable.color = activeColor;
         StartShake();
         Sequence sequence = DOTween.Sequence();
         sequence.Append(scalable.DOScale(originalScale * 0.95f, 0.2f).SetEase(Ease.OutBack));
@@ -83,6 +92,9 @@ public class GrabbableController : MonoBehaviour
     void ThrowToPlayer()
     {
         ThrownEvent.Invoke();
+
+        colorizable.color = originalColor;
+        thrown = true;
 
         mainObject.position = new Vector3(mainObject.position.x, mainObject.position.y, -1.0f); // on Front
         theRigidbody.bodyType = RigidbodyType2D.Dynamic;
@@ -100,11 +112,13 @@ public class GrabbableController : MonoBehaviour
 
     void OnMouseDown()
     {
-        StartGrab();
+        if(!thrown)
+            StartGrab();
     }
 
     void OnMouseUp()
     {
-        StopGrab();
+        if(!thrown)
+            StopGrab();
     }
 }

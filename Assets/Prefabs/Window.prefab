@@ -51,10 +51,12 @@ MonoBehaviour:
   theRigidbody: {fileID: 1558505950150620807}
   scalable: {fileID: 6281362971924293900}
   shakeable: {fileID: 971292839454818202}
+  colorizable: {fileID: 6062924157700783772}
   mainObject: {fileID: 6281362971924293900}
   timeToThrow: 1
   throwForce: 10
   jumpUp: 1
+  activeColor: {r: 0.8392157, g: 0.3764706, b: 0.8980392, a: 1}
   StartGrabEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -208,7 +210,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 8815447266391376613, guid: 7d575c3b57bf04748bd93e2de09b9489, type: 3}
-  m_Color: {r: 0.41568628, g: 0.6509804, b: 0.6509804, a: 1}
+  m_Color: {r: 0.8773585, g: 0.120016046, b: 0.120016046, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

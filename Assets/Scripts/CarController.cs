@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CarController : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class CarController : MonoBehaviour
     public float OriginalZ { get; set; }
 
     [SerializeField] float degreesToNextPatrolPoint;
+    [SerializeField] ParticleSystem particlesExplosion;
+    [SerializeField] ParticleSystem particlesFire;
+
+    [SerializeField] Color burntColor = new Color(0.27f, 0.076f, 0.15f);
+    [SerializeField] SpriteRenderer colorizable;
+    [SerializeField] Collider2D theCollider;
 
     bool idle = false;
 
@@ -119,5 +126,42 @@ public class CarController : MonoBehaviour
     {
         animator.SetBool("Moving", true);
         idle = false;
+    }
+
+    public void Thrown()
+    {
+        animator.SetBool("Moving", true);
+        idle = true;
+    }
+
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if(other.CompareTag("CarGround"))
+    //     {
+    //         Explode();
+    //     }
+    // }
+
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        if(
+            collisionInfo.gameObject.CompareTag("CarGround") ||
+            collisionInfo.gameObject.CompareTag("Car")
+        )
+        {
+            StartCoroutine(ExplodeCoroutine());
+        }
+    }
+
+    IEnumerator ExplodeCoroutine()
+    {
+        Debug.Log("Car.Explode()");
+        particlesExplosion.Play();
+        particlesFire.Play();
+
+        yield return colorizable.DOColor(burntColor, Utils.AddNoise(10)).WaitForCompletion();
+
+        // theCollider.enabled = false;
+        animator.SetBool("Moving", false);
     }
 }
