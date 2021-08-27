@@ -7,6 +7,8 @@ TagManager:
   - Missile
   - CarGround
   - Car
+  - WindowGround
+  - Window
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - UI
   - CarsGround
   - Cars
-  - 
-  - 
+  - WindowsGround
+  - Windows
   - 
   - 
   - 
