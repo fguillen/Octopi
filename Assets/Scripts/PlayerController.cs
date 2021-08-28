@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<Transform> tentacleTargets;
     [SerializeField] LayerMask tentacleTargetLayers;
 
+    SpringJoint2D joint;
+
     // [SerializeField] int numPoints = 3;
     // [SerializeField] float radius = 1.0f;
 
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
         if(hit)
         {
-            hit.collider.gameObject.GetComponent<GrabbableController>().StartGrab();
+            HookToGrabbable(hit.collider.gameObject.GetComponent<GrabbableController>());
         }
     }
 
@@ -72,4 +74,21 @@ public class PlayerController : MonoBehaviour
 
         return (direction: direction, hit: hit);
     }
+
+    void HookToGrabbable(GrabbableController grabbable)
+    {
+        grabbable.StartGrab();
+
+        joint = gameObject.AddComponent<SpringJoint2D>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = grabbable.transform.position;
+
+        float distanceFromPoint = Vector2.Distance(transform.position, grabbable.transform.position);
+
+        joint.distance = 1.25f;
+        joint.dampingRatio = 0f;
+        joint.frequency = 1f;
+    }
+
+
 }
