@@ -9,6 +9,9 @@ TagManager:
   - Car
   - WindowGround
   - Window
+  - Soldier
+  - Tank
+  - Helicopter
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - WindowsGround
   - Windows
   - Player
-  - 
+  - Army
   - 
   - 
   - 

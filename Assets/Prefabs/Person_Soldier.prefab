@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8750890266480520578}
   - component: {fileID: 5268749975339433673}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2212983945321176716}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarrelEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357493776926974589}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 5658715953142556563}
   - component: {fileID: 7627747189193227847}
   - component: {fileID: 4633899202469381152}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,6 +253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1634464771094052825, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -269,10 +273,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6509804
       objectReference: {fileID: 0}
+    - target: {fileID: 2898519896449309666, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Name
       value: Person_Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_TagString
+      value: Soldier
+      objectReference: {fileID: 0}
     - target: {fileID: 5176787652933076652, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.b
       value: 0.29411766
@@ -285,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6509804
       objectReference: {fileID: 0}
+    - target: {fileID: 5821710933735244548, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6145978617745206607, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.b
       value: 0.29411766
@@ -296,6 +316,10 @@ PrefabInstance:
     - target: {fileID: 6145978617745206607, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Color.r
       value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511071745041460686, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6585086134120003780, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_RootOrder
@@ -344,6 +368,14 @@ PrefabInstance:
     - target: {fileID: 7217302678977616771, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383973375823269613, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501997973321780403, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6891341265005700495, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
