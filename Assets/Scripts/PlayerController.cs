@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<Transform> tentacleTargets;
     [SerializeField] LayerMask tentacleTargetLayers;
 
-    SpringJoint2D joint;
+
+
+    List<SpringJoint2D> joints = new List<SpringJoint2D>();
 
     // [SerializeField] int numPoints = 3;
     // [SerializeField] float radius = 1.0f;
@@ -45,14 +47,13 @@ public class PlayerController : MonoBehaviour
         var result = RaycastTentacle();
 
         Gizmos.color = Color.grey;
-        Vector2 finalPosition =  (Vector2)transform.position + (result.direction * maxTentacleDistance);
-        Gizmos.DrawLine(transform.position, finalPosition);
+        Gizmos.DrawLine(result.rayCastIni, result.rayCastEnd);
 
         // Debug.Log($"direction: {result.direction}");
 
         if(result.hit)
         {
-            Gizmos.DrawSphere(result.hit.transform.position, 0.5f);
+            Gizmos.DrawSphere(result.hit.transform.position, 0.1f);
         }
     }
 
@@ -66,20 +67,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    (Vector2 direction, RaycastHit2D hit) RaycastTentacle()
+    (Vector2 rayCastIni, Vector2 rayCastEnd, RaycastHit2D hit) RaycastTentacle()
     {
-        Vector3 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePosition - transform.position).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxTentacleDistance, tentacleTargetLayers);
+        Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        float distanceToMousePosition = Vector2.Distance(transform.position, mousePosition);
 
-        return (direction: direction, hit: hit);
+        Vector2 rayCastIni;
+        Vector2 rayCastEnd;
+        float rayCastDistance;
+
+        if(distanceToMousePosition <= maxTentacleDistance)
+        {
+            rayCastIni = mousePosition;
+            rayCastEnd = mousePosition + (direction * (maxTentacleDistance - distanceToMousePosition));
+            rayCastDistance = maxTentacleDistance - distanceToMousePosition;
+        } else
+        {
+            rayCastIni = (Vector2)transform.position + (direction * maxTentacleDistance);
+            rayCastEnd = transform.position;
+            rayCastDistance = maxTentacleDistance;
+            direction = -direction;
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(rayCastIni, direction, rayCastDistance, tentacleTargetLayers);
+
+        return (rayCastIni: rayCastIni, rayCastEnd: rayCastEnd, hit: hit);
     }
 
     void HookToGrabbable(GrabbableController grabbable)
     {
         grabbable.StartGrab();
 
-        joint = gameObject.AddComponent<SpringJoint2D>();
+        if(joints.Count >= 4)
+        {
+            Destroy(joints[0]);
+            joints.RemoveAt(0);
+        }
+
+        SpringJoint2D joint = gameObject.AddComponent<SpringJoint2D>();
         joint.autoConfigureConnectedAnchor = false;
         joint.connectedAnchor = grabbable.transform.position;
 
@@ -88,6 +114,8 @@ public class PlayerController : MonoBehaviour
         joint.distance = 1.25f;
         joint.dampingRatio = 0f;
         joint.frequency = 1f;
+
+        joints.Add(joint);
     }
 
 
