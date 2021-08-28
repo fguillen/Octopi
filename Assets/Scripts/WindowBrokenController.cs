@@ -51,7 +51,7 @@ public class WindowBrokenController : MonoBehaviour
             {
                 float timePassed = (Time.time - startedAt);
                 float rateOverTime = Mathf.Lerp(originalRateOverTime, 0.0f, timePassed / smokeDurationTime);
-                Debug.Log($"originalRateOverTime: {originalRateOverTime}, smokeDurationTime: {smokeDurationTime}, TimePassed: {timePassed}, RateOverTime: {rateOverTime}");
+                // Debug.Log($"originalRateOverTime: {originalRateOverTime}, smokeDurationTime: {smokeDurationTime}, TimePassed: {timePassed}, RateOverTime: {rateOverTime}");
 
                 var emission = particlesSmoke.emission;
                 emission.rateOverTime = 2.0f;
