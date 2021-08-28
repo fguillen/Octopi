@@ -6,12 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] float maxTentacleDistance = 5.0f;
-    [SerializeField] List<Transform> tentacleTargets;
     [SerializeField] LayerMask tentacleTargetLayers;
 
-
-
-    List<SpringJoint2D> joints = new List<SpringJoint2D>();
+    [SerializeField] List<TentacleController> tentacles = new List<TentacleController>();
 
     // [SerializeField] int numPoints = 3;
     // [SerializeField] float radius = 1.0f;
@@ -97,25 +94,8 @@ public class PlayerController : MonoBehaviour
 
     void HookToGrabbable(GrabbableController grabbable)
     {
-        grabbable.StartGrab();
-
-        if(joints.Count >= 4)
-        {
-            Destroy(joints[0]);
-            joints.RemoveAt(0);
-        }
-
-        SpringJoint2D joint = gameObject.AddComponent<SpringJoint2D>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grabbable.transform.position;
-
-        float distanceFromPoint = Vector2.Distance(transform.position, grabbable.transform.position);
-
-        joint.distance = 1.25f;
-        joint.dampingRatio = 0f;
-        joint.frequency = 1f;
-
-        joints.Add(joint);
+        TentacleController tentacle = tentacles[Random.Range(0, tentacles.Count)];
+        tentacle.Hook(grabbable);
     }
 
 

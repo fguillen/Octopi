@@ -34,7 +34,7 @@ public class GrabbableController : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
+        player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
 
         originalScale = scalable.localScale;
