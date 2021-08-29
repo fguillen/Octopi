@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -86,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     void HookToGrabbable(GrabbableController grabbable)
     {
-        TentacleController tentacle = tentacles[Random.Range(0, tentacles.Count)];
+        TentacleController tentacle = tentacles.OrderBy( e => e.lastHookAt ).First();
         tentacle.Hook(grabbable);
     }
 

@@ -33,6 +33,7 @@ public class TentacleController : MonoBehaviour
     SpringJoint2D joint;
     GrabbableController grabbable;
     float tentacleOriginalLength;
+    public float lastHookAt;
 
     [SerializeField] List<Transform> bones;
     List<BoneWrapper> boneWrappers = new List<BoneWrapper>();
@@ -67,6 +68,7 @@ public class TentacleController : MonoBehaviour
     public void Hook(GrabbableController grabbable)
     {
         this.grabbable = grabbable;
+        lastHookAt = Time.time;
 
         if(hookCoroutine != null)
             StopCoroutine(hookCoroutine);
