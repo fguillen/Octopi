@@ -27,8 +27,8 @@ TagManager:
   - Player
   - Army
   - Tentacles
-  - 
-  - 
+  - Missile
+  - InPlayerCollider
   - 
   - 
   - 

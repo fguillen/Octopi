@@ -101,6 +101,14 @@ public class SoldierController : Shooter
         idle = false;
     }
 
+    void OnDrawGizmos()
+    {
+        Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawLine(barrelEnd.position, (Vector2)barrelEnd.position + (direction * shootForce));
+    }
+
     void Shoot()
     {
         // Debug.Log("Shoot!!");

@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1595513581759357720, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.19
+      value: 21.22
       objectReference: {fileID: 0}
     - target: {fileID: 1595513581759357720, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: 11.67
       objectReference: {fileID: 0}
     - target: {fileID: 1595513581759357720, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50,6 +50,14 @@ PrefabInstance:
     - target: {fileID: 1595513581759357720, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887638268986673155, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887638268986673155, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4887638268986673155, guid: 4f861a3c5393e4b4fb87e0467b04a81e, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar

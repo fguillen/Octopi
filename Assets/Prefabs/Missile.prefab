@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2847751901391388879}
   - component: {fileID: 2792486543932335747}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4025025431742609343}
   - component: {fileID: 1580110710021465418}
   - component: {fileID: 1331299276177134334}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Missile
   m_TagString: Missile
   m_Icon: {fileID: 0}
