@@ -23,6 +23,7 @@ public class TentacleController : MonoBehaviour
             Destroy(joint);
 
         joint = player.gameObject.AddComponent<SpringJoint2D>();
+        joint.enableCollision = true;
         joint.autoConfigureConnectedAnchor = false;
         joint.connectedAnchor = grabbable.transform.position;
         joint.distance = 1.25f;
