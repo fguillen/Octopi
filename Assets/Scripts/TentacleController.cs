@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BoneWrapper
 {
@@ -26,7 +27,9 @@ public class TentacleController : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] PlayerController player;
+    [SerializeField] float velocity = 1.0f;
 
+    IEnumerator hookCoroutine;
     SpringJoint2D joint;
     GrabbableController grabbable;
     float tentacleOriginalLength;
@@ -42,27 +45,45 @@ public class TentacleController : MonoBehaviour
         CalculateOriginalLength();
     }
 
-    public void Hook(GrabbableController grabbable)
+    IEnumerator HookCoroutine()
     {
-        target.position = grabbable.transform.position;
+        grabbed = true;
 
-        this.grabbable = grabbable;
-        this.grabbable.StartGrab();
+        StretchTentacle(Vector2.Distance(grabbable.transform.position, player.transform.position) * 1.2f);
 
         if(joint != null)
             Destroy(joint);
 
+        Sequence sequence = DOTween.Sequence();
+        // sequence.Append(target.transform.DOMoveY(target.transform.position.y - 5, 0.1f));
+        sequence.Append(target.transform.DOMove(grabbable.transform.position, 1f));
+
+        yield return sequence.WaitForCompletion();
+
+        CreateJoint(grabbable.transform.position);
+        grabbable.StartGrab();
+    }
+
+    public void Hook(GrabbableController grabbable)
+    {
+        this.grabbable = grabbable;
+
+        if(hookCoroutine != null)
+            StopCoroutine(hookCoroutine);
+
+        hookCoroutine = HookCoroutine();
+        StartCoroutine(hookCoroutine);
+    }
+
+    void CreateJoint(Vector2 position)
+    {
         joint = player.gameObject.AddComponent<SpringJoint2D>();
         joint.enableCollision = true;
         joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grabbable.transform.position;
+        joint.connectedAnchor = position;
         joint.distance = 1.25f;
         joint.dampingRatio = 0f;
         joint.frequency = 1f;
-
-        StretchTentacle(Vector2.Distance(target.position, player.transform.position) * 1.2f);
-
-        grabbed = true;
     }
 
     void BuildBoneWrappers()
