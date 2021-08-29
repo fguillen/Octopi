@@ -33,13 +33,13 @@ public class TentacleController : MonoBehaviour
     SpringJoint2D joint;
     GrabbableController grabbable;
     float tentacleOriginalLength;
-    public float lastHookAt;
+    public float lastActivityAt;
     Vector3 originalTargetRelatedPosition;
 
     [SerializeField] List<Transform> bones;
     List<BoneWrapper> boneWrappers = new List<BoneWrapper>();
 
-    bool grabbed = false;
+    public bool grabbed = false;
 
     void Awake()
     {
@@ -58,6 +58,9 @@ public class TentacleController : MonoBehaviour
         if(joint != null)
             Destroy(joint);
 
+        if(grabbable != null)
+            grabbable.StopGrab();
+
         Sequence sequence = DOTween.Sequence();
         // sequence.Append(target.transform.DOMoveY(target.transform.position.y - 5, 0.1f));
         sequence.Append(target.transform.DOMove(grabbable.transform.position, 1f));
@@ -71,7 +74,7 @@ public class TentacleController : MonoBehaviour
     public void Hook(GrabbableController grabbable)
     {
         this.grabbable = grabbable;
-        lastHookAt = Time.time;
+        lastActivityAt = Time.time;
         target.GetComponent<Rigidbody2D>().isKinematic = true;
         target.GetComponent<Collider2D>().enabled = false;
 
@@ -98,9 +101,18 @@ public class TentacleController : MonoBehaviour
         if(joint != null)
             Destroy(joint);
 
-        target.transform.DOMove(transform.position + originalTargetRelatedPosition, 1.0f);
+        if(grabbable != null)
+            grabbable.StopGrab();
+
+        // target.transform.DOMove(transform.position + originalTargetRelatedPosition, 1.0f);
         target.GetComponent<Rigidbody2D>().isKinematic = false;
         target.GetComponent<Collider2D>().enabled = true;
+
+        StretchTentacle(tentacleOriginalLength);
+
+        grabbable = null;
+
+        lastActivityAt = Time.time;
     }
 
     void BuildBoneWrappers()

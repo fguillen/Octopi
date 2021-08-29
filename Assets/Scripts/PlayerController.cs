@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
         {
             ShootTentacle();
         }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            ReleaseTentacle();
+        }
     }
 
     void OnDrawGizmos()
@@ -56,6 +61,14 @@ public class PlayerController : MonoBehaviour
         {
             HookToGrabbable(hit.collider.gameObject.GetComponent<GrabbableController>());
         }
+    }
+
+    void ReleaseTentacle()
+    {
+        TentacleController tentacle = tentacles.Where(e => e.grabbed).OrderBy( e => e.lastActivityAt).First();
+
+        if(tentacle != null)
+            tentacle.Release();
     }
 
     (Vector2 rayCastIni, Vector2 rayCastEnd, RaycastHit2D hit) RaycastTentacle()
@@ -88,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     void HookToGrabbable(GrabbableController grabbable)
     {
-        TentacleController tentacle = tentacles.OrderBy( e => e.lastHookAt ).First();
+        TentacleController tentacle = tentacles.OrderBy( e => e.lastActivityAt ).First();
         tentacle.Hook(grabbable);
     }
 
