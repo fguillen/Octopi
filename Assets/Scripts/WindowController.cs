@@ -36,7 +36,7 @@ public class WindowController : MonoBehaviour
 
     IEnumerator ExplodeCoroutine()
     {
-        Debug.Log("Car.Explode()");
+        // Debug.Log("Car.Explode()");
         particlesExplosion.Play();
         particlesSmoke.Play();
 

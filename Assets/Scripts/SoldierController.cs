@@ -103,7 +103,7 @@ public class SoldierController : Shooter
 
     void Shoot()
     {
-        Debug.Log("Shoot!!");
+        // Debug.Log("Shoot!!");
         GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, Quaternion.identity);
         Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
         bullet.GetComponent<BulletController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);

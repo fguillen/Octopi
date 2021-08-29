@@ -117,7 +117,7 @@ public class CarController : MonoBehaviour
 
     public void StartGrab()
     {
-        Debug.Log("CarController.StartGrab()");
+        // Debug.Log("CarController.StartGrab()");
         animator.SetBool("Moving", false);
         idle = true;
     }
@@ -155,7 +155,7 @@ public class CarController : MonoBehaviour
 
     IEnumerator ExplodeCoroutine()
     {
-        Debug.Log("Car.Explode()");
+        // Debug.Log("Car.Explode()");
         particlesExplosion.Play();
         particlesFire.Play();
 

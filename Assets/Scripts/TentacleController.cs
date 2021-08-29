@@ -13,13 +13,13 @@ public class BoneWrapper
         this.bone = bone;
         originalLength = bone.localPosition.x;
 
-        Debug.Log($"BoneWrapper.originalLength: {originalLength}");
+        // Debug.Log($"BoneWrapper.originalLength: {originalLength}");
     }
 
     public void SetLength(float length)
     {
         bone.localPosition = new Vector2(length, bone.localPosition.y);
-        Debug.Log($"BoneWrapper.setLength: {length}");
+        // Debug.Log($"BoneWrapper.setLength: {length}");
     }
 }
 
@@ -140,7 +140,7 @@ public class TentacleController : MonoBehaviour
 
         this.tentacleOriginalLength = length;
 
-        Debug.Log($"TentacleController.tentacleOriginalLength: {tentacleOriginalLength}");
+        // Debug.Log($"TentacleController.tentacleOriginalLength: {tentacleOriginalLength}");
     }
 
     void StretchTentacle(float desiredLength)
@@ -152,9 +152,9 @@ public class TentacleController : MonoBehaviour
 
         float multiplier = desiredLength / tentacleOriginalLength;
 
-        Debug.Log($"TentacleController.tentacleOriginalLength: {tentacleOriginalLength}");
-        Debug.Log($"TentacleController.desiredLength: {desiredLength}");
-        Debug.Log($"TentacleController.multiplier: {multiplier}");
+        // Debug.Log($"TentacleController.tentacleOriginalLength: {tentacleOriginalLength}");
+        // Debug.Log($"TentacleController.desiredLength: {desiredLength}");
+        // Debug.Log($"TentacleController.multiplier: {multiplier}");
 
         foreach (var boneWrapper in boneWrappers)
         {

@@ -25,7 +25,7 @@ public class WindowBrokenController : MonoBehaviour
         foreach (var crack in cracks)
         {
             int random = Random.Range(0, 2);
-            Debug.Log($"Random: {random}");
+            // Debug.Log($"Random: {random}");
             crack.SetActive(random == 1);
         }
 
