@@ -14,7 +14,7 @@ public class SoldierController : Shooter
 
     [SerializeField] float betweenShootsTime = 2.0f;
     [SerializeField] Transform gun;
-    [SerializeField] GameObject missilePrefab;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform barrelEnd;
     [SerializeField] float shootForce = 1.0f;
     [SerializeField] Vector3 shootingOffset = new Vector3(0, 1, 0);
@@ -104,9 +104,9 @@ public class SoldierController : Shooter
     void Shoot()
     {
         Debug.Log("Shoot!!");
-        GameObject missile = Instantiate(missilePrefab, barrelEnd.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, Quaternion.identity);
         Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
-        missile.GetComponent<MissileController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);
+        bullet.GetComponent<BulletController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);
     }
 
     void NextPatrolPointClosestToPlayer()

@@ -14,19 +14,29 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] ParticleSystem particlesBloodMissile;
     [SerializeField] ParticleSystem particlesBloodBullet;
+    [SerializeField] Collider2D colliderGroundUp;
+
+    [SerializeField] GameObject iconTentaclePrefab;
+    GameObject iconTentacle;
 
     float missileForce = 10.0f;
     float bulletForce = 2.0f;
+    Vector2 tentacleHiddenPosition = new Vector2(100, 100);
 
     Rigidbody2D theRigidBody;
 
     void Awake()
     {
         theRigidBody = GetComponent<Rigidbody2D>();
+        colliderGroundUp.enabled = true;
+        iconTentacle = Instantiate(iconTentaclePrefab, tentacleHiddenPosition, Quaternion.identity);
+        HideIconTentacle();
     }
 
     void Update()
     {
+        DrawIconTentacle();
+
         if(Input.GetMouseButtonDown(0))
         {
             ShootTentacle();
@@ -36,6 +46,29 @@ public class PlayerController : MonoBehaviour
         {
             ReleaseTentacle();
         }
+    }
+
+    void DrawIconTentacle()
+    {
+        var result = RaycastTentacle();
+
+        // Gizmos.color = Color.grey;
+        // Gizmos.DrawLine(result.rayCastIni, result.rayCastEnd);
+
+        // Debug.Log($"direction: {result.direction}");
+
+        if(result.hit)
+        {
+            iconTentacle.transform.position = result.hit.transform.position;
+        } else
+        {
+            HideIconTentacle();
+        }
+    }
+
+    void HideIconTentacle()
+    {
+        iconTentacle.transform.position = tentacleHiddenPosition;
     }
 
     void OnDrawGizmos()
@@ -69,6 +102,10 @@ public class PlayerController : MonoBehaviour
 
         if(tentacle != null)
             tentacle.Release();
+
+
+        if(!tentacles.Where(e => e.grabbed).Any())
+            colliderGroundUp.enabled = true;
     }
 
     (Vector2 rayCastIni, Vector2 rayCastEnd, RaycastHit2D hit) RaycastTentacle()
@@ -103,6 +140,8 @@ public class PlayerController : MonoBehaviour
     {
         TentacleController tentacle = tentacles.OrderBy( e => e.lastActivityAt ).First();
         tentacle.Hook(grabbable);
+
+        colliderGroundUp.enabled = false;
     }
 
     public void HitByMissile(Vector2 position, Vector2 direction)

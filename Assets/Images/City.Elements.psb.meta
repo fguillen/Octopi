@@ -575,28 +575,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 466, y: 1276}
-  - name: Person_3_Hat
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 386
-      y: 1544
-      width: 43
-      height: 39
-    spriteID: 2a91dc04d631348cdbbdd5d23c184fc7
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 386, y: 1544}
   - name: Person_3_Head
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -971,28 +949,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 633, y: 1500}
-  - name: Militar_Gun_Bullet
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 362
-      y: 1525
-      width: 17
-      height: 8
-    spriteID: 03e396b2fda0b4c28a1d55101f36691a
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 362, y: 1525}
   - name: Militar_Gun
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2115,72 +2071,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -167, y: -158}
-  - name: Person_3_Hat_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 386
-      y: 1544
-      width: 43
-      height: 39
-    spriteID: a51950da1f5534e818ab1833e0db871b
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -336, y: 269}
-  - name: Person_3_Head_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 949
-      y: 4
-      width: 61
-      height: 59
-    spriteID: 857e6793d1c7c4b439df62bb32d0ae4c
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 217, y: -1240}
-  - name: Person_3_Body_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 158
-      y: 1544
-      width: 49
-      height: 61
-    spriteID: edb2121156f5a4ab98dc6aaf1bd0ebfd
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -580, y: 350}
   - name: Person_2_Hat_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2211,7 +2101,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 949
-      y: 71
+      y: 4
       width: 61
       height: 59
     spriteID: c133803847d6f43eab099fedbd194f0f
@@ -2224,7 +2114,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 450, y: -1168}
+    uvTransform: {x: 450, y: -1235}
   - name: Person_2_Body_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2232,7 +2122,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 215
+      x: 158
       y: 1544
       width: 49
       height: 61
@@ -2246,7 +2136,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -290, y: 355}
+    uvTransform: {x: -347, y: 355}
   - name: Person_1_Hat_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2277,7 +2167,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 949
-      y: 138
+      y: 71
       width: 61
       height: 59
     spriteID: 97259387fe14743698d0b66466f4835f
@@ -2290,7 +2180,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 339, y: -1103}
+    uvTransform: {x: 339, y: -1170}
   - name: Person_1_Body_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2298,7 +2188,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 272
+      x: 215
       y: 1544
       width: 49
       height: 61
@@ -2312,7 +2202,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -344, y: 353}
+    uvTransform: {x: -401, y: 353}
   - name: Car_1_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2379,7 +2269,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -387, y: -323}
-  - name: Militar_Gun_Bullet_1
+  - name: Militar_Gun_Bullet
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2819,6 +2709,116 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 155, y: 544}
+  - name: Icon_Tentacle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 386
+      y: 1544
+      width: 40
+      height: 43
+    spriteID: f63d3f91feead49228e42273ddfa7860
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -653, y: 150}
+  - name: Icon_Tentacle_Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 1544
+      width: 37
+      height: 45
+    spriteID: 098c483232bc744c0a714e5cd727002c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -556, y: 153}
+  - name: Person_3_Hat
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 435
+      y: 1544
+      width: 43
+      height: 39
+    spriteID: 87d18df860af54f60be1122041ca7931
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -280, y: 272}
+  - name: Person_3_Head_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 949
+      y: 138
+      width: 61
+      height: 59
+    spriteID: bf1184dddaf534d9bbba79469c068318
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 225, y: -1103}
+  - name: Person_3_Body_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 1544
+      width: 49
+      height: 61
+    spriteID: 7a436421041df4548a7f30b51ebfcd72
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -458, y: 353}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -3330,34 +3330,6 @@ ScriptedImporter:
     spriteID: 2dc8a0024138a40efacf08c3f014b0bf
     layerID: 299
     mosaicPosition: {x: 466, y: 1276}
-  - name: Person 3
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 00000000000000000000000000000000
-    layerID: 411
-    mosaicPosition: {x: 0, y: 0}
-  - name: Person_3_Hat
-    spriteName: Person_3_Hat_1
-    isGroup: 0
-    parentIndex: 64
-    spriteID: a51950da1f5534e818ab1833e0db871b
-    layerID: 410
-    mosaicPosition: {x: 386, y: 1544}
-  - name: Person_3_Head
-    spriteName: Person_3_Head_1
-    isGroup: 0
-    parentIndex: 64
-    spriteID: 857e6793d1c7c4b439df62bb32d0ae4c
-    layerID: 409
-    mosaicPosition: {x: 949, y: 4}
-  - name: Person_3_Body
-    spriteName: Person_3_Body_1
-    isGroup: 0
-    parentIndex: 64
-    spriteID: edb2121156f5a4ab98dc6aaf1bd0ebfd
-    layerID: 408
-    mosaicPosition: {x: 158, y: 1544}
   - name: Person 2
     spriteName: 
     isGroup: 1
@@ -3368,24 +3340,24 @@ ScriptedImporter:
   - name: Person_2_Hat
     spriteName: Person_2_Hat_1
     isGroup: 0
-    parentIndex: 68
+    parentIndex: 64
     spriteID: c4073b5f4341f4638a87b8bc8a55b10d
     layerID: 404
     mosaicPosition: {x: 714, y: 1495}
   - name: Person_2_Head
     spriteName: Person_2_Head_1
     isGroup: 0
-    parentIndex: 68
+    parentIndex: 64
     spriteID: c133803847d6f43eab099fedbd194f0f
     layerID: 403
-    mosaicPosition: {x: 949, y: 71}
+    mosaicPosition: {x: 949, y: 4}
   - name: Person_2_Body
     spriteName: Person_2_Body_1
     isGroup: 0
-    parentIndex: 68
+    parentIndex: 64
     spriteID: 7ad3314ee461a48cdaa99b59282cbfbe
     layerID: 402
-    mosaicPosition: {x: 215, y: 1544}
+    mosaicPosition: {x: 158, y: 1544}
   - name: Person 1
     spriteName: 
     isGroup: 1
@@ -3396,45 +3368,73 @@ ScriptedImporter:
   - name: Person_1_Hat
     spriteName: Person_1_Hat_1
     isGroup: 0
-    parentIndex: 72
+    parentIndex: 68
     spriteID: dcbd16ed2b0e745008f1593ee5d06b37
     layerID: 390
     mosaicPosition: {x: 826, y: 250}
   - name: Person_1_Head
     spriteName: Person_1_Head_1
     isGroup: 0
-    parentIndex: 72
+    parentIndex: 68
     spriteID: 97259387fe14743698d0b66466f4835f
     layerID: 387
-    mosaicPosition: {x: 949, y: 138}
+    mosaicPosition: {x: 949, y: 71}
   - name: Person_1_Body
     spriteName: Person_1_Body_1
     isGroup: 0
-    parentIndex: 72
+    parentIndex: 68
     spriteID: 95392fc91bd654771b63dbb2f0864612
     layerID: 386
-    mosaicPosition: {x: 272, y: 1544}
+    mosaicPosition: {x: 215, y: 1544}
   - name: Car 1
     spriteName: 
     isGroup: 1
-    parentIndex: 72
+    parentIndex: 68
     spriteID: 00000000000000000000000000000000
     layerID: 292
     mosaicPosition: {x: 0, y: 0}
   - name: Car_1
     spriteName: Car_1_1
     isGroup: 0
-    parentIndex: 76
+    parentIndex: 72
     spriteID: 77abf9e08ef044e6c8be4f816969e45c
     layerID: 294
     mosaicPosition: {x: 525, y: 1153}
   - name: Car_1_Background
     spriteName: Car_1_Background_1
     isGroup: 0
-    parentIndex: 76
+    parentIndex: 72
     spriteID: ac4f7a5770b2a41e882ac06bf6648dd1
     layerID: 295
     mosaicPosition: {x: 283, y: 1276}
+  - name: Person 3
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 620
+    mosaicPosition: {x: 0, y: 0}
+  - name: Person_3_Hat
+    spriteName: Person_3_Hat_1
+    isGroup: 0
+    parentIndex: 75
+    spriteID: 87d18df860af54f60be1122041ca7931
+    layerID: 619
+    mosaicPosition: {x: 434, y: 1544}
+  - name: Person_3_Head
+    spriteName: Person_3_Head_1
+    isGroup: 0
+    parentIndex: 75
+    spriteID: bf1184dddaf534d9bbba79469c068318
+    layerID: 618
+    mosaicPosition: {x: 949, y: 138}
+  - name: Person_3_Body
+    spriteName: Person_3_Body_1
+    isGroup: 0
+    parentIndex: 75
+    spriteID: 7a436421041df4548a7f30b51ebfcd72
+    layerID: 617
+    mosaicPosition: {x: 272, y: 1544}
   - name: Missile
     spriteName: 
     isGroup: 1
@@ -3631,6 +3631,27 @@ ScriptedImporter:
     spriteID: ecc2055dd9ab444fe9ca6c0936c44de5
     layerID: 453
     mosaicPosition: {x: 4, y: 949}
+  - name: Icons
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 615
+    mosaicPosition: {x: 0, y: 0}
+  - name: Icon_Tentacle
+    spriteName: Icon_Tentacle
+    isGroup: 0
+    parentIndex: 107
+    spriteID: f63d3f91feead49228e42273ddfa7860
+    layerID: 614
+    mosaicPosition: {x: 386, y: 1544}
+  - name: Icon_Tentacle_Background
+    spriteName: Icon_Tentacle_Background
+    isGroup: 0
+    parentIndex: 107
+    spriteID: 098c483232bc744c0a714e5cd727002c
+    layerID: 613
+    mosaicPosition: {x: 485, y: 1544}
   characterData:
     bones: []
     parts: []

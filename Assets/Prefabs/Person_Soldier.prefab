@@ -241,7 +241,7 @@ MonoBehaviour:
   nextPatrolPoint: {fileID: 0}
   betweenShootsTime: 2
   gun: {fileID: 357493776926974589}
-  missilePrefab: {fileID: 6821153355229891535, guid: 6f8c761521acf4570b7d09bb40bad7dd, type: 3}
+  bulletPrefab: {fileID: 6821153355229891535, guid: 6f8c761521acf4570b7d09bb40bad7dd, type: 3}
   barrelEnd: {fileID: 2212983945321176716}
   shootForce: 2
   shootingOffset: {x: 0, y: 0.5, z: 0}

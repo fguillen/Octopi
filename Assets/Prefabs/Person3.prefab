@@ -8,9 +8,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8189512487169029355, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+      objectReference: {fileID: 1569930291527727784, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Name
       value: Person3
