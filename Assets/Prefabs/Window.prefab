@@ -71,7 +71,7 @@ MonoBehaviour:
   shakeable: {fileID: 971292839454818202}
   colorizable: {fileID: 6062924157700783772}
   mainObject: {fileID: 6281362971924293900}
-  timeToThrow: 1
+  timeToThrow: 5
   throwForce: 10
   jumpUp: 1
   activeColor: {r: 0.8392157, g: 0.3764706, b: 0.8980392, a: 1}
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 8815447266391376613, guid: 7d575c3b57bf04748bd93e2de09b9489, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9528302, g: 0.5887772, b: 0.5887772, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -67,8 +67,13 @@ public class TentacleController : MonoBehaviour
 
         yield return sequence.WaitForCompletion();
 
-        CreateJoint(grabbable.transform.position);
-        grabbable.StartGrab();
+        // Maybe released already for other event
+        if(grabbable != null)
+        {
+            CreateJoint(grabbable.transform.position);
+            grabbable.StartGrab();
+            grabbable.ThrownEvent.AddListener(Release);
+        }
     }
 
     public void Hook(GrabbableController grabbable)
