@@ -34,6 +34,7 @@ public class TentacleController : MonoBehaviour
     GrabbableController grabbable;
     float tentacleOriginalLength;
     public float lastHookAt;
+    Vector3 originalTargetRelatedPosition;
 
     [SerializeField] List<Transform> bones;
     List<BoneWrapper> boneWrappers = new List<BoneWrapper>();
@@ -44,6 +45,8 @@ public class TentacleController : MonoBehaviour
     {
         BuildBoneWrappers();
         CalculateOriginalLength();
+
+        originalTargetRelatedPosition = target.position - transform.position;
     }
 
     IEnumerator HookCoroutine()
@@ -69,6 +72,8 @@ public class TentacleController : MonoBehaviour
     {
         this.grabbable = grabbable;
         lastHookAt = Time.time;
+        target.GetComponent<Rigidbody2D>().isKinematic = true;
+        target.GetComponent<Collider2D>().enabled = false;
 
         if(hookCoroutine != null)
             StopCoroutine(hookCoroutine);
@@ -86,6 +91,16 @@ public class TentacleController : MonoBehaviour
         joint.distance = 1.25f;
         joint.dampingRatio = 0f;
         joint.frequency = 1f;
+    }
+
+    public void Release()
+    {
+        if(joint != null)
+            Destroy(joint);
+
+        target.transform.DOMove(transform.position + originalTargetRelatedPosition, 1.0f);
+        target.GetComponent<Rigidbody2D>().isKinematic = false;
+        target.GetComponent<Collider2D>().enabled = true;
     }
 
     void BuildBoneWrappers()

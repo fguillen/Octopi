@@ -12,6 +12,7 @@ TagManager:
   - Soldier
   - Tank
   - Helicopter
+  - Tentacle
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Windows
   - Player
   - Army
-  - 
+  - Tentacles
   - 
   - 
   - 
