@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581649554382456097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.001, z: 0.01}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.01}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2947867335063433992}
@@ -91,8 +91,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947867335063433992}
+  - component: {fileID: 6276241249401667929}
   - component: {fileID: 4025025431742609343}
-  - component: {fileID: 1580110710021465418}
+  - component: {fileID: 8076600488070899791}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Missile
@@ -115,6 +116,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6276241249401667929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821153355229891535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fdf6ef5b59d41b29063f9a922ecd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheRigidbody: {fileID: 0}
+  particlesExplosion: {fileID: 0}
 --- !u!50 &4025025431742609343
 Rigidbody2D:
   serializedVersion: 4
@@ -136,16 +151,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1580110710021465418
-MonoBehaviour:
+--- !u!58 &8076600488070899791
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6821153355229891535}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9edaf96378ce0472a8f60fefcb014a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TheRigidbody: {fileID: 0}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.015400669

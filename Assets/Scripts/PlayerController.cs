@@ -10,26 +10,18 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] List<TentacleController> tentacles = new List<TentacleController>();
 
-    // [SerializeField] int numPoints = 3;
-    // [SerializeField] float radius = 1.0f;
+    [SerializeField] ParticleSystem particlesBloodMissile;
+    [SerializeField] ParticleSystem particlesBloodBullet;
 
-    // void OnDrawGizmos()
-    // {
-    //     if(numPoints > 1)
-    //     {
-    //         float minDegrees = 15.0f;
-    //         float maxDegrees = 165.0f;
-    //         float degreesStep = (maxDegrees - minDegrees) / (numPoints - 1);
+    float missileForce = 10.0f;
+    float bulletForce = 2.0f;
 
-    //         for (int i = 0; i < numPoints; i++)
-    //         {
-    //             float degrees = minDegrees + (i * degreesStep);
-    //             Vector3 position = Utils.PositionInCircumference(transform.position, radius, degrees);
-    //             Gizmos.color = Color.red;
-    //             Gizmos.DrawWireSphere(position, 0.5f);
-    //         }
-    //     }
-    // }
+    Rigidbody2D theRigidBody;
+
+    void Awake()
+    {
+        theRigidBody = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -98,5 +90,19 @@ public class PlayerController : MonoBehaviour
         tentacle.Hook(grabbable);
     }
 
+    public void HitByMissile(Vector2 position, Vector2 direction)
+    {
+        ParticleSystem particles = Instantiate(particlesBloodMissile, position, Quaternion.identity, transform);
+        particles.Play();
+        Destroy(particles, 10.0f);
+        theRigidBody.AddForce(direction * missileForce, ForceMode2D.Impulse);
+    }
 
+    public void HitByBullet(Vector2 position, Vector2 direction)
+    {
+        ParticleSystem particles = Instantiate(particlesBloodBullet, position, Quaternion.identity, transform);
+        particles.Play();
+        Destroy(particles, 10.0f);
+        theRigidBody.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+    }
 }

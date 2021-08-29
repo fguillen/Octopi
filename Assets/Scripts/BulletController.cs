@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class MissileController : MonoBehaviour
+public class BulletController : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D TheRigidbody;
-
-    [SerializeField] ParticleSystem particlesExplosion;
 
     void Awake()
     {
@@ -29,16 +27,13 @@ public class MissileController : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().HitByMissile(other.transform.position, TheRigidbody.velocity.normalized);
+            other.gameObject.GetComponent<PlayerController>().HitByBullet(other.transform.position, TheRigidbody.velocity.normalized);
             Explode();
         }
     }
 
     void Explode()
     {
-        ParticleSystem particles = Instantiate(particlesExplosion, transform.position, Quaternion.identity);
-        particles.Play();
-        Destroy(particles, 10.0f);
         Destroy(gameObject);
     }
 }

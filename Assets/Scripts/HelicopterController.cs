@@ -37,6 +37,7 @@ public class HelicopterController : Shooter
         animator.SetBool("Moving", true);
         nextShootAt = Time.time + Utils.AddNoise(betweenShootsTime);
         gunReleaseRotation = gun.localRotation;
+        NextPatrolPointCloseToPlayer();
     }
 
     void Update()
