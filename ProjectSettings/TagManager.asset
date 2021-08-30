@@ -14,6 +14,7 @@ TagManager:
   - Helicopter
   - Tentacle
   - House
+  - PlayerGround
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - InPlayerCollider
   - Houses
   - WindowsHidden
-  - 
+  - PlayerGround
   - 
   - 
   - 
