@@ -6,6 +6,8 @@ public class BirdController : MonoBehaviour
 {
     public float velocity = -1;
     Animator animator;
+    bool grabbed = false;
+    bool onAir = true;
 
     void Awake()
     {
@@ -15,12 +17,18 @@ public class BirdController : MonoBehaviour
     void Start()
     {
         animator.SetBool("Flying", true);
+        animator.SetBool("Grabbed", false);
+        FlipTowardsVelocity();
     }
 
     void Update()
     {
-        transform.Translate(new Vector3(velocity, 0f, 0f) * Time.deltaTime);
+        if(!grabbed)
+            transform.Translate(new Vector3(velocity, 0f, 0f) * Time.deltaTime);
+    }
 
+    void FlipTowardsVelocity()
+    {
         if(
             (velocity > 0 && transform.localScale.x > 0) ||
             (velocity < 0 && transform.localScale.x < 0)
@@ -28,5 +36,30 @@ public class BirdController : MonoBehaviour
         {
             transform.localScale = new Vector3(- transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
+    }
+
+    public void StartGrab()
+    {
+        // Debug.Log("CarController.StartGrab()");
+        animator.SetBool("Grabbed", true);
+        grabbed = true;
+    }
+
+    public void StopGrab()
+    {
+        Debug.Log("CarController.StopGrab()");
+        if(onAir)
+        {
+            animator.SetBool("Grabbed", false);
+            grabbed = false;
+        }
+    }
+
+    public void Thrown()
+    {
+        Debug.Log("CarController.Thrown()");
+        animator.SetBool("Grabbed", false);
+        grabbed = true;
+        onAir = false;
     }
 }

@@ -107,7 +107,8 @@ public class GrabbableController : MonoBehaviour
             direction = direction.normalized;
         }
 
-        theRigidbody.AddForce(direction * throwForce, ForceMode2D.Impulse);
+        Vector2 directionWithForce = direction * throwForce;
+        theRigidbody.AddForce(directionWithForce, ForceMode2D.Impulse);
         theRigidbody.AddTorque(Random.Range(-throwForce, throwForce), ForceMode2D.Impulse);
     }
 

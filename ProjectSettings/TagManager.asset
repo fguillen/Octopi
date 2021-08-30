@@ -16,6 +16,7 @@ TagManager:
   - House
   - PlayerGround
   - ActivateArmy
+  - Bird
   layers:
   - Default
   - TransparentFX
@@ -36,7 +37,7 @@ TagManager:
   - WindowsHidden
   - PlayerGround
   - ActivateArmy
-  - 
+  - Birds
   - 
   - 
   - 

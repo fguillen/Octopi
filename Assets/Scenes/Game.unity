@@ -21318,6 +21318,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.14999998
       objectReference: {fileID: 0}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: tentacleTargetLayers.m_Bits
+      value: 524928
+      objectReference: {fileID: 0}
     - target: {fileID: 2788845185495850643, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.96643823

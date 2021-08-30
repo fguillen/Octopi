@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car1
       objectReference: {fileID: 0}
+    - target: {fileID: 4751523732691960470, guid: 931e155ea72124e4883a396643f00040, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751523732691960470, guid: 931e155ea72124e4883a396643f00040, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4975909280142355307, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.004
