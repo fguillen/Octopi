@@ -25,10 +25,12 @@ public class BoneWrapper
 
 public class TentacleController : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] GameObject target;
     [SerializeField] PlayerController player;
     [SerializeField] float velocity = 1.0f;
 
+
+    Collider2D targetCollider;
     IEnumerator hookCoroutine;
     SpringJoint2D joint;
     GrabbableController grabbable;
@@ -46,7 +48,24 @@ public class TentacleController : MonoBehaviour
         BuildBoneWrappers();
         CalculateOriginalLength();
 
-        originalTargetRelatedPosition = target.position - transform.position;
+        originalTargetRelatedPosition = target.transform.position - transform.position;
+
+        targetCollider = target.GetComponent<Collider2D>();
+    }
+
+    void Update()
+    {
+        LiberateIfHolding();
+    }
+
+    void LiberateIfHolding()
+    {
+        if(target.transform.position.y > player.transform.position.y)
+        {
+            targetCollider.enabled = false;
+        } else {
+            targetCollider.enabled = true;
+        }
     }
 
     IEnumerator HookCoroutine()
