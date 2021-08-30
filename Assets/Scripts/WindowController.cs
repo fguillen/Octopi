@@ -11,6 +11,8 @@ public class WindowController : MonoBehaviour
     [SerializeField] ParticleSystem particlesExplosion;
     [SerializeField] ParticleSystem particlesSmoke;
 
+    bool onWall = true;
+
     public void StartGrab()
     {
     }
@@ -21,7 +23,13 @@ public class WindowController : MonoBehaviour
 
     public void Thrown()
     {
-        Instantiate(windowBrokenPrefab, transform.position, Quaternion.identity, transform.parent);
+        if(onWall)
+        {
+            Instantiate(windowBrokenPrefab, transform.position, Quaternion.identity, transform.parent);
+            onWall = false;
+        }{
+            particlesExplosion.Play();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -39,6 +47,8 @@ public class WindowController : MonoBehaviour
         // Debug.Log("Car.Explode()");
         particlesExplosion.Play();
         particlesSmoke.Play();
+
+        gameObject.layer = LayerMask.NameToLayer("WindowsHidden");
 
         yield return colorizable.DOColor(burntColor, 0.5f).WaitForCompletion();
     }
