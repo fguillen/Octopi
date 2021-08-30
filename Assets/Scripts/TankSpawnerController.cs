@@ -12,12 +12,13 @@ public class TankSpawnerController : MonoBehaviour
 
     void Start()
     {
-        SpawnTank();
+        if(GameManagerController.Instance.CanMoreTanks())
+            SpawnTank();
     }
 
     void Update()
     {
-        if(nextTankAt <= Time.time)
+        if(nextTankAt <= Time.time && GameManagerController.Instance.CanMoreTanks())
             SpawnTank();
     }
 

@@ -11,12 +11,13 @@ public class HelicopterSpawnerController : MonoBehaviour
 
     void Start()
     {
-        SpawnHelicopter();
+        if(GameManagerController.Instance.CanMoreHelicopters())
+            SpawnHelicopter();
     }
 
     void Update()
     {
-        if(nextHelicopterAt <= Time.time && GameManagerController.instance.CanMoreHelicopters())
+        if(nextHelicopterAt <= Time.time && GameManagerController.Instance.CanMoreHelicopters())
             SpawnHelicopter();
     }
 

@@ -16,11 +16,13 @@ public class GameManagerController : MonoBehaviour
     int actualNumTanks;
     int actualNumSoldiers;
 
-    public static GameManagerController instance;
+    bool armyActive = false;
+
+    public static GameManagerController Instance;
 
     void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     // Start is called before the first frame update
@@ -56,6 +58,12 @@ public class GameManagerController : MonoBehaviour
 
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
+    }
+
+    public void ActivateArmy()
+    {
+        Debug.Log("ActiveArmy()");
+        armyActive = true;
     }
 
     public void IncreasePeople()
@@ -102,7 +110,7 @@ public class GameManagerController : MonoBehaviour
 
     public bool CanMoreHelicopters()
     {
-        return maxNumHelicopters > actualNumHelicopters;
+        return maxNumHelicopters > actualNumHelicopters && armyActive;
     }
 
 
@@ -118,7 +126,7 @@ public class GameManagerController : MonoBehaviour
 
     public bool CanMoreTanks()
     {
-        return maxNumTanks > actualNumTanks;
+        return maxNumTanks > actualNumTanks && armyActive;
     }
 
 
@@ -134,6 +142,6 @@ public class GameManagerController : MonoBehaviour
 
     public bool CanMoreSoldiers()
     {
-        return maxNumSoldiers > actualNumSoldiers;
+        return maxNumSoldiers > actualNumSoldiers && armyActive;
     }
 }

@@ -12,12 +12,13 @@ public class PeopleSpawnerController : MonoBehaviour
 
     void Start()
     {
-        SpawnPerson();
+        if(GameManagerController.Instance.CanMorePeople())
+            SpawnPerson();
     }
 
     void Update()
     {
-        if(nextPersonAt <= Time.time && GameManagerController.instance.CanMorePeople())
+        if(nextPersonAt <= Time.time && GameManagerController.Instance.CanMorePeople())
             SpawnPerson();
     }
 

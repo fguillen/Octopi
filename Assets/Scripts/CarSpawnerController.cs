@@ -12,12 +12,13 @@ public class CarSpawnerController : MonoBehaviour
 
     void Start()
     {
-        SpawnCar();
+        if(GameManagerController.Instance.CanMoreCars())
+            SpawnCar();
     }
 
     void Update()
     {
-        if(nextCarAt <= Time.time && GameManagerController.instance.CanMoreCars())
+        if(nextCarAt <= Time.time && GameManagerController.Instance.CanMoreCars())
             SpawnCar();
     }
 

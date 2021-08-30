@@ -12,12 +12,13 @@ public class SoldierSpawnerController : MonoBehaviour
 
     void Start()
     {
-        SpawnSoldier();
+        if(GameManagerController.Instance.CanMoreSoldiers())
+            SpawnSoldier();
     }
 
     void Update()
     {
-        if(nextSoldierAt <= Time.time && GameManagerController.instance.CanMoreSoldiers())
+        if(nextSoldierAt <= Time.time && GameManagerController.Instance.CanMoreSoldiers())
             SpawnSoldier();
     }
 
