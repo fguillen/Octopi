@@ -150,9 +150,9 @@ public class CarController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
+        Debug.Log($"Tag: {collisionInfo.gameObject.tag}");
         if(
-            collisionInfo.gameObject.CompareTag("CarGround") ||
-            collisionInfo.gameObject.CompareTag("Car")
+            collisionInfo.gameObject.CompareTag("CarGround")
         )
         {
             StartCoroutine(ExplodeCoroutine());

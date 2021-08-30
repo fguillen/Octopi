@@ -23,13 +23,14 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(other.CompareTag("Player"))
+        if(collisionInfo.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().HitByBullet(other.transform.position, TheRigidbody.velocity.normalized);
-            Explode();
+            collisionInfo.gameObject.GetComponent<PlayerController>().HitByBullet(collisionInfo.gameObject.transform.position, TheRigidbody.velocity.normalized);
         }
+
+        Explode();
     }
 
     void Explode()

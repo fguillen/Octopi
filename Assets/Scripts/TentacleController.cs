@@ -66,7 +66,16 @@ public class TentacleController : MonoBehaviour
         target.transform.position = Vector2.MoveTowards(target.transform.position, grabbable.grabbablePosition.transform.position, velocity * Time.deltaTime);
         if(Vector2.Distance(target.transform.position, grabbable.grabbablePosition.transform.position) < 0.01f)
         {
-            Hook();
+            float distanceToGrabbable = Vector2.Distance(player.transform.position, grabbable.grabbablePosition.transform.position);
+
+            if(distanceToGrabbable > 5f)
+            {
+                Release();
+            } else
+            {
+                Hook();
+            }
+
         }
     }
 

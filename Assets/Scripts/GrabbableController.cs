@@ -111,15 +111,15 @@ public class GrabbableController : MonoBehaviour
         theRigidbody.AddTorque(Random.Range(-throwForce, throwForce), ForceMode2D.Impulse);
     }
 
-    void OnMouseDown()
-    {
-        if(!thrown)
-            StartGrab();
-    }
+    // void OnMouseDown()
+    // {
+    //     if(!thrown)
+    //         StartGrab();
+    // }
 
-    void OnMouseUp()
-    {
-        if(!thrown)
-            StopGrab();
-    }
+    // void OnMouseUp()
+    // {
+    //     if(!thrown)
+    //         StopGrab();
+    // }
 }
