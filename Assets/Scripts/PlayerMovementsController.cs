@@ -15,7 +15,7 @@ public class PlayerMovementsController : MonoBehaviour
 
     void Update()
     {
-        int grabbedTentacles = player.GrabbedTentacles();
+        int grabbedTentacles = player.GrabbedTentaclesCount();
         if(grabbedTentacles > 0)
         {
             if(Input.GetKey(KeyCode.A))

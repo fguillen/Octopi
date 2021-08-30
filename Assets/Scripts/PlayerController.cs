@@ -96,11 +96,11 @@ public class PlayerController : MonoBehaviour
 
     void ReleaseTentacle()
     {
-        var grabbedTentacles = tentacles.Where(e => e.grabbed);
+        var grabbedTentacles = tentacles.Where( e => e.grabbed );
 
         if(grabbedTentacles.Count() > 0)
         {
-            TentacleController tentacle = grabbedTentacles.OrderBy( e => e.lastActivityAt).First();
+            TentacleController tentacle = grabbedTentacles.OrderBy( e => e.lastActivityAt ).First();
             tentacle.Release();
         }
     }
@@ -135,13 +135,13 @@ public class PlayerController : MonoBehaviour
 
     void HookToGrabbable(GrabbableController grabbable)
     {
-        var tentaclesToChoose = tentacles.Where(e => !e.grabbed);
+        var tentaclesToChoose = FreeTentacles();
 
         if(tentaclesToChoose.Count() == 0)
             tentaclesToChoose = tentacles;
 
         TentacleController tentacle = tentaclesToChoose.OrderBy( e => e.lastActivityAt ).First();
-        tentacle.Hook(grabbable);
+        tentacle.StartHook(grabbable);
     }
 
     public void HitByMissile(Vector2 position, Vector2 direction)
@@ -160,8 +160,13 @@ public class PlayerController : MonoBehaviour
         theRigidBody.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
 
-    public int GrabbedTentacles()
+    public int GrabbedTentaclesCount()
     {
         return tentacles.Where(e => e.grabbed).Count();
+    }
+
+    public List<TentacleController> FreeTentacles()
+    {
+        return tentacles.Where( e => !e.grabbed && !e.targeting ).ToList();
     }
 }

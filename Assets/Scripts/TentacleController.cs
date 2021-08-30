@@ -31,7 +31,6 @@ public class TentacleController : MonoBehaviour
 
 
     Collider2D targetCollider;
-    IEnumerator hookCoroutine;
     SpringJoint2D joint;
     GrabbableController grabbable;
     float tentacleOriginalLength;
@@ -42,6 +41,7 @@ public class TentacleController : MonoBehaviour
     List<BoneWrapper> boneWrappers = new List<BoneWrapper>();
 
     public bool grabbed = false;
+    public bool targeting = false;
 
     void Awake()
     {
@@ -56,7 +56,20 @@ public class TentacleController : MonoBehaviour
     void Update()
     {
         LiberateIfHolding();
+
+        if(targeting)
+            MoveTowardsGrabbed();
     }
+
+    void MoveTowardsGrabbed()
+    {
+        target.transform.position = Vector2.MoveTowards(target.transform.position, grabbable.grabbablePosition.transform.position, velocity * Time.deltaTime);
+        if(Vector2.Distance(target.transform.position, grabbable.grabbablePosition.transform.position) < 0.01f)
+        {
+            Hook();
+        }
+    }
+
 
     void LiberateIfHolding()
     {
@@ -68,11 +81,10 @@ public class TentacleController : MonoBehaviour
         }
     }
 
-    IEnumerator HookCoroutine()
+    public void StartHook(GrabbableController grabbable)
     {
-        grabbed = true;
-
-        StretchTentacle(Vector2.Distance(grabbable.grabbablePosition.transform.position, player.transform.position) * 1.2f);
+        targeting = true;
+        grabbed = false;
 
         if(joint != null)
             Destroy(joint);
@@ -80,34 +92,22 @@ public class TentacleController : MonoBehaviour
         if(grabbable != null)
             grabbable.StopGrab();
 
-        Sequence sequence = DOTween.Sequence();
-        // sequence.Append(target.transform.DOMoveY(target.transform.position.y - 5, 0.1f));
-        sequence.Append(target.transform.DOMove(grabbable.grabbablePosition.transform.position, 1f));
-
-        yield return sequence.WaitForCompletion();
-
-        // Maybe released already for other event
-        if(grabbable != null)
-        {
-            CreateJoint(grabbable.grabbablePosition.transform.position);
-            grabbable.StartGrab();
-            grabbable.ThrownEvent.AddListener(Release);
-        }
-    }
-
-    public void Hook(GrabbableController grabbable)
-    {
         this.grabbable = grabbable;
         lastActivityAt = Time.time;
         target.GetComponent<Rigidbody2D>().isKinematic = true;
         target.GetComponent<Rigidbody2D>().simulated = false;
         target.GetComponent<Collider2D>().enabled = false;
 
-        if(hookCoroutine != null)
-            StopCoroutine(hookCoroutine);
+        StretchTentacle(Vector2.Distance(player.transform.position, grabbable.grabbablePosition.transform.position) * 1.2f);
+    }
 
-        hookCoroutine = HookCoroutine();
-        StartCoroutine(hookCoroutine);
+    void Hook()
+    {
+        CreateJoint(grabbable.grabbablePosition.transform.position);
+        grabbable.StartGrab();
+        grabbable.ThrownEvent.AddListener(Release);
+        targeting = false;
+        grabbed = true;
     }
 
     void CreateJoint(Vector2 position)
@@ -140,6 +140,7 @@ public class TentacleController : MonoBehaviour
 
         lastActivityAt = Time.time;
 
+        targeting = false;
         grabbed = false;
     }
 
