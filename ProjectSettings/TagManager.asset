@@ -13,6 +13,7 @@ TagManager:
   - Tank
   - Helicopter
   - Tentacle
+  - House
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - Tentacles
   - Missile
   - InPlayerCollider
-  - 
-  - 
+  - Houses
+  - WindowsHidden
   - 
   - 
   - 
