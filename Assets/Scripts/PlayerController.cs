@@ -135,7 +135,12 @@ public class PlayerController : MonoBehaviour
 
     void HookToGrabbable(GrabbableController grabbable)
     {
-        TentacleController tentacle = tentacles.OrderBy( e => e.lastActivityAt ).First();
+        var tentaclesToChoose = tentacles.Where(e => !e.grabbed);
+
+        if(tentaclesToChoose.Count() == 0)
+            tentaclesToChoose = tentacles;
+
+        TentacleController tentacle = tentaclesToChoose.OrderBy( e => e.lastActivityAt ).First();
         tentacle.Hook(grabbable);
     }
 
