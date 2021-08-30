@@ -29,6 +29,12 @@ public class TankController : Shooter
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
+        GameManagerController.instance.IncreaseTanks();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseTanks();
     }
 
     void Start()

@@ -30,6 +30,12 @@ public class HelicopterController : Shooter
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
+        GameManagerController.instance.IncreaseHelicopters();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseHelicopters();
     }
 
     void Start()

@@ -23,6 +23,12 @@ public class CarController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
+        GameManagerController.instance.IncreaseCars();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseCars();
     }
 
     void Start()

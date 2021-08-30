@@ -12,6 +12,7 @@ public class PersonController : MonoBehaviour
     [SerializeField] float pauseTime = 2.0f;
     [SerializeField] float pauseEachSeconds = 10.0f;
 
+
     float nextPauseAt;
 
     bool idle = false;
@@ -19,6 +20,12 @@ public class PersonController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
+        GameManagerController.instance.IncreasePeople();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreasePeople();
     }
 
     void Start()

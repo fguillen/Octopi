@@ -30,6 +30,12 @@ public class SoldierController : Shooter
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
+        GameManagerController.instance.IncreaseSoldiers();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseSoldiers();
     }
 
     void Start()

@@ -3020,7 +3020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &405193203
 Transform:
   m_ObjectHideFlags: 0
@@ -3499,7 +3499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &441218259
 Transform:
   m_ObjectHideFlags: 0
@@ -4883,7 +4883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &570451646
 Transform:
   m_ObjectHideFlags: 0
@@ -7852,7 +7852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &959406536
 Transform:
   m_ObjectHideFlags: 0
@@ -8715,7 +8715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1056488313
 Transform:
   m_ObjectHideFlags: 0
@@ -9472,6 +9472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1547cd38d5a4315a517e1de8f95690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxNumPeople: 100
+  maxNumCars: 40
+  maxNumHelicopters: 5
+  maxNumTanks: 10
+  maxNumSoldiers: 20
 --- !u!4 &1146151645
 Transform:
   m_ObjectHideFlags: 0
@@ -10026,7 +10031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1199764590
 Transform:
   m_ObjectHideFlags: 0
@@ -17248,7 +17253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1953283305
 Transform:
   m_ObjectHideFlags: 0

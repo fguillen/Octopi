@@ -16,7 +16,7 @@ public class HelicopterSpawnerController : MonoBehaviour
 
     void Update()
     {
-        if(nextHelicopterAt <= Time.time)
+        if(nextHelicopterAt <= Time.time && GameManagerController.instance.CanMoreHelicopters())
             SpawnHelicopter();
     }
 

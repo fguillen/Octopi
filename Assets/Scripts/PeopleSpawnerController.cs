@@ -17,7 +17,7 @@ public class PeopleSpawnerController : MonoBehaviour
 
     void Update()
     {
-        if(nextPersonAt <= Time.time)
+        if(nextPersonAt <= Time.time && GameManagerController.instance.CanMorePeople())
             SpawnPerson();
     }
 
