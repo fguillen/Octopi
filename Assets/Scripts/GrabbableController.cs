@@ -11,6 +11,7 @@ public class GrabbableController : MonoBehaviour
     [SerializeField] Transform shakeable;
     [SerializeField] SpriteRenderer colorizable;
     [SerializeField] Transform mainObject;
+    [SerializeField] public Transform grabbablePosition;
 
     [SerializeField] float timeToThrow = 2.0f;
     [SerializeField] float throwForce = 10.0f;

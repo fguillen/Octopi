@@ -72,7 +72,7 @@ public class TentacleController : MonoBehaviour
     {
         grabbed = true;
 
-        StretchTentacle(Vector2.Distance(grabbable.transform.position, player.transform.position) * 1.2f);
+        StretchTentacle(Vector2.Distance(grabbable.grabbablePosition.transform.position, player.transform.position) * 1.2f);
 
         if(joint != null)
             Destroy(joint);
@@ -82,14 +82,14 @@ public class TentacleController : MonoBehaviour
 
         Sequence sequence = DOTween.Sequence();
         // sequence.Append(target.transform.DOMoveY(target.transform.position.y - 5, 0.1f));
-        sequence.Append(target.transform.DOMove(grabbable.transform.position, 1f));
+        sequence.Append(target.transform.DOMove(grabbable.grabbablePosition.transform.position, 1f));
 
         yield return sequence.WaitForCompletion();
 
         // Maybe released already for other event
         if(grabbable != null)
         {
-            CreateJoint(grabbable.transform.position);
+            CreateJoint(grabbable.grabbablePosition.transform.position);
             grabbable.StartGrab();
             grabbable.ThrownEvent.AddListener(Release);
         }

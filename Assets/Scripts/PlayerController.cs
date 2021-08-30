@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         if(result.hit)
         {
-            iconTentacle.transform.position = result.hit.transform.position;
+            iconTentacle.transform.position = result.hit.collider.gameObject.GetComponent<GrabbableController>().grabbablePosition.transform.position;
         } else
         {
             HideIconTentacle();
