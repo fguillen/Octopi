@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CarController : MonoBehaviour
 {
@@ -10,10 +11,24 @@ public class CarController : MonoBehaviour
     public float OriginalZ { get; set; }
 
     [SerializeField] float degreesToNextPatrolPoint;
+    [SerializeField] ParticleSystem particlesExplosion;
+    [SerializeField] ParticleSystem particlesFire;
+
+    [SerializeField] Color burntColor = new Color(0.27f, 0.076f, 0.15f);
+    [SerializeField] SpriteRenderer colorizable;
+    [SerializeField] Collider2D theCollider;
+
+    bool idle = false;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        GameManagerController.instance.IncreaseCars();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseCars();
     }
 
     void Start()
@@ -22,6 +37,14 @@ public class CarController : MonoBehaviour
     }
 
     void Update()
+    {
+        if(!idle)
+            Move();
+
+
+    }
+
+    void Move()
     {
         Vector3 nextPatrolPointPositionWithCustomZ = new Vector3(nextPatrolPoint.transform.position.x, nextPatrolPoint.transform.position.y, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, nextPatrolPointPositionWithCustomZ, velocity * Time.deltaTime);
@@ -36,9 +59,6 @@ public class CarController : MonoBehaviour
                 NextPatrolPoint(nextPatrolPoint.nextPatrolPoints[Random.Range(0, nextPatrolPoint.nextPatrolPoints.Count)]);
             }
         }
-
-        // degreesToNextPatrolPoint = Mathf.Rad2Deg * (Mathf.Atan2(nextPatrolPoint.transform.position.y - transform.position.y, nextPatrolPoint.transform.position.x - transform.position.x));
-        // LookTowardsPoint(nextPatrolPoint.transform.position);
     }
 
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)
@@ -99,5 +119,55 @@ public class CarController : MonoBehaviour
         transform.localScale = new Vector3(1, -1, 1);
         transform.rotation = Quaternion.Euler(0, 0, -90);
         transform.position = new Vector3(transform.position.x, transform.position.y, OriginalZ - 0.2f); // Front
+    }
+
+    public void StartGrab()
+    {
+        // Debug.Log("CarController.StartGrab()");
+        animator.SetBool("Moving", false);
+        idle = true;
+    }
+
+    public void StopGrab()
+    {
+        animator.SetBool("Moving", true);
+        idle = false;
+    }
+
+    public void Thrown()
+    {
+        animator.SetBool("Moving", true);
+        idle = true;
+    }
+
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if(other.CompareTag("CarGround"))
+    //     {
+    //         Explode();
+    //     }
+    // }
+
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        if(
+            collisionInfo.gameObject.CompareTag("CarGround") ||
+            collisionInfo.gameObject.CompareTag("Car")
+        )
+        {
+            StartCoroutine(ExplodeCoroutine());
+        }
+    }
+
+    IEnumerator ExplodeCoroutine()
+    {
+        // Debug.Log("Car.Explode()");
+        particlesExplosion.Play();
+        particlesFire.Play();
+
+        yield return colorizable.DOColor(burntColor, Utils.AddNoise(10)).WaitForCompletion();
+
+        // theCollider.enabled = false;
+        animator.SetBool("Moving", false);
     }
 }

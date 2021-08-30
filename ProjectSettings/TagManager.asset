@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Missile
+  - CarGround
+  - Car
+  - WindowGround
+  - Window
+  - Soldier
+  - Tank
+  - Helicopter
+  - Tentacle
+  - House
+  - PlayerGround
   layers:
   - Default
   - TransparentFX
@@ -12,18 +22,18 @@ TagManager:
   - PostProcessing
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarsGround
+  - Cars
+  - WindowsGround
+  - Windows
+  - Player
+  - Army
+  - Tentacles
+  - Missile
+  - InPlayerCollider
+  - Houses
+  - WindowsHidden
+  - PlayerGround
   - 
   - 
   - 
@@ -65,4 +75,10 @@ TagManager:
     locked: 0
   - name: Dialog
     uniqueID: 915187595
+    locked: 0
+  - name: Missle
+    uniqueID: 3017929787
+    locked: 0
+  - name: UI
+    uniqueID: 3506272123
     locked: 0

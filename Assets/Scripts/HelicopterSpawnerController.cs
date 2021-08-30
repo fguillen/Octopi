@@ -16,7 +16,7 @@ public class HelicopterSpawnerController : MonoBehaviour
 
     void Update()
     {
-        if(nextHelicopterAt <= Time.time)
+        if(nextHelicopterAt <= Time.time && GameManagerController.instance.CanMoreHelicopters())
             SpawnHelicopter();
     }
 
@@ -30,7 +30,6 @@ public class HelicopterSpawnerController : MonoBehaviour
 
         helicopter.GetComponent<HelicopterController>().velocity = Utils.AddNoise(helicopterVelocity);
         helicopter.GetComponent<HelicopterController>().OriginalZ = zPosition;
-        helicopter.GetComponent<HelicopterController>().NextPatrolPointCloseToPlayer();
     }
 
     GameObject RandomHelicopter()

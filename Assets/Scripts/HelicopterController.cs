@@ -28,7 +28,14 @@ public class HelicopterController : Shooter
     void Awake()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.Find("/PlayerWrapper/Player").GetComponent<PlayerController>();
+        player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
+        Debug.Assert(player != null);
+        GameManagerController.instance.IncreaseHelicopters();
+    }
+
+    void OnDestroy()
+    {
+        GameManagerController.instance.DecreaseHelicopters();
     }
 
     void Start()
@@ -36,6 +43,7 @@ public class HelicopterController : Shooter
         animator.SetBool("Moving", true);
         nextShootAt = Time.time + Utils.AddNoise(betweenShootsTime);
         gunReleaseRotation = gun.localRotation;
+        NextPatrolPointCloseToPlayer();
     }
 
     void Update()
@@ -85,7 +93,7 @@ public class HelicopterController : Shooter
 
     void Shoot()
     {
-        Debug.Log("Shoot!!");
+        // Debug.Log("Shoot!!");
         GameObject missile = Instantiate(missilePrefab, barrelEnd.position, Quaternion.identity);
         Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
         missile.GetComponent<MissileController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);

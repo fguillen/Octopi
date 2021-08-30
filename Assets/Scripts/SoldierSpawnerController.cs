@@ -17,7 +17,7 @@ public class SoldierSpawnerController : MonoBehaviour
 
     void Update()
     {
-        if(nextSoldierAt <= Time.time)
+        if(nextSoldierAt <= Time.time && GameManagerController.instance.CanMoreSoldiers())
             SpawnSoldier();
     }
 

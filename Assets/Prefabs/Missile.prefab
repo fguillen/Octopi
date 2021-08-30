@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2847751901391388879}
   - component: {fileID: 2792486543932335747}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 949898603
-  m_SortingLayer: 5
+  m_SortingLayerID: -1277037509
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -1354630828838401111, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
   m_Color: {r: 0.6509804, g: 0.56078434, b: 0.29411766, a: 1}
@@ -93,7 +93,8 @@ GameObject:
   - component: {fileID: 2947867335063433992}
   - component: {fileID: 4025025431742609343}
   - component: {fileID: 1580110710021465418}
-  m_Layer: 0
+  - component: {fileID: 1331299276177134334}
+  m_Layer: 13
   m_Name: Missile
   m_TagString: Missile
   m_Icon: {fileID: 0}
@@ -149,3 +150,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TheRigidbody: {fileID: 0}
+  particlesExplosion: {fileID: 2010399089004507841, guid: 06226d2884e844d1d949f716c66ebd7a, type: 3}
+--- !u!70 &1331299276177134334
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821153355229891535}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.3, y: 0.1}
+  m_Direction: 1
