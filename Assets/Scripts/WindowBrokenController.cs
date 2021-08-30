@@ -10,6 +10,9 @@ public class WindowBrokenController : MonoBehaviour
 
     [SerializeField] ParticleSystem particlesExplosion;
     [SerializeField] ParticleSystem particlesSmoke;
+    [SerializeField] ParticleSystem particlesFire;
+
+    [SerializeField][Range(0, 1)] float probabilityFire = 0.1f;
 
     void Awake()
     {
@@ -27,5 +30,8 @@ public class WindowBrokenController : MonoBehaviour
     {
         particlesExplosion.Play();
         particlesSmoke.Play();
+
+        if(Random.Range(0.0f, 1.0f) < probabilityFire)
+            particlesFire.Play();
     }
 }
