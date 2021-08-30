@@ -19,6 +19,7 @@ public class CarController : MonoBehaviour
     [SerializeField] Collider2D theCollider;
 
     bool idle = false;
+    bool onRoad = true;
 
     void Awake()
     {
@@ -130,14 +131,20 @@ public class CarController : MonoBehaviour
 
     public void StopGrab()
     {
-        animator.SetBool("Moving", true);
-        idle = false;
+        Debug.Log("CarController.StopGrab()");
+        if(onRoad)
+        {
+            animator.SetBool("Moving", true);
+            idle = false;
+        }
     }
 
     public void Thrown()
     {
+        Debug.Log("CarController.Thrown()");
         animator.SetBool("Moving", true);
         idle = true;
+        onRoad = false;
     }
 
     // void OnTriggerEnter2D(Collider2D other)

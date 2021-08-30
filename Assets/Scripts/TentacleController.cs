@@ -79,7 +79,6 @@ public class TentacleController : MonoBehaviour
         }
     }
 
-
     void LiberateIfHolding()
     {
         if(target.transform.position.y > player.transform.position.y)
