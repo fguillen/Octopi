@@ -47,8 +47,8 @@ public class GrabbableController : MonoBehaviour
         // Debug.Log("GrabbableController.StartGrab()");
         StartGrabEvent.Invoke();
 
-        grabCoroutine = GrabCoroutine();
-        StartCoroutine(grabCoroutine);
+        // grabCoroutine = GrabCoroutine();
+        // StartCoroutine(grabCoroutine);
     }
 
     public void StopGrab()

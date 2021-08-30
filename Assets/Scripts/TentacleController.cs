@@ -81,6 +81,7 @@ public class TentacleController : MonoBehaviour
         this.grabbable = grabbable;
         lastActivityAt = Time.time;
         target.GetComponent<Rigidbody2D>().isKinematic = true;
+        target.GetComponent<Rigidbody2D>().simulated = false;
         target.GetComponent<Collider2D>().enabled = false;
 
         if(hookCoroutine != null)
@@ -111,6 +112,7 @@ public class TentacleController : MonoBehaviour
 
         // target.transform.DOMove(transform.position + originalTargetRelatedPosition, 1.0f);
         target.GetComponent<Rigidbody2D>().isKinematic = false;
+        target.GetComponent<Rigidbody2D>().simulated = true;
         target.GetComponent<Collider2D>().enabled = true;
 
         StretchTentacle(tentacleOriginalLength);
@@ -118,6 +120,8 @@ public class TentacleController : MonoBehaviour
         grabbable = null;
 
         lastActivityAt = Time.time;
+
+        grabbed = false;
     }
 
     void BuildBoneWrappers()

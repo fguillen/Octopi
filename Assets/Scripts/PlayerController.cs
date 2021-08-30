@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] ParticleSystem particlesBloodMissile;
     [SerializeField] ParticleSystem particlesBloodBullet;
-    [SerializeField] Collider2D colliderGroundUp;
 
     [SerializeField] GameObject iconTentaclePrefab;
     GameObject iconTentacle;
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         theRigidBody = GetComponent<Rigidbody2D>();
-        colliderGroundUp.enabled = true;
         iconTentacle = Instantiate(iconTentaclePrefab, tentacleHiddenPosition, Quaternion.identity);
         HideIconTentacle();
     }
@@ -98,14 +96,13 @@ public class PlayerController : MonoBehaviour
 
     void ReleaseTentacle()
     {
-        TentacleController tentacle = tentacles.Where(e => e.grabbed).OrderBy( e => e.lastActivityAt).First();
+        var grabbedTentacles = tentacles.Where(e => e.grabbed);
 
-        if(tentacle != null)
+        if(grabbedTentacles.Count() > 0)
+        {
+            TentacleController tentacle = grabbedTentacles.OrderBy( e => e.lastActivityAt).First();
             tentacle.Release();
-
-
-        if(!tentacles.Where(e => e.grabbed).Any())
-            colliderGroundUp.enabled = true;
+        }
     }
 
     (Vector2 rayCastIni, Vector2 rayCastEnd, RaycastHit2D hit) RaycastTentacle()
@@ -140,8 +137,6 @@ public class PlayerController : MonoBehaviour
     {
         TentacleController tentacle = tentacles.OrderBy( e => e.lastActivityAt ).First();
         tentacle.Hook(grabbable);
-
-        colliderGroundUp.enabled = false;
     }
 
     public void HitByMissile(Vector2 position, Vector2 direction)
@@ -158,5 +153,10 @@ public class PlayerController : MonoBehaviour
         particles.Play();
         Destroy(particles, 10.0f);
         theRigidBody.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+    }
+
+    public int GrabbedTentacles()
+    {
+        return tentacles.Where(e => e.grabbed).Count();
     }
 }
