@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1750995647990416372, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8343209098218186906, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+      objectReference: {fileID: -8114904651351024381, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 3252614451015008259, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_Name
       value: Car3
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 6145978617745206607, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5284031720879595116, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+      objectReference: {fileID: -5594697444332384715, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 6585086134120003780, guid: 931e155ea72124e4883a396643f00040, type: 3}
       propertyPath: m_RootOrder
       value: 0

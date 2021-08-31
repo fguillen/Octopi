@@ -10,10 +10,10 @@ PrefabInstance:
     - target: {fileID: 1750995647990416372, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7412025038161144939, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+      objectReference: {fileID: 8507103949546494968, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
     - target: {fileID: 3252614451015008259, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_Name
-      value: Person_2
+      value: Person2
       objectReference: {fileID: 0}
     - target: {fileID: 6585086134120003780, guid: 6c5fd8c26eb4148eca86746efb2e1b9a, type: 3}
       propertyPath: m_RootOrder
