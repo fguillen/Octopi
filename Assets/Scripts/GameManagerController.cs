@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameManagerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManagerController : MonoBehaviour
     [SerializeField] int maxNumTanks = 10;
     [SerializeField] int maxNumSoldiers = 20;
 
+    [SerializeField] PlayableDirector endScene;
+
     int actualNumPeople;
     int actualNumCars;
     int actualNumHelicopters;
@@ -17,6 +20,7 @@ public class GameManagerController : MonoBehaviour
     int actualNumSoldiers;
 
     bool armyActive = false;
+    bool endGame = false;
 
     public static GameManagerController Instance;
 
@@ -143,5 +147,20 @@ public class GameManagerController : MonoBehaviour
     public bool CanMoreSoldiers()
     {
         return maxNumSoldiers > actualNumSoldiers && armyActive;
+    }
+
+    public bool CanShoot()
+    {
+        return !endGame;
+    }
+
+    public void PlayEndScene()
+    {
+        Debug.Log("PlayEndScen()");
+
+        if(!endGame)
+            endScene.Play();
+
+        endGame = true;
     }
 }

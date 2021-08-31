@@ -68,7 +68,7 @@ public class TentacleController : MonoBehaviour
         {
             float distanceToGrabbable = Vector2.Distance(player.transform.position, grabbable.grabbablePosition.transform.position);
 
-            if(distanceToGrabbable > 5f)
+            if(distanceToGrabbable > 6f)
             {
                 Release();
             } else

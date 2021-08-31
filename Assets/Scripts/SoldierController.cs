@@ -51,7 +51,7 @@ public class SoldierController : Shooter
         if(!idle)
             Move();
 
-        if(!idle && inRange && nextShootAt <= Time.time)
+        if(!idle && inRange && nextShootAt <= Time.time && GameManagerController.Instance.CanShoot())
             StartCoroutine(ShootCoroutine());
 
         // TargetPlayer();
