@@ -22,20 +22,20 @@ namespace UnityCore {
                     audioController.PlayAudio(AudioType.SFX_windowPull_01, false);
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha3)) {
-                    audioController.PlayAudio(AudioType.SFX_windowCrash, false);
+                    audioController.PlayAudio(AudioType.SFX_windowCrash_01, false);
                 }
 
-                //fire on/off
+                //fire on/off - key down for playback, key up for stoping (it has fade active)
                 if (Input.GetKeyDown(KeyCode.Alpha4)) {
                     audioController.PlayAudio(AudioType.SFX_fire, false);
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha4))
+                if (Input.GetKeyUp(KeyCode.Alpha4))
                 {
-                    audioController.StopAudio(AudioType.SFX_fire, false);
+                    audioController.StopAudio(AudioType.SFX_fire, true);
                 }
 
                 //guns
-                if (Input.GetKeyUp(KeyCode.Alpha5)) {
+                if (Input.GetKeyDown(KeyCode.Alpha5)) {
                     audioController.PlayAudio(AudioType.SFX_bulletShoot, false);
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha6))
@@ -59,7 +59,7 @@ namespace UnityCore {
                 }
 
                 //Bird
-                if (Input.GetKeyDown(KeyCode.T))
+                if (Input.GetKeyDown(KeyCode.T)) //keydown for grabbing, key up for crashing
                 {
                     audioController.PlayAudio(AudioType.SFX_birdGrab, false);
                 }
@@ -71,7 +71,7 @@ namespace UnityCore {
                 //Vehicle crashes
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
-                    audioController.PlayAudio(AudioType.SFX_carCrash, false);
+                    audioController.PlayAudio(AudioType.SFX_carCrash_01, false);
                 }
                 if (Input.GetKeyDown(KeyCode.U))
                 {
@@ -85,35 +85,35 @@ namespace UnityCore {
                 }
 
                 //Background loops
-                if (Input.GetKeyDown(KeyCode.O))
+                if (Input.GetKeyDown(KeyCode.G))
                 {
                     audioController.PlayAudio(AudioType.BCKGR_city, true);
                 }
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.H))
                 {
                     audioController.StopAudio(AudioType.BCKGR_city, true);
                 }
-                if (Input.GetKeyDown(KeyCode.G))
+                if (Input.GetKeyDown(KeyCode.J))
                 {
                     audioController.PlayAudio(AudioType.BCKGR_beach, true);
                 }
-                if (Input.GetKeyDown(KeyCode.H))
+                if (Input.GetKeyDown(KeyCode.K))
                 {
                     audioController.StopAudio(AudioType.BCKGR_beach, true);
                 }
 
                 //music
-                if (Input.GetKeyDown(KeyCode.J))
-                {
-                    audioController.PlayAudio(AudioType.MUS_level, false);
-                }
-                if (Input.GetKeyDown(KeyCode.K))
-                {
-                    audioController.StopAudio(AudioType.MUS_level, true);
-                }
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    audioController.PlayAudio(AudioType.MUS_stinger, false);
+                    audioController.PlayAudio(AudioType.MUS_militaryMarch, false);
+                }
+                if (Input.GetKeyDown(KeyCode.V))
+                {
+                    audioController.StopAudio(AudioType.MUS_militaryMarch, true);
+                }
+                if (Input.GetKeyDown(KeyCode.B))
+                {
+                    audioController.PlayAudio(AudioType.MUS_win, false);
                 }
             }
 #endif

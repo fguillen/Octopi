@@ -14,7 +14,9 @@ namespace UnityCore {
             SFX_windowPull_04,
             SFX_windowPull_05,
             SFX_windowPull_06,
-            SFX_windowCrash,
+            SFX_windowCrash_01,
+            SFX_windowCrash_02,
+            SFX_windowCrash_03,
             SFX_fire,
 
             SFX_bulletShoot,
@@ -30,7 +32,9 @@ namespace UnityCore {
 
             SFX_birdGrab,
             SFX_birdCrash,
-            SFX_carCrash,
+            SFX_carCrash_01,
+            SFX_carCrash_02,
+            SFX_carCrash_03,
             SFX_airplaneCrash,
 
             SFX_ui,
@@ -38,8 +42,8 @@ namespace UnityCore {
             BCKGR_city,
             BCKGR_beach,
 
-            MUS_level,
-            MUS_stinger,
+            MUS_militaryMarch,
+            MUS_win,
             //...custom audio types here
         }
     }
