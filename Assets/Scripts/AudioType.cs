@@ -5,14 +5,31 @@ namespace UnityCore {
 
         public enum AudioType {
             None,
-            SFX_01,
-            SFX_02,
-            SFX_03,
-            SFX_04,
-            SFX_05,
+
+            SFX_grabObject,
+            SFX_windowPull,
+            SFX_windowCrash,
+            SFX_fire,
+
+            SFX_bulletShoot,
+            SFX_missileShoot,
+            SFX_bulletImpact,
+            SFX_missileImpact,
+            SFX_missileExplosion,
+            SFX_tankTurret,
+
+            SFX_birdCrash,
+            SFX_carCrash,
+            SFX_airplaneCrash,
+
+            SFX_ui,
             
-            BCKGR_01,
-            BCKGR_02
+            BCKGR_city,
+            BCKGR_beach,
+
+            MUS_menu,
+            MUS_level,
+            MUS_stinger,
         }
     }
 }

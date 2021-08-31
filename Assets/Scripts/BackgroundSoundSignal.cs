@@ -20,7 +20,7 @@ namespace UnityCore
 
             public void PlayBckgrSound() {
       
-                    audioController.PlayAudio(AudioType.BCKGR_01, true, FadeTime, TargetVolume); //bool is for fades (yes/no)
+                    audioController.PlayAudio(AudioType.BCKGR_city, true, FadeTime, TargetVolume); //bool is for fades (yes/no)
             }
         }
     }
