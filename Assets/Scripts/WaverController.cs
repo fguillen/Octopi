@@ -25,6 +25,7 @@ public class WaverController : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(waveable.DOLocalMoveY(originalY - offset, velocity).SetEase(Ease.InOutCirc));
         sequence.Append(waveable.DOLocalMoveY(originalY + offset, velocity).SetEase(Ease.InOutCirc));
+        sequence.SetUpdate(true);
         sequence.OnComplete(Animate);
     }
 }
