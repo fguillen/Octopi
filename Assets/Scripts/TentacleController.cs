@@ -31,6 +31,7 @@ public class TentacleController : MonoBehaviour
 
 
     Collider2D targetCollider;
+    Rigidbody2D targetRigidbody;
     SpringJoint2D joint;
     GrabbableController grabbable;
     float tentacleOriginalLength;
@@ -51,6 +52,7 @@ public class TentacleController : MonoBehaviour
         originalTargetRelatedPosition = target.transform.position - transform.position;
 
         targetCollider = target.GetComponent<Collider2D>();
+        targetRigidbody = target.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -190,5 +192,10 @@ public class TentacleController : MonoBehaviour
         {
             boneWrapper.SetLength(boneWrapper.originalLength * multiplier);
         }
+    }
+
+    public void Jump(float force)
+    {
+        targetRigidbody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 }

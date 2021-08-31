@@ -33,21 +33,26 @@ public class PlayerMovementsController : MonoBehaviour
             {
                 MoveUp(grabbedTentaclesCount);
             }
+
+            if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                MoveDown(grabbedTentaclesCount);
+            }
         }
 
-        // if(grabbedTentaclesCount == 4)
-        // {
-        //     if(Input.GetButtonDown("Jump"))
-        //     {
-        //         Jump();
-        //     }
-        // }
-
-
-        if(Input.GetButtonDown("Jump"))
+        if(grabbedTentaclesCount == 4)
         {
-            Jump();
+            if(Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
         }
+
+
+        // if(Input.GetButtonDown("Jump"))
+        // {
+        //     Jump();
+        // }
     }
 
     void MoveLeft(int forceMultiplier)
@@ -65,9 +70,19 @@ public class PlayerMovementsController : MonoBehaviour
         theRigidBody.AddForce(Vector2.up * movementForce * forceMultiplier, ForceMode2D.Force);
     }
 
+    void MoveDown(int forceMultiplier)
+    {
+        theRigidBody.AddForce(Vector2.down * movementForce * forceMultiplier, ForceMode2D.Force);
+    }
+
     void Jump()
     {
         player.ReleaseAllTentacles();
         theRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        foreach (var tentacle in player.tentacles)
+        {
+            tentacle.Jump(jumpForce / 40f);
+        }
     }
 }

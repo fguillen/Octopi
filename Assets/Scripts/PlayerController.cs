@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxTentacleDistance = 5.0f;
     [SerializeField] LayerMask tentacleTargetLayers;
 
-    [SerializeField] List<TentacleController> tentacles = new List<TentacleController>();
+    [SerializeField] public List<TentacleController> tentacles = new List<TentacleController>();
 
     [SerializeField] ParticleSystem particlesBloodMissile;
     [SerializeField] ParticleSystem particlesBloodBullet;
