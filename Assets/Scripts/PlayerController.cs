@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 
 public class PlayerController : MonoBehaviour
@@ -18,11 +19,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject iconTentaclePrefab;
     GameObject iconTentacle;
 
+    [SerializeField] Transform endScenePosition;
+
     float missileForce = 10.0f;
     float bulletForce = 2.0f;
     Vector2 tentacleHiddenPosition = new Vector2(100, 100);
 
     Rigidbody2D theRigidBody;
+
+    bool onCutScene = false;
 
     void Awake()
     {
@@ -33,16 +38,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        DrawIconTentacle();
-
-        if(Input.GetMouseButtonDown(0))
+        if(!onCutScene)
         {
-            ShootTentacle();
-        }
+            DrawIconTentacle();
 
-        if(Input.GetMouseButtonDown(1))
-        {
-            ReleaseTentacle();
+            if(Input.GetMouseButtonDown(0))
+            {
+                ShootTentacle();
+            }
+
+            if(Input.GetMouseButtonDown(1))
+            {
+                ReleaseTentacle();
+            }
         }
     }
 
@@ -168,5 +176,11 @@ public class PlayerController : MonoBehaviour
     public List<TentacleController> FreeTentacles()
     {
         return tentacles.Where( e => !e.grabbed && !e.targeting ).ToList();
+    }
+
+    public void MoveToEndScenePosition()
+    {
+        onCutScene = true;
+        transform.DOMove(endScenePosition.position, 1.0f);
     }
 }
