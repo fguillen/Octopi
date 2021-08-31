@@ -14822,7 +14822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Credits\n\nalbert bueno - Drawings and Programming \nGabriel Gallardo 
+  m_text: "Credits\n\nalbert bueno - Drawings and Programming \nGabriel Gallardo
     - Sound Design\nFrikH - Programming"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ad66913733e74038a31725397c427a9, type: 2}
@@ -19900,7 +19900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895073893}
   m_LocalRotation: {x: 1.222587e-22, y: 0.00000009536743, z: -1.1659499e-29, w: 1}
-  m_LocalPosition: {x: -5.5612507, y: 3.833036, z: -7.0156565}
+  m_LocalPosition: {x: -5.5612507, y: 1.7230358, z: -7.0156565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 550067161}
