@@ -27,12 +27,14 @@ public class MissileController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
+
         if(collisionInfo.gameObject.CompareTag("Player"))
         {
             collisionInfo.gameObject.GetComponent<PlayerController>().HitByMissile(collisionInfo.transform.position, TheRigidbody.velocity.normalized);
         }
 
-        Explode();
+        if(collisionInfo.enabled)
+            Explode();
     }
 
     void Explode()
