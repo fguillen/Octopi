@@ -188,4 +188,12 @@ public class PlayerController : MonoBehaviour
         onCutScene = true;
         transform.DOMove(endScenePosition.position, 1.0f);
     }
+
+    public void ReleaseAllTentacles()
+    {
+        foreach (var tentacle in GrabbedTentacles())
+        {
+            tentacle.Release();
+        }
+    }
 }
