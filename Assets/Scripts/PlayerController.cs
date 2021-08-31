@@ -170,7 +170,12 @@ public class PlayerController : MonoBehaviour
 
     public int GrabbedTentaclesCount()
     {
-        return tentacles.Where(e => e.grabbed).Count();
+        return tentacles.Where( e => e.grabbed ).Count();
+    }
+
+    public List<TentacleController> GrabbedTentacles()
+    {
+        return tentacles.Where( e => e.grabbed || e.targeting ).ToList();
     }
 
     public List<TentacleController> FreeTentacles()

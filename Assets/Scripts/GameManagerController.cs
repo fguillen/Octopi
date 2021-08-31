@@ -154,6 +154,11 @@ public class GameManagerController : MonoBehaviour
         return !endGame;
     }
 
+    public bool EndGame()
+    {
+        return endGame;
+    }
+
     public void PlayEndScene()
     {
         Debug.Log("PlayEndScen()");

@@ -32,6 +32,7 @@ public class GrabbableController : MonoBehaviour
     public UnityEvent ThrownEvent;
 
     bool thrown = false;
+    bool grabbed = false;
 
     void Awake()
     {
@@ -45,11 +46,16 @@ public class GrabbableController : MonoBehaviour
 
     public void StartGrab()
     {
-        // Debug.Log("GrabbableController.StartGrab()");
-        StartGrabEvent.Invoke();
+        if(!grabbed)
+        {
+            // Debug.Log("GrabbableController.StartGrab()");
+            StartGrabEvent.Invoke();
 
-        grabCoroutine = GrabCoroutine();
-        StartCoroutine(grabCoroutine);
+            grabCoroutine = GrabCoroutine();
+            StartCoroutine(grabCoroutine);
+
+            grabbed = true;
+        }
     }
 
     public void StopGrab()
@@ -61,6 +67,8 @@ public class GrabbableController : MonoBehaviour
 
         if(grabCoroutine != null)
             StopCoroutine(grabCoroutine);
+
+        grabbed = false;
     }
 
     void StartShake()
@@ -110,6 +118,8 @@ public class GrabbableController : MonoBehaviour
         Vector2 directionWithForce = direction * throwForce;
         theRigidbody.AddForce(directionWithForce, ForceMode2D.Impulse);
         theRigidbody.AddTorque(Random.Range(-throwForce, throwForce), ForceMode2D.Impulse);
+
+        grabbed = false;
     }
 
     // void OnMouseDown()

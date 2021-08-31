@@ -95,7 +95,7 @@ public class TentacleController : MonoBehaviour
         if(joint != null)
             Destroy(joint);
 
-        if(grabbable != null)
+        if(grabbable != null && player.GrabbedTentacles().Count == 0)
             grabbable.StopGrab();
 
         this.grabbable = grabbable;
