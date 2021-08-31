@@ -238,7 +238,7 @@ MonoBehaviour:
   colorizable: {fileID: 6145978617745206607}
   mainObject: {fileID: 6585086134120003780}
   grabbablePosition: {fileID: 4975909280142355307}
-  timeToThrow: 1.5
+  timeToThrow: 4
   throwForce: 7
   jumpUp: 1
   activeColor: {r: 0.837667, g: 0.376246, b: 0.8962264, a: 1}

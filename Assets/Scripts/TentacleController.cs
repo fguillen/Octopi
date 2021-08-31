@@ -64,18 +64,16 @@ public class TentacleController : MonoBehaviour
     void MoveTowardsGrabbed()
     {
         target.transform.position = Vector2.MoveTowards(target.transform.position, grabbable.grabbablePosition.transform.position, velocity * Time.deltaTime);
-        if(Vector2.Distance(target.transform.position, grabbable.grabbablePosition.transform.position) < 0.01f)
+        float distanceToGrabbable = Vector2.Distance(player.transform.position, grabbable.grabbablePosition.transform.position);
+
+        // If it went too far Release
+        if(distanceToGrabbable > 6f)
         {
-            float distanceToGrabbable = Vector2.Distance(player.transform.position, grabbable.grabbablePosition.transform.position);
-
-            if(distanceToGrabbable > 6f)
-            {
-                Release();
-            } else
-            {
+            Release();
+        } else
+        {
+            if(Vector2.Distance(target.transform.position, grabbable.grabbablePosition.transform.position) < 0.01f)
                 Hook();
-            }
-
         }
     }
 
