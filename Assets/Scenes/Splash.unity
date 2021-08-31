@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jump, when holding
+  m_text: Jump, when holding 4 tentacles
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ad66913733e74038a31725397c427a9, type: 2}
   m_sharedMaterial: {fileID: -920857711596732476, guid: 7ad66913733e74038a31725397c427a9, type: 2}
@@ -6369,7 +6369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1892759938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6417,7 +6417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1941162728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7084,8 +7084,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveable: {fileID: 2054477388}
-  offset: 1
-  velocity: 1
+  offset: 10
+  velocity: 2
 --- !u!1 &2057766071
 GameObject:
   m_ObjectHideFlags: 0
