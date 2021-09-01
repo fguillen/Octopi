@@ -147,6 +147,8 @@ public class CarController : MonoBehaviour
         animator.SetBool("Moving", true);
         idle = true;
         onRoad = false;
+
+        SoundThrowPlay();
     }
 
     // void OnTriggerEnter2D(Collider2D other)
@@ -193,6 +195,39 @@ public class CarController : MonoBehaviour
                 break;
             case 3:
                 AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_carCrash_03, false);
+                break;
+        }
+    }
+
+    void SoundThrowPlay()
+    {
+        int windowPullClip = Random.Range(1, 9);
+
+        switch (windowPullClip)
+        {
+            case 1:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_01, false);
+                break;
+            case 2:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_02, false);
+                break;
+            case 3:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_03, false);
+                break;
+            case 4:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_04, false);
+                break;
+            case 5:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_05, false);
+                break;
+            case 6:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_06, false);
+                break;
+            case 7:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_07, false);
+                break;
+            case 8:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_windowPull_08, false);
                 break;
         }
     }

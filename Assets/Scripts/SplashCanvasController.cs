@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityCore.Audio;
 
 public class SplashCanvasController : MonoBehaviour
 {
@@ -19,5 +20,10 @@ public class SplashCanvasController : MonoBehaviour
     public void HideControls()
     {
         animator.SetBool("ControlsVisible", false);
+    }
+
+    public void SoundBeachPlay()
+    {
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.BCKGR_beach, true);
     }
 }

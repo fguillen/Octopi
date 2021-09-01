@@ -31,7 +31,7 @@ public class WindowController : MonoBehaviour
             onWall = false;
         }{
             particlesExplosion.Play();
-            PlayThrowSound();
+            SoundThrowPlay();
         }
     }
 
@@ -51,14 +51,14 @@ public class WindowController : MonoBehaviour
         particlesExplosion.Play();
         particlesSmoke.Play();
 
-        PlayCrashSound();
+        SoundCrashSoundPlay();
 
         gameObject.layer = LayerMask.NameToLayer("WindowsHidden");
 
         yield return colorizable.DOColor(burntColor, 0.5f).WaitForCompletion();
     }
 
-    void PlayThrowSound()
+    void SoundThrowPlay()
     {
         int windowPullClip = Random.Range(1, 9);
 
@@ -91,7 +91,7 @@ public class WindowController : MonoBehaviour
         }
     }
 
-    void PlayCrashSound()
+    void SoundCrashSoundPlay()
     {
         int windowCrashClip = Random.Range(1, 4);
         switch (windowCrashClip)
