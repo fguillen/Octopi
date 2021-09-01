@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityCore.Audio;
 
 public class MenuController : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class MenuController : MonoBehaviour
         visible = true;
         Time.timeScale = 0f;
         animator.SetBool("Visible", true);
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_ui, false);
     }
 
     public void Hide()
@@ -37,5 +39,6 @@ public class MenuController : MonoBehaviour
         visible = false;
         Time.timeScale = 1f;
         animator.SetBool("Visible", false);
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_ui, false);
     }
 }
