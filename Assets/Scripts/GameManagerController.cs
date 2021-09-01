@@ -78,6 +78,7 @@ public class GameManagerController : MonoBehaviour
         {
             Debug.Log("ActiveArmy()");
             armyActive = true;
+            Invoke("SoundArmyPlay", 20f);
         }
     }
 
