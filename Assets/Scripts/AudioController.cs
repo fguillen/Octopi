@@ -43,7 +43,8 @@ namespace UnityCore {
                 public bool fade;
                 public float fadetime;
                 public float targetvolume;
-                public WaitForSeconds delay;
+                //public WaitForSeconds delay;
+                public float delay;
 
                 public AudioJob(AudioAction _action, AudioType _type, bool _fade, float _duration, float _target, float _delay) {
                     action = _action;
@@ -51,7 +52,8 @@ namespace UnityCore {
                     fade = _fade;
                     fadetime = _duration;
                     targetvolume = _target;
-                    delay = _delay > 0f ? new WaitForSeconds(_delay) : null;
+                    //delay = _delay > 0f ? new WaitForSeconds(_delay) : null;
+                    delay = _delay;
                 }
             }
 
@@ -94,7 +96,8 @@ namespace UnityCore {
             private void Dispose() {
                 // cancel all jobs in progress
                 foreach(DictionaryEntry _kvp in m_JobTable) {
-                    Coroutine _job = (Coroutine)_kvp.Value;
+                    IEnumerator _job = (IEnumerator)_kvp.Value;
+                    //Coroutine _job = (Coroutine)_kvp.Value;
                     StopCoroutine(_job);
                 }
             }
@@ -103,8 +106,10 @@ namespace UnityCore {
                 // cancel any job that might be using this job's audio source
                 RemoveConflictingJobs(_job.type);
 
-                Coroutine _jobRunner = StartCoroutine(RunAudioJob(_job));
+                IEnumerator _jobRunner = RunAudioJob(_job);
+                //Coroutine _jobRunner = StartCoroutine(RunAudioJob(_job));
                 m_JobTable.Add(_job.type, _jobRunner);
+                StartCoroutine(_jobRunner);
                 Log("Starting job on ["+_job.type+"] with operation: "+_job.action);
             }
 
@@ -113,7 +118,8 @@ namespace UnityCore {
                     Log("Trying to stop a job ["+_type+"] that is not running.");
                     return;
                 }
-                Coroutine _runningJob = (Coroutine)m_JobTable[_type];
+                IEnumerator _runningJob = (IEnumerator)m_JobTable[_type];
+                //Coroutine _runningJob = (Coroutine)m_JobTable[_type];
                 StopCoroutine(_runningJob);
                 m_JobTable.Remove(_type);
             }
@@ -126,13 +132,14 @@ namespace UnityCore {
 
                 // cancel jobs that share the same audio track
                 AudioType _conflictAudio = AudioType.None;
-                AudioTrack _audioTrackNeeded = GetAudioTrack(_type, "Get Audio Track Needed");
+                //AudioTrack _audioTrackNeeded = GetAudioTrack(_type, "Get Audio Track Needed");
                 foreach (DictionaryEntry _entry in m_JobTable) {
                     AudioType _audioType = (AudioType)_entry.Key;
                     AudioTrack _audioTrackInUse = GetAudioTrack(_audioType, "Get Audio Track In Use");
+                    AudioTrack _audioTrackNeeded = GetAudioTrack(_type, "Get Audio Track Needed");
                     if (_audioTrackInUse.source == _audioTrackNeeded.source) {
                         _conflictAudio = _audioType;
-                        break;
+                        //break;
                     }
                 }
                 if (_conflictAudio != AudioType.None) {
@@ -141,7 +148,8 @@ namespace UnityCore {
             }
 
             private IEnumerator RunAudioJob(AudioJob _job) {
-                if (_job.delay != null) yield return _job.delay;
+                yield return new WaitForSeconds(_job.delay);
+                //if (_job.delay != null) yield return _job.delay;
 
                 AudioTrack _track = GetAudioTrack(_job.type); // track existence should be verified by now
                 _track.source.clip = GetAudioClipFromAudioTrack(_job.type, _track);

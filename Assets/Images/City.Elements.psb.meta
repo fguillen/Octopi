@@ -3854,7 +3854,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 635
     mosaicPosition: {x: 0, y: 0}
   - name: Spacebar_Line
@@ -3896,7 +3896,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 627
     mosaicPosition: {x: 0, y: 0}
   - name: Mouse_Line
