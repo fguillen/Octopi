@@ -172,6 +172,7 @@ public class CarController : MonoBehaviour
         particlesExplosion.Play();
         particlesFire.Play();
         AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_fire, false);
+        SoundCrashPlay();
 
         yield return colorizable.DOColor(burntColor, Utils.AddNoise(10.0f)).WaitForCompletion();
 
