@@ -22,6 +22,7 @@ public class GameManagerController : MonoBehaviour
 
     bool armyActive = false;
     bool endGame = false;
+    bool soundArmyPlaying = false;
 
     public static GameManagerController Instance;
 
@@ -73,11 +74,10 @@ public class GameManagerController : MonoBehaviour
 
     public void ActivateArmy()
     {
-        Debug.Log("ActiveArmy()");
-        if(!endGame)
+        if(!endGame && !armyActive)
         {
+            Debug.Log("ActiveArmy()");
             armyActive = true;
-            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, false);
         }
     }
 
@@ -192,5 +192,14 @@ public class GameManagerController : MonoBehaviour
     public void StopCityBackground()
     {
         AudioController.instance.StopAudio(UnityCore.Audio.AudioType.BCKGR_city, true);
+    }
+
+    public void SoundArmyPlay()
+    {
+        if(!soundArmyPlaying)
+        {
+            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, false);
+            soundArmyPlaying = true;
+        }
     }
 }

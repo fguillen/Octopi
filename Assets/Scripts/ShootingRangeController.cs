@@ -9,7 +9,10 @@ public class ShootingRangeController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
+        {
             shooter.InRange();
+            GameManagerController.Instance.SoundArmyPlay();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)

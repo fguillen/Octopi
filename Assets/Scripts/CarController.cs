@@ -14,6 +14,7 @@ public class CarController : MonoBehaviour
     [SerializeField] float degreesToNextPatrolPoint;
     [SerializeField] ParticleSystem particlesExplosion;
     [SerializeField] ParticleSystem particlesFire;
+    [SerializeField] ParticleSystem particlesSmoke;
 
     [SerializeField] Color burntColor = new Color(0.27f, 0.076f, 0.15f);
     [SerializeField] SpriteRenderer colorizable;
@@ -175,6 +176,7 @@ public class CarController : MonoBehaviour
         // Debug.Log("Car.Explode()");
         particlesExplosion.Play();
         particlesFire.Play();
+        particlesSmoke.Play();
         AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_fire, false);
         SoundCrashPlay();
 
