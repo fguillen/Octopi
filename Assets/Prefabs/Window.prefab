@@ -109,10 +109,34 @@ MonoBehaviour:
   activeColor: {r: 0.8392157, g: 0.3764706, b: 0.8980392, a: 1}
   StartGrabEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2447362470626363076}
+        m_TargetAssemblyTypeName: WindowController, Assembly-CSharp
+        m_MethodName: StartGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   StopGrabEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2447362470626363076}
+        m_TargetAssemblyTypeName: WindowController, Assembly-CSharp
+        m_MethodName: StopGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ThrownEvent:
     m_PersistentCalls:
       m_Calls:
@@ -422,6 +446,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6685663683099017957, guid: f1fdc2210b9cb4c70afa4181b404751b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685663683099017957, guid: f1fdc2210b9cb4c70afa4181b404751b, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7960833273390106962, guid: f1fdc2210b9cb4c70afa4181b404751b, type: 3}
       propertyPath: m_Name
       value: Particles_WindowCrash
@@ -492,6 +524,54 @@ PrefabInstance:
     - target: {fileID: 5658727929259587757, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
       propertyPath: m_Name
       value: Particles_WindowSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.3372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.9490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+      propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].time
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
