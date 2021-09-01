@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityCore.Audio;
 
 public class GameManagerController : MonoBehaviour
 {
@@ -163,9 +164,21 @@ public class GameManagerController : MonoBehaviour
     {
         Debug.Log("PlayEndScen()");
 
+        StopCityBackground();
+
         if(!endGame)
             endScene.Play();
 
         endGame = true;
+    }
+
+    public void PlayCityBackground()
+    {
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.BCKGR_city, true);
+    }
+
+    public void StopCityBackground()
+    {
+        AudioController.instance.StopAudio(UnityCore.Audio.AudioType.BCKGR_city, true);
     }
 }
