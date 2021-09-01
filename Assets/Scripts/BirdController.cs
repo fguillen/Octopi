@@ -39,11 +39,13 @@ public class BirdController : MonoBehaviour
 
     public void StartGrab()
     {
-        // Debug.Log("CarController.StartGrab()");
-        animator.SetBool("Grabbed", true);
-        grabbed = true;
+        if(!grabbed)
+        {
+            animator.SetBool("Grabbed", true);
+            grabbed = true;
 
-        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdGrab, false);
+            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdGrab, false);
+        }
     }
 
     public void StopGrab()
@@ -58,11 +60,14 @@ public class BirdController : MonoBehaviour
 
     public void Thrown()
     {
-        Debug.Log("CarController.Thrown()");
-        animator.SetBool("Grabbed", false);
-        grabbed = true;
-        onAir = false;
+        if(onAir)
+        {
+            Debug.Log("CarController.Thrown()");
+            animator.SetBool("Grabbed", false);
+            grabbed = true;
+            onAir = false;
 
-        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdCrash, false);
+            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdCrash, false);
+        }
     }
 }
