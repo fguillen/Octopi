@@ -146,7 +146,7 @@ MonoBehaviour:
   - {fileID: 5870250568302431029}
   - {fileID: 9176639099546211040}
   particlesExplosion: {fileID: 3682191406683536792}
-  particlesSmoke: {fileID: 0}
+  particlesSmoke: {fileID: 3255444578520002759}
   particlesFire: {fileID: 7983468304154294262}
   probabilityFire: 0.324
 --- !u!1 &4093764444453195036
@@ -1331,5 +1331,10 @@ PrefabInstance:
 --- !u!4 &8709310367781247964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3009918808926918657, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
+  m_PrefabInstance: {fileID: 5843647664832463837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3255444578520002759 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8950173150977897242, guid: 4249037c3cf334935bea3c15d42608c1, type: 3}
   m_PrefabInstance: {fileID: 5843647664832463837}
   m_PrefabAsset: {fileID: 0}

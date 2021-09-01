@@ -85,7 +85,7 @@ public class TankController : Shooter
         float soundSpeed = Utils.AddNoise(0.5f);
         while(tween.IsPlaying())
         {
-            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_tankTurret, false);
+            // AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_tankTurret, false);
             yield return new WaitForSeconds(soundSpeed);
         }
 
@@ -98,7 +98,7 @@ public class TankController : Shooter
         // TODO: calculate this depending in the size of the angle between the actual rotation and the desired rotation
         while(tween.IsPlaying())
         {
-            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_tankTurret, false);
+            // AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_tankTurret, false);
             yield return new WaitForSeconds(soundSpeed);
         }
 

@@ -18371,7 +18371,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Credits\n\nalbert bueno - Drawings and Programming \nGabriel Gallardo
-    - Sound Design\nFrikH - Programming"
+    - Music & Sound Design\nFrikH - Programming"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ad66913733e74038a31725397c427a9, type: 2}
   m_sharedMaterial: {fileID: -920857711596732476, guid: 7ad66913733e74038a31725397c427a9, type: 2}
