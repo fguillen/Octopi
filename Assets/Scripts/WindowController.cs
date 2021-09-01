@@ -16,6 +16,7 @@ public class WindowController : MonoBehaviour
 
     public void StartGrab()
     {
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_grabObject, false);
     }
 
     public void StopGrab()

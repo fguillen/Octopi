@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
-using UnityCore.Audio;
 
 public class BoneWrapper
 {
@@ -117,8 +114,6 @@ public class TentacleController : MonoBehaviour
         grabbable.ThrownEvent.AddListener(Release);
         targeting = false;
         grabbed = true;
-
-        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_grabObject, false);
     }
 
     void CreateJoint(Vector2 position)

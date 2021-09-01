@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityCore.Audio;
 
 public class BirdController : MonoBehaviour
 {
@@ -43,6 +42,8 @@ public class BirdController : MonoBehaviour
         // Debug.Log("CarController.StartGrab()");
         animator.SetBool("Grabbed", true);
         grabbed = true;
+
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdGrab, false);
     }
 
     public void StopGrab()
@@ -61,5 +62,7 @@ public class BirdController : MonoBehaviour
         animator.SetBool("Grabbed", false);
         grabbed = true;
         onAir = false;
+
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_birdCrash, false);
     }
 }
