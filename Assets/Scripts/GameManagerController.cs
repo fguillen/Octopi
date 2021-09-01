@@ -176,7 +176,7 @@ public class GameManagerController : MonoBehaviour
 
         StopCityBackground();
         AudioController.instance.StopAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, true);
-        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_win, false);
+        //AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_win, false);
 
         if(!endGame)
             endScene.Play();
