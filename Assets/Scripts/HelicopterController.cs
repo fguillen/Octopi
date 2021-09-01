@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityCore.Audio;
 
 public class HelicopterController : Shooter
 {
@@ -76,7 +77,14 @@ public class HelicopterController : Shooter
 
         // Point towards Player
         Tween tween = gun.DORotateQuaternion(Utils.Rotation2DTowards(gun.transform, player.transform.position, transform.localScale.x < 0), 2.0f);
-        yield return tween.WaitForCompletion();
+
+        // TODO: calculate this depending in the size of the angle between the actual rotation and the desired rotation
+        float soundSpeed = Utils.AddNoise(0.5f);
+        while(tween.IsPlaying())
+        {
+            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_missileExplosion, false);
+            yield return new WaitForSeconds(soundSpeed);
+        }
 
         Shoot();
 
@@ -97,6 +105,8 @@ public class HelicopterController : Shooter
         GameObject missile = Instantiate(missilePrefab, barrelEnd.position, Quaternion.identity);
         Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
         missile.GetComponent<MissileController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);
+
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_missileShoot, false);
     }
 
     public void NextPatrolPointCloseToPlayer()

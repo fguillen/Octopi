@@ -139,7 +139,7 @@ namespace UnityCore
                 }
 
                 //Bird grab and bird crash. For testing, keydown for grabbing, key up for crashing
-                if (Input.GetKeyDown(KeyCode.T)) 
+                if (Input.GetKeyDown(KeyCode.T))
                 {
                     audioController.PlayAudio(AudioType.SFX_birdGrab, false);
                 }
@@ -220,4 +220,3 @@ namespace UnityCore
             }
         }
     }
-

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityCore.Audio;
 
 public class SoldierController : Shooter
 {
@@ -121,6 +122,8 @@ public class SoldierController : Shooter
         GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, Quaternion.identity);
         Vector2 direction = (player.transform.position + shootingOffset - gun.position).normalized;
         bullet.GetComponent<BulletController>().TheRigidbody.AddForce(direction * shootForce, ForceMode2D.Impulse);
+
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletShoot, false);
     }
 
     void NextPatrolPointClosestToPlayer()

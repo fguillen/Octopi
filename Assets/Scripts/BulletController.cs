@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityCore.Audio;
 
 public class BulletController : MonoBehaviour
 {
@@ -31,10 +32,34 @@ public class BulletController : MonoBehaviour
         }
 
         Explode();
+        SoundImpactPlay();
     }
 
     void Explode()
     {
         Destroy(gameObject);
+    }
+
+    void SoundImpactPlay()
+    {
+        int bulletImpactClip = Random.Range(1, 6);
+        switch (bulletImpactClip)
+        {
+            case 1:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletImpact_01, false);
+                break;
+            case 2:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletImpact_02, false);
+                break;
+            case 3:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletImpact_03, false);
+                break;
+            case 4:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletImpact_04, false);
+                break;
+            case 5:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_bulletImpact_05, false);
+                break;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityCore.Audio;
 
 public class MissileController : MonoBehaviour
 {
@@ -28,13 +29,19 @@ public class MissileController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
 
-        if(collisionInfo.gameObject.CompareTag("Player"))
-        {
-            collisionInfo.gameObject.GetComponent<PlayerController>().HitByMissile(collisionInfo.transform.position, TheRigidbody.velocity.normalized);
-        }
-
         if(collisionInfo.enabled)
+        {
+            if(collisionInfo.gameObject.CompareTag("Player"))
+            {
+                collisionInfo.gameObject.GetComponent<PlayerController>().HitByMissile(collisionInfo.transform.position, TheRigidbody.velocity.normalized);
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_missileImpact, false);
+            } else
+            {
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_missileExplosion, false);
+            }
+
             Explode();
+        }
     }
 
     void Explode()

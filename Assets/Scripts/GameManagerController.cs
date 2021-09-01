@@ -40,11 +40,11 @@ public class GameManagerController : MonoBehaviour
     void Update()
     {
         #if UNITY_EDITOR
-            ChangeVelocity();
+            DebugKeys();
         #endif
     }
 
-    void ChangeVelocity()
+    void DebugKeys()
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
@@ -63,6 +63,9 @@ public class GameManagerController : MonoBehaviour
 
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
+
+        if(Input.GetKeyDown(KeyCode.A))
+            ActivateArmy();
     }
 
     public void ActivateArmy()
