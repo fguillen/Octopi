@@ -148,7 +148,7 @@ MonoBehaviour:
   particlesExplosion: {fileID: 3682191406683536792}
   particlesSmoke: {fileID: 4659927229654578259}
   particlesFire: {fileID: 7983468304154294262}
-  probabilityFire: 0.202
+  probabilityFire: 0.324
 --- !u!1 &4093764444453195036
 GameObject:
   m_ObjectHideFlags: 0

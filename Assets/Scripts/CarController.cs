@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityCore.Audio;
 
 public class CarController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class CarController : MonoBehaviour
 
     bool idle = false;
     bool onRoad = true;
+    bool exploded = false;
 
     void Awake()
     {
@@ -157,12 +159,11 @@ public class CarController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        Debug.Log($"Tag: {collisionInfo.gameObject.tag}");
-        if(
-            collisionInfo.gameObject.CompareTag("CarGround")
-        )
+        if(!exploded &&collisionInfo.gameObject.CompareTag("CarGround"))
         {
             StartCoroutine(ExplodeCoroutine());
+            StartCoroutine(SoundFireCoroutine());
+            exploded = true;
         }
     }
 
@@ -176,5 +177,14 @@ public class CarController : MonoBehaviour
 
         // theCollider.enabled = false;
         animator.SetBool("Moving", false);
+    }
+
+    IEnumerator SoundFireCoroutine()
+    {
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_fire, false);
+
+        yield return new WaitForSeconds(Utils.AddNoise(10f));
+
+        AudioController.instance.StopAudio(UnityCore.Audio.AudioType.SFX_fire, true);
     }
 }
