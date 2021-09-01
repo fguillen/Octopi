@@ -129,6 +129,8 @@ public class CarController : MonoBehaviour
         // Debug.Log("CarController.StartGrab()");
         animator.SetBool("Moving", false);
         idle = true;
+
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_grabObject, false);
     }
 
     public void StopGrab()
