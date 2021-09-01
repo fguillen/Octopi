@@ -162,7 +162,6 @@ public class CarController : MonoBehaviour
         if(!exploded &&collisionInfo.gameObject.CompareTag("CarGround"))
         {
             StartCoroutine(ExplodeCoroutine());
-            StartCoroutine(SoundFireCoroutine());
             exploded = true;
         }
     }
@@ -172,19 +171,28 @@ public class CarController : MonoBehaviour
         // Debug.Log("Car.Explode()");
         particlesExplosion.Play();
         particlesFire.Play();
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_fire, false);
 
-        yield return colorizable.DOColor(burntColor, Utils.AddNoise(10)).WaitForCompletion();
+        yield return colorizable.DOColor(burntColor, Utils.AddNoise(10.0f)).WaitForCompletion();
 
-        // theCollider.enabled = false;
+        AudioController.instance.StopAudio(UnityCore.Audio.AudioType.SFX_fire, true);
         animator.SetBool("Moving", false);
     }
 
-    IEnumerator SoundFireCoroutine()
+    void SoundCrashPlay()
     {
-        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_fire, false);
-
-        yield return new WaitForSeconds(Utils.AddNoise(10f));
-
-        AudioController.instance.StopAudio(UnityCore.Audio.AudioType.SFX_fire, true);
+        int carCrashClipClip = Random.Range(1, 4);
+        switch (carCrashClipClip)
+        {
+            case 1:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_carCrash_01, false);
+                break;
+            case 2:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_carCrash_02, false);
+                break;
+            case 3:
+                AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.SFX_carCrash_03, false);
+                break;
+        }
     }
 }
