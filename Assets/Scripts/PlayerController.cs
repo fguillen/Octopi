@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     GameObject iconTentacle;
 
     [SerializeField] Transform endScenePosition;
+    [SerializeField] GameObject groundColliderObject;
 
     float missileForce = 10.0f;
     float bulletForce = 2.0f;
@@ -186,7 +187,11 @@ public class PlayerController : MonoBehaviour
     public void MoveToEndScenePosition()
     {
         onCutScene = true;
+        ReleaseAllTentacles();
         transform.DOMove(endScenePosition.position, 1.0f);
+        groundColliderObject.transform.DOMove(endScenePosition.position, 1.0f);
+        groundColliderObject.GetComponent<Rigidbody2D>().mass = 100f;
+        theRigidBody.mass = 100f;
     }
 
     public void ReleaseAllTentacles()

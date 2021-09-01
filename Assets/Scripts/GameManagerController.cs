@@ -66,12 +66,19 @@ public class GameManagerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.A))
             ActivateArmy();
+
+        if(Input.GetKeyDown(KeyCode.E))
+            PlayEndScene();
     }
 
     public void ActivateArmy()
     {
         Debug.Log("ActiveArmy()");
-        armyActive = true;
+        if(!endGame)
+        {
+            armyActive = true;
+            AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, false);
+        }
     }
 
     public void IncreasePeople()
@@ -168,6 +175,8 @@ public class GameManagerController : MonoBehaviour
         Debug.Log("PlayEndScen()");
 
         StopCityBackground();
+        AudioController.instance.StopAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, true);
+        AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_win, false);
 
         if(!endGame)
             endScene.Play();
