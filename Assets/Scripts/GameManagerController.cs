@@ -64,7 +64,7 @@ public class GameManagerController : MonoBehaviour
             Debug.Log($"GameManager.timeScale: {Time.timeScale}");
         }
 
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.Z))
             ActivateArmy();
 
         if(Input.GetKeyDown(KeyCode.E))
