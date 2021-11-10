@@ -10175,7 +10175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657629568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.207916, y: -0.6769643, z: -11.015647}
+  m_LocalPosition: {x: -54.496918, y: -0.105964184, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 606922648}
@@ -10640,7 +10640,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1146151644}
           m_TargetAssemblyTypeName: GameManagerController, Assembly-CSharp
-          m_MethodName: PlayCityBackground
+          m_MethodName: StartCity
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -18898,6 +18898,7 @@ MonoBehaviour:
   maxNumTanks: 10
   maxNumSoldiers: 20
   endScene: {fileID: 354360500}
+  cityActive: 0
 --- !u!4 &1146151645
 Transform:
   m_ObjectHideFlags: 0
@@ -35696,7 +35697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3627336114416395836, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3681054360532429400, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
       propertyPath: m_LocalRotation.w

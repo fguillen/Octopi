@@ -24,6 +24,8 @@ public class GameManagerController : MonoBehaviour
     bool endGame = false;
     bool soundArmyPlaying = false;
 
+    public bool cityActive = false;
+
     public static GameManagerController Instance;
 
     void Awake()
@@ -175,7 +177,7 @@ public class GameManagerController : MonoBehaviour
     {
         Debug.Log("PlayEndScen()");
 
-        StopCityBackground();
+        StopCity();
         AudioController.instance.StopAudio(UnityCore.Audio.AudioType.MUS_militaryMarch, true);
         //AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.MUS_win, false);
 
@@ -185,7 +187,19 @@ public class GameManagerController : MonoBehaviour
         endGame = true;
     }
 
-    public void PlayCityBackground()
+    public void StartCity()
+    {
+        cityActive = true;
+        PlayCityBackground();
+    }
+
+    public void StopCity()
+    {
+        cityActive = false;
+        StopCityBackground();
+    }
+
+    void PlayCityBackground()
     {
         AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.BCKGR_city, true);
     }
