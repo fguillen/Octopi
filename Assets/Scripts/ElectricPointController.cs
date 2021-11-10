@@ -13,6 +13,8 @@ public class ElectricPointController : MonoBehaviour
     float nextLightningAt;
     bool lightningActive;
 
+    IEnumerator spawnLightningCoroutine;
+
 
     void Awake()
     {
@@ -32,7 +34,7 @@ public class ElectricPointController : MonoBehaviour
     {
         if(Time.time > nextLightningAt && !lightningActive)
         {
-            ShootLighting();
+            SpawnLighting();
             CalculateNextLightningAt();
         }
     }
@@ -42,12 +44,26 @@ public class ElectricPointController : MonoBehaviour
         nextLightningAt = Time.time + Utils.AddNoise(lightningFrequency);
     }
 
-    void ShootLighting()
+    void SpawnLighting()
     {
-        StartCoroutine(ShootLightningCoroutine());
+        spawnLightningCoroutine = SpawnLightningCoroutine();
+        StartCoroutine(spawnLightningCoroutine);
     }
 
-    IEnumerator ShootLightningCoroutine()
+    void ElectrocutePlayer(Vector2 position, PlayerController player)
+    {
+        lightning.EndObject.transform.position = position;
+
+        if(spawnLightningCoroutine != null)
+        {
+            StopCoroutine(spawnLightningCoroutine);
+        }
+
+        SpawnLighting();
+        player.Electrocuted(position);
+    }
+
+    IEnumerator SpawnLightningCoroutine()
     {
         lightningActive = true;
         lightning.gameObject.SetActive(true);
@@ -57,5 +73,16 @@ public class ElectricPointController : MonoBehaviour
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
         lightningActive = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        if(collisionInfo.gameObject.CompareTag("Player"))
+        {
+            ContactPoint2D[] contacts = new ContactPoint2D[1];
+            collisionInfo.GetContacts(contacts);
+            Vector2 position = contacts[0].point;
+            ElectrocutePlayer(position, collisionInfo.gameObject.GetComponent<PlayerController>());
+        }
     }
 }

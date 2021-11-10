@@ -7996,6 +7996,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8521133107640821848, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
   m_PrefabInstance: {fileID: 1347845663}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &541827040
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541827037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.38930464, y: -1.5837619}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7786093, y: 4.1675234}
+  m_EdgeRadius: 0
 --- !u!1 &550067160
 GameObject:
   m_ObjectHideFlags: 3
@@ -10175,7 +10201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657629568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.496918, y: -0.105964184, z: -7.015647}
+  m_LocalPosition: {x: -53.207916, y: -0.6769643, z: -11.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 606922648}
@@ -12235,14 +12261,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820496460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41, y: 7.27, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4099998, y: 7.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280973565}
   - {fileID: 1900147264}
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1725948349}
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &820631813
 PrefabInstance:
@@ -17942,6 +17968,46 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/Tree2.prefab
   - _gameObject: {fileID: 1569461598}
     _prefab: Assets/Prefabs/Tree2.prefab
+  - _gameObject: {fileID: 1178602429}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 450971654}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 1392023063}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 1520677974}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 1375115231}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 143104701}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 1894907004}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 388207685}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 229856720}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 418152313}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 864082937}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 1008856306}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 177986802}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 1878818449}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 1174731551}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 1952415745}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 1230107242}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 2130242152}
+    _prefab: Assets/Prefabs/Lighting.prefab
+  - _gameObject: {fileID: 541827037}
+    _prefab: Assets/Prefabs/ElectricPoint.prefab
+  - _gameObject: {fileID: 1305268195}
+    _prefab: Assets/Prefabs/Lighting.prefab
   - _gameObject: {fileID: 3327069831329203174}
     _prefab: Assets/Prefabs/CloudSpawner.prefab
   - _gameObject: {fileID: 1074148521}
@@ -18074,46 +18140,6 @@ MonoBehaviour:
     _prefab: Assets/Particles/Particles_BigSmoke.prefab
   - _gameObject: {fileID: 1342633574}
     _prefab: Assets/Prefabs/AudioManager.prefab
-  - _gameObject: {fileID: 1178602429}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 450971654}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 1392023063}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 1520677974}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 1375115231}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 143104701}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 1894907004}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 388207685}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 229856720}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 418152313}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 864082937}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 1008856306}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 177986802}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 1878818449}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 1174731551}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 1952415745}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 1230107242}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 2130242152}
-    _prefab: Assets/Prefabs/Lighting.prefab
-  - _gameObject: {fileID: 541827037}
-    _prefab: Assets/Prefabs/ElectricPoint.prefab
-  - _gameObject: {fileID: 1305268195}
-    _prefab: Assets/Prefabs/Lighting.prefab
 --- !u!4 &1075150277
 Transform:
   m_ObjectHideFlags: 11
@@ -18126,7 +18152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1081444554 stripped
 Transform:
@@ -22142,6 +22168,14 @@ PrefabInstance:
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: m_Layer
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: m_TagString
+      value: Electricity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
@@ -27867,6 +27901,7 @@ Transform:
   - {fileID: 1648627432}
   - {fileID: 3159971230237686614}
   - {fileID: 1569461597}
+  - {fileID: 820496461}
   m_Father: {fileID: 731065177}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
