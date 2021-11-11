@@ -199,11 +199,11 @@ public class PlayerController : MonoBehaviour
         Vector2 direction;
 
         if(position.x > transform.position.x)
-            direction = (new Vector2(-1f, 1f)).normalized;
+            direction = new Vector2(-1f, 1f);
         else
-            direction = (new Vector2(1f, 1f)).normalized;
+            direction = new Vector2(1f, 1f);
 
-        groundColliderObject.GetComponent<Rigidbody2D>().AddForce(direction * electrocutionForce * 10, ForceMode2D.Impulse);
+        groundColliderObject.GetComponent<Rigidbody2D>().AddForce(direction * electrocutionForce * 0.4f, ForceMode2D.Impulse);
         theRigidBody.AddForce(direction * electrocutionForce, ForceMode2D.Impulse);
         foreach (var tentacle in tentacles)
         {

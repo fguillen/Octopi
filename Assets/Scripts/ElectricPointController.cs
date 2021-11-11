@@ -14,7 +14,6 @@ public class ElectricPointController : MonoBehaviour
     Vector3 originalEndPosition;
     float nextLightningAt;
     bool lightningActive;
-    bool electrocutingActive;
 
     IEnumerator spawnLightningCoroutine;
     IEnumerator electrocutedPlayerCoroutine;
@@ -26,7 +25,6 @@ public class ElectricPointController : MonoBehaviour
         originalEndPosition = lightning.EndObject.transform.localPosition;
         CalculateNextLightningAt();
         lightningActive = false;
-        electrocutingActive = false;
     }
 
     // Start is called before the first frame update
@@ -75,6 +73,10 @@ public class ElectricPointController : MonoBehaviour
 
     IEnumerator ElectrocutedPlayerCoroutine(Vector2 position, PlayerController player)
     {
+        Debug.Log("ElectrocutedPlayerCoroutine() :: INI");
+        lightningActive = true;
+        electricPole.electrocuting = true;
+
         lightning.EndObject.transform.position = position;
 
         if(spawnLightningCoroutine != null)
@@ -83,8 +85,7 @@ public class ElectricPointController : MonoBehaviour
         if(doShakeTween != null)
             doShakeTween.Kill();
 
-        lightningActive = true;
-        electrocutingActive = true;
+
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
         electricPole.FlashBackground(lightningDuration);
@@ -92,13 +93,14 @@ public class ElectricPointController : MonoBehaviour
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
         lightningActive = false;
-        electrocutingActive = false;
+        electricPole.electrocuting = false;
         player.HitByElectrocution(position);
+        Debug.Log("ElectrocutedPlayerCoroutine() :: END");
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(collisionInfo.gameObject.CompareTag("Player") && !electrocutingActive)
+        if(collisionInfo.gameObject.CompareTag("Player") && !electricPole.electrocuting)
         {
             ContactPoint2D[] contacts = new ContactPoint2D[1];
             collisionInfo.GetContacts(contacts);

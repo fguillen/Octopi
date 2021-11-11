@@ -7,6 +7,8 @@ public class ElectricPoleController : MonoBehaviour
     [SerializeField] Color flashBackgroundColor;
     [SerializeField] float flashFlipingScale;
 
+    public bool electrocuting = false;
+
     void Start()
     {
         background.enabled = false;
@@ -24,7 +26,6 @@ public class ElectricPoleController : MonoBehaviour
         while(Time.time < untilTime)
         {
             float noiseValue = Mathf.PerlinNoise(Time.time * flashFlipingScale, 0.0f);
-            Debug.Log($"noise: {noiseValue}, ${Time.time}, ${untilTime}");
 
             if(noiseValue < 0.5f)
             {
