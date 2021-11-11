@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform endScenePosition;
     [SerializeField] GameObject groundColliderObject;
+    [SerializeField] SpriteRenderer bodySpriteRenderer;
+    [SerializeField] Color flashBodyColor;
 
     [SerializeField]float electrocutionForce = 50.0f;
+
 
     float missileForce = 10.0f;
     float bulletForce = 2.0f;
@@ -242,5 +245,26 @@ public class PlayerController : MonoBehaviour
         {
             tentacle.Release();
         }
+    }
+
+    public void FlashBodyBackground(float time)
+    {
+        StartCoroutine(FlashBodyBackgroundCoroutine(time));
+    }
+
+    IEnumerator FlashBodyBackgroundCoroutine(float time)
+    {
+        float untilTime = Time.time + time;
+        Color originalBackgroundColor = bodySpriteRenderer.color;
+
+        while(Time.time < untilTime)
+        {
+            float noiseValue = Mathf.PerlinNoise(Time.time * 10f, 0.0f);
+            bodySpriteRenderer.color = noiseValue < 0.5f ? flashBodyColor : Color.white;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        bodySpriteRenderer.color = originalBackgroundColor;
     }
 }

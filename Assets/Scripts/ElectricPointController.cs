@@ -92,6 +92,9 @@ public class ElectricPointController : MonoBehaviour
         lightningActive = true;
         electricPole.electrocuting = true;
 
+        player.SetControlsActive(false);
+
+
         lightning.EndObject.transform.position = position;
 
         if(spawnLightningCoroutine != null)
@@ -106,10 +109,13 @@ public class ElectricPointController : MonoBehaviour
 
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
+        player.FlashBodyBackground(duration);
         electricPole.FlashBackground(lightningDuration);
         yield return new WaitForSeconds(duration);
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
+
+        player.SetControlsActive(true);
         player.HitByElectrocution(position);
 
         audioSource.Stop();

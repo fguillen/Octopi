@@ -879,6 +879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8ba389c8ff44066a2197ecc1ca9be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &42117392 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1480950378930431610, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+  m_PrefabInstance: {fileID: 1480950377405850208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &46368254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25761,7 +25766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609528381}
   m_LocalRotation: {x: 1.222587e-22, y: 0.00000009536743, z: -1.1659499e-29, w: 1}
-  m_LocalPosition: {x: -15.576253, y: 0.6368356, z: -7.0156507}
+  m_LocalPosition: {x: -15.576251, y: 0.6368356, z: -7.0156507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1505400825}
@@ -35541,6 +35546,26 @@ PrefabInstance:
       propertyPath: endScenePosition
       value: 
       objectReference: {fileID: 2007780115}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: flashBodyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: flashBodyColor.b
+      value: 0.91273415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: flashBodyColor.g
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: flashBodyColor.r
+      value: 0.17123532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480950379047622004, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
+      propertyPath: bodySpriteRenderer
+      value: 
+      objectReference: {fileID: 42117392}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79e20d0806664086bccdfaabd915dc8, type: 3}
 --- !u!1 &1480950377405850209 stripped
