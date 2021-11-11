@@ -16,6 +16,14 @@ public class PlayerMovementsController : MonoBehaviour
 
     void Update()
     {
+        if(player.GetControlsActive())
+        {
+            CheckMovement();
+        }
+    }
+
+    void CheckMovement()
+    {
         int grabbedTentaclesCount = player.GrabbedTentaclesCount();
         if(grabbedTentaclesCount > 0)
         {

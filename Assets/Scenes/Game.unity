@@ -1397,6 +1397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (6)
@@ -1731,7 +1735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104448031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.707916, y: 0.58303595, z: -7.015647}
+  m_LocalPosition: {x: -32.42125, y: 0.58303595, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1663584913}
@@ -2879,6 +2883,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (2)
@@ -6350,6 +6358,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (3)
@@ -7052,7 +7064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451622240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.212082, y: 5.9730353, z: -7.015647}
+  m_LocalPosition: {x: 42.49875, y: 5.9730353, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 392327826}
@@ -7689,7 +7701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.707916, y: 0.58303595, z: -7.015647}
+  m_LocalPosition: {x: -32.42125, y: 0.58303595, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 146923737}
@@ -10111,7 +10123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650748847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.82121e-13, y: -0.4488001, z: 10.000004}
+  m_LocalPosition: {x: 0.000001907348, y: -0.4488001, z: 10.000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1609528382}
@@ -10200,7 +10212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657629568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.207916, y: -0.6769643, z: -11.015647}
+  m_LocalPosition: {x: -52.92125, y: -0.6769643, z: -11.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 606922648}
@@ -12246,6 +12258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820496461}
+  - component: {fileID: 820496462}
   m_Layer: 0
   m_Name: ElectricPole
   m_TagString: Untagged
@@ -12269,6 +12282,21 @@ Transform:
   m_Father: {fileID: 1725948349}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820496462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820496460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b870e6b59aa1d46f1afef9eacec76970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 598290314}
+  flashBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
+  flashFlipingScale: 10
 --- !u!1001 &820631813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12500,6 +12528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (1)
@@ -14233,6 +14265,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (8)
@@ -19705,7 +19741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221526870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.587917, y: 0.4930358, z: -7.015647}
+  m_LocalPosition: {x: -39.30125, y: 0.4930358, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2094504955}
@@ -22076,6 +22112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (9)
@@ -24363,6 +24403,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (7)
@@ -25579,7 +25623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609528381}
   m_LocalRotation: {x: 1.222587e-22, y: 0.00000009536743, z: -1.1659499e-29, w: 1}
-  m_LocalPosition: {x: -15.576251, y: 0.6368356, z: -7.0156507}
+  m_LocalPosition: {x: -15.576253, y: 0.6368356, z: -7.0156507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1505400825}
@@ -27495,6 +27539,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (5)
@@ -31444,6 +31492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint (4)
@@ -38321,6 +38373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521133107640821849, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
+      propertyPath: electricPole
+      value: 
+      objectReference: {fileID: 820496462}
     - target: {fileID: 8521133107640821851, guid: 6257a860240f846b0becbd4b2e74e907, type: 3}
       propertyPath: m_Name
       value: ElectricPoint

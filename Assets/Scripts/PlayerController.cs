@@ -31,18 +31,19 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D theRigidBody;
 
-    bool onCutScene = false;
+    bool controlsActive;
 
     void Awake()
     {
         theRigidBody = GetComponent<Rigidbody2D>();
         iconTentacle = Instantiate(iconTentaclePrefab, tentacleHiddenPosition, Quaternion.identity);
         HideIconTentacle();
+        controlsActive = true;
     }
 
     void Update()
     {
-        if(!onCutScene)
+        if(controlsActive)
         {
             DrawIconTentacle();
 
@@ -56,6 +57,16 @@ public class PlayerController : MonoBehaviour
                 ReleaseTentacle();
             }
         }
+    }
+
+    public void SetControlsActive(bool value)
+    {
+        controlsActive = value;
+    }
+
+    public bool GetControlsActive()
+    {
+        return controlsActive;
     }
 
     void DrawIconTentacle()
@@ -176,16 +187,22 @@ public class PlayerController : MonoBehaviour
     [ContextMenu("Electrocuted")]
     public void Electrocuted()
     {
-        Electrocuted(new Vector2(0,0));
+        HitByElectrocution(new Vector2(0,0));
     }
 
-    public void Electrocuted(Vector2 position)
+    public void HitByElectrocution(Vector2 position)
     {
         ReleaseAllTentacles();
         ParticleSystem particles = Instantiate(particlesBloodMissile, position, Quaternion.identity, transform);
         particles.Play();
         Destroy(particles, 10.0f);
-        Vector2 direction = new Vector2(-1f, 1f);
+        Vector2 direction;
+
+        if(position.x > transform.position.x)
+            direction = (new Vector2(-1f, 1f)).normalized;
+        else
+            direction = (new Vector2(1f, 1f)).normalized;
+
         groundColliderObject.GetComponent<Rigidbody2D>().AddForce(direction * electrocutionForce * 10, ForceMode2D.Impulse);
         theRigidBody.AddForce(direction * electrocutionForce, ForceMode2D.Impulse);
         foreach (var tentacle in tentacles)
@@ -211,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveToEndScenePosition()
     {
-        onCutScene = true;
+        SetControlsActive(false);
         ReleaseAllTentacles();
         transform.DOMove(endScenePosition.position, 1.0f);
         groundColliderObject.transform.DOMove(endScenePosition.position, 1.0f);
