@@ -196,4 +196,9 @@ public class TentacleController : MonoBehaviour
     {
         targetRigidbody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
+
+    public void PushTarget(Vector2 force)
+    {
+        targetRigidbody.AddForce(force, ForceMode2D.Impulse);
+    }
 }

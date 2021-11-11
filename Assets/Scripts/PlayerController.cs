@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform endScenePosition;
     [SerializeField] GameObject groundColliderObject;
 
+    [SerializeField]float electrocutionForce = 50.0f;
+
     float missileForce = 10.0f;
     float bulletForce = 2.0f;
-    float electrocutionForce = 20.0f;
+
     Vector2 tentacleHiddenPosition = new Vector2(100, 100);
 
     Rigidbody2D theRigidBody;
@@ -170,13 +172,26 @@ public class PlayerController : MonoBehaviour
         theRigidBody.AddForce(direction * bulletForce, ForceMode2D.Impulse);
     }
 
+
+    [ContextMenu("Electrocuted")]
+    public void Electrocuted()
+    {
+        Electrocuted(new Vector2(0,0));
+    }
+
     public void Electrocuted(Vector2 position)
     {
+        ReleaseAllTentacles();
         ParticleSystem particles = Instantiate(particlesBloodMissile, position, Quaternion.identity, transform);
         particles.Play();
         Destroy(particles, 10.0f);
         Vector2 direction = new Vector2(-1f, 1f);
+        groundColliderObject.GetComponent<Rigidbody2D>().AddForce(direction * electrocutionForce * 10, ForceMode2D.Impulse);
         theRigidBody.AddForce(direction * electrocutionForce, ForceMode2D.Impulse);
+        foreach (var tentacle in tentacles)
+        {
+            tentacle.PushTarget(direction * electrocutionForce * 0.1f);
+        }
     }
 
     public int GrabbedTentaclesCount()

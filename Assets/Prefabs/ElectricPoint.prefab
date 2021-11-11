@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8521133107640821848}
   - component: {fileID: 8521133107640821849}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: ElectricPoint
-  m_TagString: Untagged
+  m_TagString: Electricity
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
