@@ -10,6 +10,10 @@ public class ElectricPointController : MonoBehaviour
     [SerializeField] float lightningDuration = 2.0f;
     [SerializeField] float lightningFrequency = 3.0f;
     [SerializeField] ElectricPoleController electricPole;
+    [SerializeField] AudioClip clipElectroLow;
+    [SerializeField] AudioClip clipElectroHigh;
+    [SerializeField] AudioClip clipElectroOut;
+    AudioSource audioSource;
 
     Vector3 originalEndPosition;
     float nextLightningAt;
@@ -25,6 +29,10 @@ public class ElectricPointController : MonoBehaviour
         originalEndPosition = lightning.EndObject.transform.localPosition;
         CalculateNextLightningAt();
         lightningActive = false;
+        audioSource = GetComponent<AudioSource>();
+
+        if(audioSource == null)
+            throw new System.Exception("AudioSource Required");
     }
 
     // Start is called before the first frame update
@@ -62,12 +70,19 @@ public class ElectricPointController : MonoBehaviour
     IEnumerator SpawnLightningCoroutine()
     {
         lightningActive = true;
+
+        audioSource.clip = clipElectroLow;
+        audioSource.Play();
+
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
         doShakeTween = lightning.EndObject.transform.DOShakePosition(duration, 0.5f, 1, 90);
         yield return new WaitForSeconds(duration);
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
+
+        audioSource.Stop();
+
         lightningActive = false;
     }
 
@@ -85,6 +100,9 @@ public class ElectricPointController : MonoBehaviour
         if(doShakeTween != null)
             doShakeTween.Kill();
 
+        audioSource.Stop(); // in case it is playing the other sound
+        audioSource.clip = clipElectroHigh;
+        audioSource.Play();
 
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
@@ -92,9 +110,14 @@ public class ElectricPointController : MonoBehaviour
         yield return new WaitForSeconds(duration);
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
+        player.HitByElectrocution(position);
+
+        audioSource.Stop();
+        audioSource.PlayOneShot(clipElectroOut);
+
         lightningActive = false;
         electricPole.electrocuting = false;
-        player.HitByElectrocution(position);
+
         Debug.Log("ElectrocutedPlayerCoroutine() :: END");
     }
 

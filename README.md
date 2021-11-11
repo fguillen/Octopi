@@ -13,3 +13,9 @@ FrikH - Programming
 ### Assets
 
 - https://assetstore.unity.com/packages/tools/particles-effects/lightning-bolt-effect-for-unity-59471
+
+### Sound effects
+
+- Electricity Low: https://freesound.org/s/101334/
+- Electricity High: https://freesound.org/s/367455/
+- Electricity Out: https://freesound.org/s/257958/
