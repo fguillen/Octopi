@@ -50,7 +50,7 @@ public class BirdController : MonoBehaviour
 
     public void StopGrab()
     {
-        Debug.Log("CarController.StopGrab()");
+        Debug.Log("BirdController.StopGrab()");
         if(onAir)
         {
             animator.SetBool("Grabbed", false);
@@ -62,7 +62,7 @@ public class BirdController : MonoBehaviour
     {
         if(onAir)
         {
-            Debug.Log("CarController.Thrown()");
+            Debug.Log("BirdController.Thrown()");
             animator.SetBool("Grabbed", false);
             grabbed = true;
             onAir = false;
