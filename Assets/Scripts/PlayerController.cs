@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform endScenePosition;
     [SerializeField] GameObject groundColliderObject;
     [SerializeField] SpriteRenderer bodySpriteRenderer;
+    [SerializeField] SpriteRenderer skullSpriteRenderer;
     [SerializeField] Color flashBodyColor;
 
     [SerializeField]float electrocutionForce = 50.0f;
@@ -258,16 +259,18 @@ public class PlayerController : MonoBehaviour
     IEnumerator FlashBodyBackgroundCoroutine(float time)
     {
         float untilTime = Time.time + time;
-        Color originalBackgroundColor = bodySpriteRenderer.color;
+        Color originalBackgroundColor = skullSpriteRenderer.color;
+        skullSpriteRenderer.enabled = true;
 
         while(Time.time < untilTime)
         {
             float noiseValue = Mathf.PerlinNoise(Time.time * 10f, 0.0f);
-            bodySpriteRenderer.color = noiseValue < 0.5f ? flashBodyColor : Color.white;
+            skullSpriteRenderer.color = noiseValue < 0.5f ? flashBodyColor : Color.black;
 
             yield return new WaitForEndOfFrame();
         }
 
-        bodySpriteRenderer.color = originalBackgroundColor;
+        skullSpriteRenderer.enabled = false;
+        skullSpriteRenderer.color = originalBackgroundColor;
     }
 }
