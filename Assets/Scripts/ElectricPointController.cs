@@ -71,8 +71,16 @@ public class ElectricPointController : MonoBehaviour
     {
         lightningActive = true;
 
+        // TODO Sound - INI: There is a pseudo 3D implementation here because I don't know how the new sound system works with 3D
         audioSource.clip = clipElectroLow;
+        float maxDistanceSound = 5f;
+        float distanceToPlayer = Vector2.Distance(PlayerController.instance.transform.position, transform.position);
+        float distanceNormalized = distanceToPlayer / maxDistanceSound;
+        float volume = Mathf.Lerp(1, 0, distanceNormalized);
+        Debug.Log($"SpawnLightningCoroutine sound: {distanceToPlayer}, {distanceNormalized}, {volume}");
+        audioSource.volume = volume;
         audioSource.Play();
+        // TODO Sound - END
 
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
@@ -81,7 +89,9 @@ public class ElectricPointController : MonoBehaviour
         lightning.gameObject.SetActive(false);
         lightning.EndObject.transform.localPosition = originalEndPosition;
 
+        // TODO Sound - INI
         audioSource.Stop();
+        // TODO Sound - END
 
         lightningActive = false;
     }
@@ -103,9 +113,12 @@ public class ElectricPointController : MonoBehaviour
         if(doShakeTween != null)
             doShakeTween.Kill();
 
+        // TODO Sound - INI
         audioSource.Stop(); // in case it is playing the other sound
         audioSource.clip = clipElectroHigh;
+        audioSource.volume = 1f;
         audioSource.Play();
+        // TODO Sound - END
 
         lightning.gameObject.SetActive(true);
         float duration = Utils.AddNoise(lightningDuration);
@@ -118,8 +131,10 @@ public class ElectricPointController : MonoBehaviour
         player.SetControlsActive(true);
         player.HitByElectrocution(position);
 
+        // TODO Sound - INI
         audioSource.Stop();
         audioSource.PlayOneShot(clipElectroOut);
+        // TODO Sound - END
 
         lightningActive = false;
         electricPole.electrocuting = false;

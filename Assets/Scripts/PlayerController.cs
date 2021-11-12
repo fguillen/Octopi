@@ -36,12 +36,15 @@ public class PlayerController : MonoBehaviour
 
     bool controlsActive;
 
+    public static PlayerController instance;
+
     void Awake()
     {
         theRigidBody = GetComponent<Rigidbody2D>();
         iconTentacle = Instantiate(iconTentaclePrefab, tentacleHiddenPosition, Quaternion.identity);
         HideIconTentacle();
         controlsActive = true;
+        instance = this;
     }
 
     void Update()
