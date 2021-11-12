@@ -24,8 +24,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer bodySpriteRenderer;
     [SerializeField] SpriteRenderer skullSpriteRenderer;
     [SerializeField] Color flashBodyColor;
+    [SerializeField] SpriteRenderer faceRenderer;
+    [SerializeField] Sprite faceNormal;
+    [SerializeField] Sprite faceHit;
 
     [SerializeField]float electrocutionForce = 50.0f;
+
+    IEnumerator hitFaceCoroutine;
 
 
     float missileForce = 10.0f;
@@ -180,6 +185,18 @@ public class PlayerController : MonoBehaviour
         particles.Play();
         Destroy(particles, 10.0f);
         theRigidBody.AddForce(direction * missileForce, ForceMode2D.Impulse);
+
+        if(hitFaceCoroutine != null)
+            StopCoroutine(hitFaceCoroutine);
+
+        hitFaceCoroutine = HitFaceCoroutine();
+        StartCoroutine(hitFaceCoroutine);
+    }
+
+    [ContextMenu("HitByBullet")]
+    public void HitByBullet()
+    {
+        HitByBullet(Vector2.zero, Vector2.zero);
     }
 
     public void HitByBullet(Vector2 position, Vector2 direction)
@@ -188,11 +205,17 @@ public class PlayerController : MonoBehaviour
         particles.Play();
         Destroy(particles, 10.0f);
         theRigidBody.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+
+        if(hitFaceCoroutine != null)
+            StopCoroutine(hitFaceCoroutine);
+
+        hitFaceCoroutine = HitFaceCoroutine();
+        StartCoroutine(hitFaceCoroutine);
     }
 
 
-    [ContextMenu("Electrocuted")]
-    public void Electrocuted()
+    [ContextMenu("HitByElectrocution")]
+    public void HitByElectrocution()
     {
         HitByElectrocution(new Vector2(0,0));
     }
@@ -272,5 +295,12 @@ public class PlayerController : MonoBehaviour
 
         skullSpriteRenderer.enabled = false;
         skullSpriteRenderer.color = originalBackgroundColor;
+    }
+
+    IEnumerator HitFaceCoroutine()
+    {
+        faceRenderer.sprite = faceHit;
+        yield return new WaitForSeconds(Utils.AddNoise(1f));
+        faceRenderer.sprite = faceNormal;
     }
 }

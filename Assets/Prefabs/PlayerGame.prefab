@@ -1240,6 +1240,9 @@ MonoBehaviour:
   bodySpriteRenderer: {fileID: 1480950378930431610}
   skullSpriteRenderer: {fileID: 525475149}
   flashBodyColor: {r: 0.9647059, g: 0.9254902, b: 0.6039216, a: 1}
+  faceRenderer: {fileID: 1480950378576891918}
+  faceNormal: {fileID: 3860458146400888812, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
+  faceHit: {fileID: -590878928053177707, guid: 24c24047253724ab59a3cbc75f0e893d, type: 3}
   electrocutionForce: 50
 --- !u!114 &444293679777961445
 MonoBehaviour:
