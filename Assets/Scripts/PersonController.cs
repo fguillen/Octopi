@@ -20,12 +20,12 @@ public class PersonController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        GameManagerController.Instance.IncreasePeople();
+        GameManagerController.Instance.IncreasePeople(this);
     }
 
     void OnDestroy()
     {
-        GameManagerController.Instance.DecreasePeople();
+        GameManagerController.Instance.DecreasePeople(this);
     }
 
     void Start()

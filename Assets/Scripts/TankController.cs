@@ -24,18 +24,19 @@ public class TankController : Shooter
     bool idle = false;
     bool inRange = false;
     Quaternion gunReleaseRotation;
+    RoadPatrolPointController previousPatrolPoint;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
-        GameManagerController.Instance.IncreaseTanks();
+        GameManagerController.Instance.IncreaseTanks(this);
     }
 
     void OnDestroy()
     {
-        GameManagerController.Instance.DecreaseTanks();
+        GameManagerController.Instance.DecreaseTanks(this);
     }
 
     void Start()
@@ -69,7 +70,13 @@ public class TankController : Shooter
                 Destroy(gameObject);
             } else
             {
-                NextPatrolPointClosestToPlayer();
+              if(GameManagerController.Instance.EndGame())
+                {
+                    NextPatrolPointFarthestToPlayer();
+                } else
+                {
+                    NextPatrolPointClosestToPlayer();
+                }
             }
         }
     }
@@ -123,8 +130,18 @@ public class TankController : Shooter
         NextPatrolPoint(nextPatrolPoint.nextPatrolPoints.OrderBy( e => Vector2.Distance(e.transform.position, player.transform.position) ).ToList()[0]);
     }
 
+    void NextPatrolPointFarthestToPlayer()
+    {
+        var nextPatrolPoints = nextPatrolPoint.nextPatrolPoints;
+        var nextPatrolPointsSorted = nextPatrolPoints.OrderBy( e => -Vector2.Distance(e.transform.position, player.transform.position) );
+        var nextPatrolPointsSortedFirst = nextPatrolPointsSorted.ToList()[0];
+        NextPatrolPoint(nextPatrolPointsSortedFirst);
+    }
+
     public void NextPatrolPoint(RoadPatrolPointController patrolPoint)
     {
+        this.previousPatrolPoint = this.nextPatrolPoint == null ? patrolPoint : this.nextPatrolPoint;
+
         this.nextPatrolPoint = patrolPoint;
         LookTowardsPoint(nextPatrolPoint.transform.position);
     }
@@ -189,5 +206,11 @@ public class TankController : Shooter
 
     public override void OutOfRange(){
         this.inRange = false;
+    }
+
+    public void GoAwayFromPlayer()
+    {
+        if(nextPatrolPoint.nextPatrolPoints.Count > 0)
+            NextPatrolPoint(previousPatrolPoint);
     }
 }

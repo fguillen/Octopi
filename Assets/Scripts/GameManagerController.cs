@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityCore.Audio;
@@ -14,11 +15,11 @@ public class GameManagerController : MonoBehaviour
 
     [SerializeField] PlayableDirector endScene;
 
-    int actualNumPeople;
-    int actualNumCars;
-    int actualNumHelicopters;
-    int actualNumTanks;
-    int actualNumSoldiers;
+    List<PersonController> activePeople = new List<PersonController>();
+    List<CarController> activeCars = new List<CarController>();
+    List<HelicopterController> activeHelicopters = new List<HelicopterController>();
+    List<TankController> activeTanks = new List<TankController>();
+    List<SoldierController> activeSoldiers = new List<SoldierController>();
 
     bool armyActive = false;
     bool endGame = false;
@@ -84,83 +85,84 @@ public class GameManagerController : MonoBehaviour
         }
     }
 
-    public void IncreasePeople()
+    public void IncreasePeople(PersonController element)
     {
-        actualNumPeople ++;
+
+        activePeople.Add(element);
     }
 
-    public void DecreasePeople()
+    public void DecreasePeople(PersonController element)
     {
-        actualNumPeople --;
+        activePeople.Remove(element);
     }
 
     public bool CanMorePeople()
     {
-        return maxNumPeople > actualNumPeople;
+        return maxNumPeople > activePeople.Count();
     }
 
 
-    public void IncreaseCars()
+    public void IncreaseCars(CarController element)
     {
-        actualNumCars ++;
+        activeCars.Add(element);
     }
 
-    public void DecreaseCars()
+    public void DecreaseCars(CarController element)
     {
-        actualNumCars --;
+        activeCars.Remove(element);
     }
 
     public bool CanMoreCars()
     {
-        return maxNumCars > actualNumCars;
+        return maxNumCars > activeCars.Count();
     }
 
 
-    public void IncreaseHelicopters()
+    public void IncreaseHelicopters(HelicopterController element)
     {
-        actualNumHelicopters ++;
+        activeHelicopters.Add(element);
     }
 
-    public void DecreaseHelicopters()
+    public void DecreaseHelicopters(HelicopterController element)
     {
-        actualNumHelicopters --;
+        activeHelicopters.Remove(element);
     }
 
     public bool CanMoreHelicopters()
     {
-        return maxNumHelicopters > actualNumHelicopters && armyActive;
+        return armyActive && maxNumHelicopters > activeHelicopters.Count();
     }
 
 
-    public void IncreaseTanks()
+    public void IncreaseTanks(TankController element)
     {
-        actualNumTanks ++;
+        activeTanks.Add(element);
     }
 
-    public void DecreaseTanks()
+    public void DecreaseTanks(TankController element)
     {
-        actualNumTanks --;
+        activeTanks.Remove(element);
     }
 
     public bool CanMoreTanks()
     {
-        return maxNumTanks > actualNumTanks && armyActive;
+        return armyActive && maxNumTanks > activeTanks.Count();
     }
 
 
-    public void IncreaseSoldiers()
+    public void IncreaseSoldiers(SoldierController element)
     {
-        actualNumSoldiers ++;
+        activeSoldiers.Add(element);
     }
 
-    public void DecreaseSoldiers()
+    public void DecreaseSoldiers(SoldierController element)
     {
-        actualNumSoldiers --;
+        activeSoldiers.Remove(element);
     }
 
     public bool CanMoreSoldiers()
     {
-        return maxNumSoldiers > actualNumSoldiers && armyActive;
+        return armyActive && maxNumSoldiers > activeSoldiers.Count();
     }
 
     public bool CanShoot()
@@ -173,6 +175,7 @@ public class GameManagerController : MonoBehaviour
         return endGame;
     }
 
+    [ContextMenu("PlayEndScene")]
     public void PlayEndScene()
     {
         Debug.Log("PlayEndScen()");
@@ -185,6 +188,27 @@ public class GameManagerController : MonoBehaviour
             endScene.Play();
 
         endGame = true;
+        armyActive = false;
+
+        SendArmyAway();
+    }
+
+    void SendArmyAway()
+    {
+        foreach (var element in activeSoldiers)
+        {
+            element.GoAwayFromPlayer();
+        }
+
+        foreach (var element in activeTanks)
+        {
+            element.GoAwayFromPlayer();
+        }
+
+        foreach (var element in activeHelicopters)
+        {
+            element.GoAwayFromPlayer();
+        }
     }
 
     public void StartCity()

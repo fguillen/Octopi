@@ -77,7 +77,7 @@ public class ElectricPointController : MonoBehaviour
         float distanceToPlayer = Vector2.Distance(PlayerController.instance.transform.position, transform.position);
         float distanceNormalized = distanceToPlayer / maxDistanceSound;
         float volume = Mathf.Lerp(1, 0, distanceNormalized);
-        Debug.Log($"SpawnLightningCoroutine sound: {distanceToPlayer}, {distanceNormalized}, {volume}");
+        // Debug.Log($"SpawnLightningCoroutine sound: {distanceToPlayer}, {distanceNormalized}, {volume}");
         audioSource.volume = volume;
         audioSource.Play();
         // TODO Sound - END

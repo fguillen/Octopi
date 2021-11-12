@@ -31,12 +31,12 @@ public class HelicopterController : Shooter
         animator = GetComponent<Animator>();
         player = GameObject.Find("/PlayerGame/Player").GetComponent<PlayerController>();
         Debug.Assert(player != null);
-        GameManagerController.Instance.IncreaseHelicopters();
+        GameManagerController.Instance.IncreaseHelicopters(this);
     }
 
     void OnDestroy()
     {
-        GameManagerController.Instance.DecreaseHelicopters();
+        GameManagerController.Instance.DecreaseHelicopters(this);
     }
 
     void Start()
@@ -66,7 +66,13 @@ public class HelicopterController : Shooter
 
         if(Vector3.Distance(transform.position, nextPatrolPointPositionWithCustomZ) < 0.01)
         {
-            NextPatrolPointCloseToPlayer();
+            if(GameManagerController.Instance.EndGame())
+            {
+                NextPatrolPointFarToPlayer();
+            } else
+            {
+                NextPatrolPointCloseToPlayer();
+            }
         }
     }
 
@@ -121,6 +127,12 @@ public class HelicopterController : Shooter
         NextPatrolPoint(point);
     }
 
+    public void NextPatrolPointFarToPlayer()
+    {
+        Vector3 point = Utils.PositionInCircumference(player.transform.position, 20.0f, Random.Range(15, 165));
+        NextPatrolPoint(point);
+    }
+
     void NextPatrolPoint(Vector3 patrolPoint)
     {
         this.nextPatrolPoint = patrolPoint;
@@ -161,5 +173,10 @@ public class HelicopterController : Shooter
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(nextPatrolPoint, 0.8f);
+    }
+
+    public void GoAwayFromPlayer()
+    {
+        NextPatrolPointFarToPlayer();
     }
 }
