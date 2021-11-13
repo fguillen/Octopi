@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6188580464874302282}
   - component: {fileID: 8626308228390994874}
   m_Layer: 0
-  m_Name: SpawnerRight
+  m_Name: AirplaneSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -46,4 +46,4 @@ MonoBehaviour:
   airplanePrefab: {fileID: 4152678621288526705, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
   airplaneEachSeconds: 40
   spawnAreaDelta: 2
-  airplaneVelocity: 1
+  airplaneVelocity: 0.8
