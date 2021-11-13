@@ -1675,7 +1675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104448031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.67376, y: 1.4430361, z: -7.015647}
+  m_LocalPosition: {x: -49.67125, y: 1.4430361, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1663584913}
@@ -6781,7 +6781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451622240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.49624, y: 5.9730353, z: -7.015647}
+  m_LocalPosition: {x: 42.49875, y: 5.9730353, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 392327826}
@@ -7423,7 +7423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.67376, y: 1.4430361, z: -7.015647}
+  m_LocalPosition: {x: -49.67125, y: 1.4430361, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 146923737}
@@ -7647,6 +7647,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7667584772435152005, guid: dbe282851628b4eeeb78d7ae3b377c42, type: 3}
   m_PrefabInstance: {fileID: 526989381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &528042407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6323596010444233216, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
+  m_PrefabInstance: {fileID: 1877581874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &529281426 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4654478291267019965, guid: dbe282851628b4eeeb78d7ae3b377c42, type: 3}
@@ -7688,7 +7693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540738686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000001907347, y: 2.1100001, z: 10.000009}
+  m_LocalPosition: {x: 0.0000038146954, y: 2.1100001, z: 10.00001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1895073894}
@@ -9821,7 +9826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657629568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52.92376, y: -0.6769643, z: -11.015647}
+  m_LocalPosition: {x: -52.92125, y: -0.6769643, z: -11.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 606922648}
@@ -12656,6 +12661,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9089663491534140280, guid: 145bfafc8e5994b3c9af66b6972f29ae, type: 3}
   m_PrefabInstance: {fileID: 881220280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &881959901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7672333093375319437, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
+  m_PrefabInstance: {fileID: 1877581874}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &884503921
 PrefabInstance:
@@ -17569,6 +17579,12 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/PlayerGround.prefab
   - _gameObject: {fileID: 17026538}
     _prefab: Assets/Prefabs/Airplane.prefab
+  - _gameObject: {fileID: 881959901}
+    _prefab: Assets/Particles/Particles_Smoke.prefab
+  - _gameObject: {fileID: 528042407}
+    _prefab: Assets/Particles/Particles_CarExplosion.prefab
+  - _gameObject: {fileID: 1699774538}
+    _prefab: Assets/Particles/Particles_CarFire.prefab
   - _gameObject: {fileID: 727627914}
     _prefab: Assets/Prefabs/Missile.prefab
   - _gameObject: {fileID: 298607964230155711}
@@ -19374,7 +19390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221526870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.30376, y: 0.4930358, z: -7.015647}
+  m_LocalPosition: {x: -39.30125, y: 0.4930358, z: -7.015647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2094504955}
@@ -26772,6 +26788,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689231359}
   m_CullTransparentMesh: 1
+--- !u!1 &1699774538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4554082406804523240, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
+  m_PrefabInstance: {fileID: 1877581874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700290328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5667506417228991412, guid: 17321b123c56d4a0cb6a9c347cfec892, type: 3}
@@ -29635,6 +29656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Airplane
       objectReference: {fileID: 0}
+    - target: {fileID: 4334419753649683114, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4740102744748514877, guid: 761a0ef78193e4239961af8857410ea0, type: 3}
       propertyPath: m_Color.b
       value: 0.29411766
@@ -29885,7 +29910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895073893}
   m_LocalRotation: {x: 1.222587e-22, y: 0.00000009536743, z: -1.1659499e-29, w: 1}
-  m_LocalPosition: {x: -5.5662518, y: 1.7230358, z: -7.0156555}
+  m_LocalPosition: {x: -5.56625, y: 3.833036, z: -7.0156565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 550067161}
@@ -33679,6 +33704,10 @@ PrefabInstance:
       propertyPath: airplaneVelocity
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8626308228390994874, guid: 75be9d3ec231d4ca18dcb895aa1b957e, type: 3}
+      propertyPath: airplaneEachSeconds
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75be9d3ec231d4ca18dcb895aa1b957e, type: 3}
 --- !u!1 &2090700918 stripped
@@ -36076,6 +36105,10 @@ PrefabInstance:
     - target: {fileID: 8626308228390994874, guid: 75be9d3ec231d4ca18dcb895aa1b957e, type: 3}
       propertyPath: airplaneVelocity
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626308228390994874, guid: 75be9d3ec231d4ca18dcb895aa1b957e, type: 3}
+      propertyPath: airplaneEachSeconds
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75be9d3ec231d4ca18dcb895aa1b957e, type: 3}

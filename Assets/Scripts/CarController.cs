@@ -18,7 +18,6 @@ public class CarController : MonoBehaviour
 
     [SerializeField] Color burntColor = new Color(0.27f, 0.076f, 0.15f);
     [SerializeField] SpriteRenderer colorizable;
-    [SerializeField] Collider2D theCollider;
 
     bool idle = false;
     bool onRoad = true;
@@ -150,6 +149,7 @@ public class CarController : MonoBehaviour
         animator.SetBool("Moving", true);
         idle = true;
         onRoad = false;
+        exploded = false;
 
         SoundThrowPlay();
     }
@@ -164,7 +164,7 @@ public class CarController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(!exploded &&collisionInfo.gameObject.CompareTag("CarGround"))
+        if(!exploded && collisionInfo.gameObject.CompareTag("CarGround"))
         {
             StartCoroutine(ExplodeCoroutine());
             exploded = true;
