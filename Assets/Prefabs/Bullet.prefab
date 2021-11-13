@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6276241249401667929}
   - component: {fileID: 4025025431742609343}
   - component: {fileID: 8076600488070899791}
+  - component: {fileID: 6950430164501465412}
   m_Layer: 13
   m_Name: Bullet
   m_TagString: Missile
@@ -166,3 +167,15 @@ CircleCollider2D:
   m_Offset: {x: 0.04, y: 0}
   serializedVersion: 2
   m_Radius: 0.015400669
+--- !u!114 &6950430164501465412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821153355229891535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a31d5118fc483cb26bd8f0ed5b95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

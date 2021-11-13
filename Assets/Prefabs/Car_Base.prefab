@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 4038170812050535026}
   - component: {fileID: 4751523732691960470}
   - component: {fileID: 6784192952447167654}
+  - component: {fileID: 8921823123284528091}
   m_Layer: 7
   m_Name: Car_Base
   m_TagString: Car
@@ -201,7 +202,6 @@ MonoBehaviour:
   particlesSmoke: {fileID: 5589242197699391404}
   burntColor: {r: 0.27, g: 0.076, b: 0.15, a: 1}
   colorizable: {fileID: 6145978617745206607}
-  theCollider: {fileID: 6784192952447167654}
 --- !u!95 &9048188112044448228
 Animator:
   serializedVersion: 3
@@ -335,6 +335,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0992717, y: 0.70218515}
   m_EdgeRadius: 0
+--- !u!114 &8921823123284528091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252614451015008259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a31d5118fc483cb26bd8f0ed5b95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3416428822184461629
 GameObject:
   m_ObjectHideFlags: 0

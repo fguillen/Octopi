@@ -18,6 +18,7 @@ TagManager:
   - ActivateArmy
   - Bird
   - Electricity
+  - WordLimit
   layers:
   - Default
   - TransparentFX
@@ -43,7 +44,7 @@ TagManager:
   - PlayerRoof
   - Electricity
   - Airplanes
-  - 
+  - WordLimits
   - 
   - 
   - 
