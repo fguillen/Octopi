@@ -20,8 +20,8 @@ public class CameraPlayerController : MonoBehaviour
         float screenX = Mathf.Lerp(0.371f, 0.556f, distanceToMousePositionX / 8.0f);
         float screenY = Mathf.Lerp(0.624f, 0.357f, distanceToMousePositionY / 6.0f);
 
-        Debug.Log($"distanceToMousePositionX: {distanceToMousePositionX}");
-        Debug.Log($"distanceToMousePositionY: {distanceToMousePositionY}");
+        // Debug.Log($"distanceToMousePositionX: {distanceToMousePositionX}");
+        // Debug.Log($"distanceToMousePositionY: {distanceToMousePositionY}");
 
         cinemachineComposer.m_ScreenX = screenX;
         cinemachineComposer.m_ScreenY = screenY;

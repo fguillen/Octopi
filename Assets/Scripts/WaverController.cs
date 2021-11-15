@@ -35,7 +35,7 @@ public class WaverController : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("WaverController.OnDestroy()");
+        // Debug.Log("WaverController.OnDestroy()");
         sequence.Kill();
     }
 }
