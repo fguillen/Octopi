@@ -33,6 +33,7 @@ public class GrabbableController : MonoBehaviour
 
     bool thrown = false;
     bool grabbed = false;
+    int numOfGrabs = 0;
 
     void Awake()
     {
@@ -46,6 +47,8 @@ public class GrabbableController : MonoBehaviour
 
     public void StartGrab()
     {
+        numOfGrabs ++;
+
         if(!grabbed)
         {
             // Debug.Log("GrabbableController.StartGrab()");
@@ -60,15 +63,20 @@ public class GrabbableController : MonoBehaviour
 
     public void StopGrab()
     {
-        StopGrabEvent.Invoke();
+        numOfGrabs --;
 
-        StopShake();
-        colorizable.color = originalColor;
+        if(numOfGrabs == 0)
+        {
+            StopGrabEvent.Invoke();
 
-        if(grabCoroutine != null)
-            StopCoroutine(grabCoroutine);
+            StopShake();
+            colorizable.color = originalColor;
 
-        grabbed = false;
+            if(grabCoroutine != null)
+                StopCoroutine(grabCoroutine);
+
+            grabbed = false;
+        }
     }
 
     void StartShake()
