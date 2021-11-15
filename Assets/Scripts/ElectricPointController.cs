@@ -16,12 +16,15 @@ public class ElectricPointController : MonoBehaviour
     AudioSource audioSource;
 
     Vector3 originalEndPosition;
+    Vector2 relativeToPlayerEndPosition;
     float nextLightningAt;
     bool lightningActive;
+    bool electrocutingPlayer;
 
     IEnumerator spawnLightningCoroutine;
     IEnumerator electrocutedPlayerCoroutine;
     Tween doShakeTween;
+
 
 
     void Awake()
@@ -29,6 +32,7 @@ public class ElectricPointController : MonoBehaviour
         originalEndPosition = lightning.EndObject.transform.localPosition;
         CalculateNextLightningAt();
         lightningActive = false;
+        electrocutingPlayer = false;
         audioSource = GetComponent<AudioSource>();
 
         if(audioSource == null)
@@ -49,6 +53,9 @@ public class ElectricPointController : MonoBehaviour
             SpawnLighting();
             CalculateNextLightningAt();
         }
+
+        if(electrocutingPlayer)
+            lightning.EndObject.transform.position = (Vector2)PlayerController.instance.transform.position + relativeToPlayerEndPosition;
     }
 
     void CalculateNextLightningAt()
@@ -100,12 +107,14 @@ public class ElectricPointController : MonoBehaviour
     {
         Debug.Log("ElectrocutedPlayerCoroutine() :: INI");
         lightningActive = true;
+        electrocutingPlayer = true;
         electricPole.electrocuting = true;
 
         player.SetControlsActive(false);
 
 
         lightning.EndObject.transform.position = position;
+        relativeToPlayerEndPosition = position - (Vector2)PlayerController.instance.transform.position;
 
         if(spawnLightningCoroutine != null)
             StopCoroutine(spawnLightningCoroutine);
@@ -137,6 +146,7 @@ public class ElectricPointController : MonoBehaviour
         // TODO Sound - END
 
         lightningActive = false;
+        electrocutingPlayer = false;
         electricPole.electrocuting = false;
 
         Debug.Log("ElectrocutedPlayerCoroutine() :: END");
