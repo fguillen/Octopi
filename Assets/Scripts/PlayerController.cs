@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject iconTentaclePrefab;
     GameObject iconTentacle;
 
+
     [SerializeField] Transform endScenePosition;
     [SerializeField] GameObject groundColliderObject;
     [SerializeField] SpriteRenderer bodySpriteRenderer;
@@ -303,4 +304,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(Utils.AddNoise(1f));
         faceRenderer.sprite = faceNormal;
     }
+
+
 }
