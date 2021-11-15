@@ -3,13 +3,11 @@ using Cinemachine;
 
 public class CameraPlayerController : MonoBehaviour
 {
-    CinemachineVirtualCamera cinemachineVirtualCamera;
-    CinemachineFramingTransposer cinemachineComposer;
+    CinemachineFramingTransposer cinemachineFramingTransposer;
 
     void Awake()
     {
-        cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
-        cinemachineComposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        cinemachineFramingTransposer = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
     void Update()
@@ -23,8 +21,8 @@ public class CameraPlayerController : MonoBehaviour
         // Debug.Log($"distanceToMousePositionX: {distanceToMousePositionX}");
         // Debug.Log($"distanceToMousePositionY: {distanceToMousePositionY}");
 
-        cinemachineComposer.m_ScreenX = screenX;
-        cinemachineComposer.m_ScreenY = screenY;
+        cinemachineFramingTransposer.m_ScreenX = screenX;
+        cinemachineFramingTransposer.m_ScreenY = screenY;
     }
 
 
