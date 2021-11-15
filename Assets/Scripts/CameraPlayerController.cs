@@ -4,23 +4,27 @@ using Cinemachine;
 public class CameraPlayerController : MonoBehaviour
 {
     CinemachineVirtualCamera cinemachineVirtualCamera;
+    CinemachineFramingTransposer cinemachineComposer;
 
     void Awake()
     {
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        cinemachineComposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
     void Update()
     {
         Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePosition - (Vector2)PlayerController.instance.transform.position).normalized;
-        float distanceToMousePosition = Vector2.Distance(PlayerController.instance.transform.position, mousePosition);
+        float distanceToMousePositionX = PlayerController.instance.transform.position.x - mousePosition.x;
+        float distanceToMousePositionY = PlayerController.instance.transform.position.y - mousePosition.y;
+        float screenX = Mathf.Lerp(0.371f, 0.556f, distanceToMousePositionX / 8.0f);
+        float screenY = Mathf.Lerp(0.624f, 0.357f, distanceToMousePositionY / 6.0f);
 
+        Debug.Log($"distanceToMousePositionX: {distanceToMousePositionX}");
+        Debug.Log($"distanceToMousePositionY: {distanceToMousePositionY}");
 
-        Debug.Log($"distanceToMousePosition: {distanceToMousePosition}");
-
-        float orthographicSize = Mathf.Lerp(5, 6, distanceToMousePosition / 13.0f);
-        cinemachineVirtualCamera.m_Lens.OrthographicSize = orthographicSize;
+        cinemachineComposer.m_ScreenX = screenX;
+        cinemachineComposer.m_ScreenY = screenY;
     }
 
 
