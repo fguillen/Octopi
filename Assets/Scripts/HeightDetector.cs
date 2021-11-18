@@ -62,7 +62,7 @@ public class HeightDetector : MonoBehaviour
             isHigh = false;
             //_mixer.SetFloat(_windVolume, 0f);
         }
-        Debug.Log("Height =" + height + ", is High =" + isHigh);
+        //Debug.Log("Height =" + height + ", is High =" + isHigh);
 
     
     }
