@@ -50,9 +50,9 @@ MonoBehaviour:
   lightningDuration: 2
   lightningFrequency: 10
   electricPole: {fileID: 0}
-  clipElectroLow: {fileID: 8300000, guid: ed458df69d6ff42b78784271aba8c9ed, type: 3}
-  clipElectroHigh: {fileID: 8300000, guid: 9016f2b4c203d4ce498b9cd9af9f8570, type: 3}
-  clipElectroOut: {fileID: 8300000, guid: eccae3255b4984345b0013940a0d4df6, type: 3}
+  clipElectroLow: {fileID: 8300000, guid: bb705cd71c5699347931d1b1f4f16349, type: 3}
+  clipElectroHigh: {fileID: 8300000, guid: d9d26ea045f82214da80c416c7cdc4be, type: 3}
+  clipElectroOut: {fileID: 8300000, guid: d8e1c8f6e32a90c46b6536843c974594, type: 3}
 --- !u!61 &3058834834679729113
 BoxCollider2D:
   m_ObjectHideFlags: 0
