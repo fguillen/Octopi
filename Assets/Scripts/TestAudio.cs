@@ -20,13 +20,14 @@ namespace UnityCore
                 //Grab
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    audioController.PlayAudio(AudioType.SFX_grabObject, false); //bool is for fades (yes/no)
+                    //audioController.PlayAudio(AudioType.SFX_grabObject, false); //bool is for fades (yes/no)
+                    AudioController.instance.PlayAudio(UnityCore.Audio.AudioType.BCKGR_wind, false);
                 }
 
                 //window pull with randomization of clip
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    int windowPullClip = Random.Range(1, 9);
+                    /*int windowPullClip = Random.Range(1, 9);
                     switch (windowPullClip)
                     {
                         case 1:
@@ -53,7 +54,8 @@ namespace UnityCore
                         case 8:
                             audioController.PlayAudio(AudioType.SFX_windowPull_08, false);
                             break;
-                    }
+                    }*/
+                    AudioController.instance.StopAudio(UnityCore.Audio.AudioType.BCKGR_wind, false);
                 }
 
                 //window crashing in floor, with randomization of clip

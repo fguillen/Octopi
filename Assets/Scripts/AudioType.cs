@@ -51,6 +51,7 @@ namespace UnityCore {
             
             BCKGR_city,
             BCKGR_beach,
+            BCKGR_wind,
 
             MUS_militaryMarch,
             MUS_win,
