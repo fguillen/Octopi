@@ -22,6 +22,6 @@ Octopi is a city monster walk simulator. Go through the city trying to not destr
 
 ## Code
 
-You can get all the code here:
+You can get all the full project code here:
 
 - https://github.com/fguillen/Octopi
