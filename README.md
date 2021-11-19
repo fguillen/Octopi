@@ -14,10 +14,8 @@ Octopi is a city monster walk simulator. Go through the city trying to not destr
 
 ### Assets
 
-- Lightning: https://assetstore.unity.com/packages/tools/particles-effects/lightning-bolt-effect-for-unity-59471
+- Lightning effect: https://assetstore.unity.com/packages/tools/particles-effects/lightning-bolt-effect-for-unity-59471
 
 ### Sound effects
 
-- Electricity Low: https://freesound.org/s/101334/
-- Electricity High: https://freesound.org/s/367455/
-- Electricity Out: https://freesound.org/s/257958/
+- Electricity: https://freesound.org/s/101334/, https://freesound.org/s/367455/, https://freesound.org/s/257958/
