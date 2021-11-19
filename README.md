@@ -19,3 +19,9 @@ Octopi is a city monster walk simulator. Go through the city trying to not destr
 ### Sound effects
 
 - Electricity: https://freesound.org/s/101334/, https://freesound.org/s/367455/, https://freesound.org/s/257958/
+
+## Code
+
+You can get all the code here:
+
+- https://github.com/fguillen/Octopi
